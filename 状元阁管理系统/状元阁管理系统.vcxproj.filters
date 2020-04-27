@@ -13,48 +13,90 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="头文件\标准类">
+      <UniqueIdentifier>{5b6839ba-afd0-4f8a-8ad5-bb468062784c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\关于人的类">
+      <UniqueIdentifier>{7aa1237a-72de-46d7-b106-05f40bad9621}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\实物类">
+      <UniqueIdentifier>{1749f3b2-3d9f-45c9-9db2-a24230b8c3e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\内置层">
+      <UniqueIdentifier>{44860080-22c2-4ac3-af39-bc78dbcbcc73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\外显层">
+      <UniqueIdentifier>{c95d9818-71b3-433d-9197-6b859a92a724}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\关于人的实现">
+      <UniqueIdentifier>{b8c8731d-a339-43df-a405-79f7a2005558}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Test">
+      <UniqueIdentifier>{97a0270c-6e40-4c21-96a7-10f1df4517da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\显示类">
+      <UniqueIdentifier>{84b86d57-2f6d-4670-8f57-d50792b18ac0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Test.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Table.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="People.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Student.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="Date.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Purpose.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\内置层</Filter>
     </ClCompile>
     <ClCompile Include="DEFINE.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\内置层</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件\内置层</Filter>
+    </ClCompile>
+    <ClCompile Include="LogIn.cpp">
+      <Filter>源文件\外显层</Filter>
+    </ClCompile>
+    <ClCompile Include="Table.cpp">
+      <Filter>源文件\外显层</Filter>
+    </ClCompile>
+    <ClCompile Include="People.cpp">
+      <Filter>源文件\关于人的实现</Filter>
+    </ClCompile>
+    <ClCompile Include="Student.cpp">
+      <Filter>源文件\关于人的实现</Filter>
+    </ClCompile>
+    <ClCompile Include="Teacher.cpp">
+      <Filter>源文件\关于人的实现</Filter>
+    </ClCompile>
+    <ClCompile Include="Purpose.cpp">
+      <Filter>源文件\内置层</Filter>
+    </ClCompile>
+    <ClCompile Include="Test.cpp">
+      <Filter>源文件\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson.cpp">
+      <Filter>源文件\内置层</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Table.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="Date.h">
+      <Filter>头文件\标准类</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件\标准类</Filter>
     </ClInclude>
     <ClInclude Include="People.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\关于人的类</Filter>
     </ClInclude>
     <ClInclude Include="Student.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Date.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Purpose.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\关于人的类</Filter>
     </ClInclude>
     <ClInclude Include="Teacher.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\关于人的类</Filter>
+    </ClInclude>
+    <ClInclude Include="Purpose.h">
+      <Filter>头文件\实物类</Filter>
+    </ClInclude>
+    <ClInclude Include="Table.h">
+      <Filter>头文件\实物类</Filter>
+    </ClInclude>
+    <ClInclude Include="Lesson.h">
+      <Filter>头文件\实物类</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

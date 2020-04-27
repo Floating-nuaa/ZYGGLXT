@@ -142,15 +142,21 @@
   <ItemGroup>
     <ClCompile Include="Date.cpp" />
     <ClCompile Include="DEFINE.cpp" />
+    <ClCompile Include="Lesson.cpp" />
+    <ClCompile Include="LogIn.cpp" />
     <ClCompile Include="People.cpp" />
     <ClCompile Include="Purpose.cpp" />
+    <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="Table.cpp" />
+    <ClCompile Include="Teacher.cpp" />
     <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Date.h" />
+    <ClInclude Include="Lesson.h" />
     <ClInclude Include="People.h" />
+    <ClInclude Include="stdafx.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="Purpose.h" />
     <ClInclude Include="Table.h" />

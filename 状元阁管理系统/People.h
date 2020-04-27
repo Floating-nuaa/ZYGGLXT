@@ -3,8 +3,12 @@
 #include "People.h"
 #include <iostream>
 using namespace std;
+
 class People
-{//这是一个抽象类
+
+    //这是一个抽象类
+
+{
 private:
     
     static int numID;//静态的，一个人一个ID
@@ -31,6 +35,9 @@ public:
     void setPhone(char *);
     void display();
     //virtual void showInScreen() = 0;
-    
+    char* getName();
+    char getGender();
+    char* getPhone();
+    int getID();
 };
 #endif
