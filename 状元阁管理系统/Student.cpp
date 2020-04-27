@@ -62,5 +62,25 @@ void Student::display()
 {
 	People::display();
 	sub.display();
-	cout << requirement << " " << downPayment << endl;
+	cout <<QQ<<" "<< requirement << " " << downPayment << endl;
+}
+void Student::setQQ(char* QQ) 
+{
+	strcpy_s(this->QQ, QQ);
+}
+void Student::setDownPayment(int DP)
+{
+	this->downPayment = DP;
+}
+void Student::setRequirement(string s)
+{
+	this->requirement = s;
+}
+void Student::setTable() 
+{	
+	Table temp;
+	this->table = temp;
+}
+void Student::changeTable() {
+	//ÓĞ´ıÑĞ¾¿
 }

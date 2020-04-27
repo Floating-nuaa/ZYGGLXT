@@ -1,32 +1,49 @@
 #include "Date.h"
+
 //先声明两个后边会用到的函数
+
 int monthHowDays(int year, int month);
 bool isRunYear(int x);
+
+
+
 Date::Date(int year, int month, int day) {
     this->year = year;
     this->month = month;
     this->day = day;
 }
+
 Date::Date(int month, int day) {
     this->month = month;
     this->day = day;
     this->year = 2020;
 }
+
 Date::Date() {
     year = 2020;
     month = 1;
     day = 1;
 }
+
 Date::Date(const Date& obj) {
     year = obj.year;
     month = obj.month;
     day = obj.day;
 }
+
+
+
 void Date::display() {
-    cout << year << " " << month << " " << day << " " << endl;
+    cout << "日期： "<<year << " " << month << " " << day << "    ";
 }
+
+
+
 int Date :: operator -(const Date& obj)
-{//重载Date中的运算符，忘了咋重载了，先等等
+
+//重载Date中的运算符，忘了咋重载了，先等等
+
+{
 
     if (*this < obj) return -1;//先判断日期大小，要是小的减去大的就返回-1;
 
@@ -100,6 +117,8 @@ int Date :: operator -(const Date& obj)
     //全都加完了
     return ans;
 }
+
+
 Date Date::operator +(int x) {//x是多少节课，所以要--
     x--;
     day += x;
@@ -108,6 +127,8 @@ Date Date::operator +(int x) {//x是多少节课，所以要--
 
     return *this;
 }
+
+
 Date Date::operator =(const Date& obj) {
     year = obj.year;
     month = obj.month;
@@ -115,7 +136,9 @@ Date Date::operator =(const Date& obj) {
     return *this;
 }
 
-bool Date ::operator >(const Date& obj) {
+
+
+bool Date ::operator >(const Date& obj)const {
     int a = year - obj.year;
     if (a > 0)return 1;
     if (a < 0)return 0;
@@ -133,11 +156,20 @@ bool Date ::operator >(const Date& obj) {
     return 0;
 
 }
-bool Date ::operator ==(const Date& obj) {
-    if (year == obj.year && month == obj.month && day == obj.day) return 1;
+
+bool Date ::operator ==(const Date& obj)const 
+
+{
+
+    if (year == obj.year && month == obj.month && day == obj.day) 
+    {
+        return 1;
+    }
+       
     return 0;
 }
-bool Date ::operator <(const Date& obj) {
+
+bool Date ::operator <(const Date& obj)const {
     int a = year - obj.year;
     if (a > 0)return 0;
     if (a < 0)return 1;
@@ -154,9 +186,95 @@ bool Date ::operator <(const Date& obj) {
     }
     return 0;
 }
+
+bool Date ::operator<=(const Date& obj)const 
+
+{
+
+    if (*this == obj) 
+    {
+        return 1;
+    }
+
+    if (*this < obj) 
+    {
+        return 1;
+    }
+
+    return 0;
+
+}
+
+bool Date ::operator>=(const Date& obj)const
+
+{
+    if (*this == obj)
+    {
+        return 1;
+    }
+
+    if (*this > obj)
+    {
+        return 1;
+    }
+
+    return 0;
+
+}
+
+
+
+Date Date::operator++()
+
+//重载前置++
+
+{
+    this->day++;
+    Simplify();
+    return *this;
+
+}
+
+Date Date::operator++(int) 
+//重载后置++
+{
+    Date temp(*this);
+    this->day++;
+    Simplify();
+    return temp;
+}
+
+Date Date::operator--(int) 
+
+//重载后置--
+
+{
+    Date temp(*this);
+    this->day--;
+    Simplify();
+    return temp;
+
+}
+
+Date Date::operator--()
+
+//重载前置--
+
+{
+    this->day--;
+    Simplify();
+    return *this;
+}
+
+
+
+
 int Date::getYear() { return year; }
 int Date::getMonth() { return month; }
 int Date::getDay() { return day; }
+
+
+
 bool Date::Simplify() {
     if (month > 12)
     {
@@ -173,6 +291,9 @@ bool Date::Simplify() {
     if (day > a || month > 12)return 1;//没有完全简化
     return 0;//完全简化了
 }
+
+
+
 bool isRunYear(int x) {
     //判断是否为闰年的函数，是返回1，不是返回0；
     if (x % 4 != 0) return 0;
@@ -183,6 +304,9 @@ bool isRunYear(int x) {
         else return 1;
     }
 }
+
+
+
 int monthHowDays(int year, int month) {
     //判断这个月有几天
     if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {

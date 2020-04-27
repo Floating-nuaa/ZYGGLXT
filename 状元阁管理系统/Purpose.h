@@ -12,7 +12,7 @@ public:
 	Purpose(char );
 	Purpose();
 	char getName() { return name; }
-	void display() { cout << name << endl; }
+	void display() { cout << name<<" "; }
 };
 
 #endif

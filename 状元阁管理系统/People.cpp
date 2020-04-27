@@ -47,7 +47,7 @@ People::People(char* name, char sex):ID(numID) {
 }
 void People::display() 
 {
-	cout << name << " " << gender << " " << phone <<endl;
+	cout << name << " " << gender << " " << phone<<" ";
 }
 
 void People::setGender(char sex) 
@@ -72,3 +72,13 @@ int People::checkNumID()
 	return numID;
 }
 
+
+
+
+char* People::getName() { return name; }
+
+char People::getGender() { return gender; }
+
+char* People::getPhone() { return phone; }
+
+int People::getID() { return this->ID; }
