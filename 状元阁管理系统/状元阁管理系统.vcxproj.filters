@@ -37,10 +37,20 @@
     <Filter Include="头文件\显示类">
       <UniqueIdentifier>{84b86d57-2f6d-4670-8f57-d50792b18ac0}</UniqueIdentifier>
     </Filter>
+<<<<<<< HEAD
+=======
+    <Filter Include="头文件\抽象类">
+      <UniqueIdentifier>{647e58aa-f189-4ed6-a590-786df5bfde63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\显示层">
+      <UniqueIdentifier>{0c2a4630-ca58-4ab6-9139-496da30320c3}</UniqueIdentifier>
+    </Filter>
+>>>>>>> dev
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Date.cpp">
       <Filter>源文件\内置层</Filter>
+<<<<<<< HEAD
     </ClCompile>
     <ClCompile Include="DEFINE.cpp">
       <Filter>源文件\内置层</Filter>
@@ -52,6 +62,16 @@
       <Filter>源文件\外显层</Filter>
     </ClCompile>
     <ClCompile Include="Table.cpp">
+=======
+    </ClCompile>
+    <ClCompile Include="DEFINE.cpp">
+      <Filter>源文件\内置层</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件\内置层</Filter>
+    </ClCompile>
+    <ClCompile Include="LogIn.cpp">
+>>>>>>> dev
       <Filter>源文件\外显层</Filter>
     </ClCompile>
     <ClCompile Include="People.cpp">
@@ -71,17 +91,38 @@
     </ClCompile>
     <ClCompile Include="Lesson.cpp">
       <Filter>源文件\内置层</Filter>
+<<<<<<< HEAD
+=======
+    </ClCompile>
+    <ClCompile Include="Table.cpp">
+      <Filter>源文件\外显层</Filter>
+    </ClCompile>
+    <ClCompile Include="FatherTable.cpp">
+      <Filter>源文件\外显层</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseFile.cpp">
+      <Filter>源文件\内置层</Filter>
+    </ClCompile>
+    <ClCompile Include="PremaryMenu.cpp">
+      <Filter>源文件\显示层</Filter>
+>>>>>>> dev
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Date.h">
       <Filter>头文件\标准类</Filter>
+<<<<<<< HEAD
     </ClInclude>
     <ClInclude Include="stdafx.h">
       <Filter>头文件\标准类</Filter>
     </ClInclude>
     <ClInclude Include="People.h">
       <Filter>头文件\关于人的类</Filter>
+=======
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件\标准类</Filter>
+>>>>>>> dev
     </ClInclude>
     <ClInclude Include="Student.h">
       <Filter>头文件\关于人的类</Filter>
@@ -92,11 +133,37 @@
     <ClInclude Include="Purpose.h">
       <Filter>头文件\实物类</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Table.h">
       <Filter>头文件\实物类</Filter>
     </ClInclude>
     <ClInclude Include="Lesson.h">
       <Filter>头文件\实物类</Filter>
+=======
+    <ClInclude Include="Lesson.h">
+      <Filter>头文件\实物类</Filter>
+    </ClInclude>
+    <ClInclude Include="People.h">
+      <Filter>头文件\抽象类</Filter>
+    </ClInclude>
+    <ClInclude Include="Table.h">
+      <Filter>头文件\实物类</Filter>
+    </ClInclude>
+    <ClInclude Include="FatherTable.h">
+      <Filter>头文件\抽象类</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseFile.h">
+      <Filter>头文件\标准类</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>头文件\显示类</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenu.h">
+      <Filter>头文件\显示类</Filter>
+    </ClInclude>
+    <ClInclude Include="PremaryMenu.h">
+      <Filter>头文件\显示类</Filter>
+>>>>>>> dev
     </ClInclude>
   </ItemGroup>
 </Project>

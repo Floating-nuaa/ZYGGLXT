@@ -9,22 +9,69 @@ Lesson::Lesson()
 	ordinalNumber = 0;
 }
 
+<<<<<<< HEAD
 Lesson::Lesson(int year, int month, int day, int ordinalNumber)
+=======
+Lesson::Lesson(int year, int month, int day, int ordinalNumber):Date(year,month,day)
+>>>>>>> dev
 
 //普普通通的构造函数
 
 {
 	Date::Date(year, month, day);
+<<<<<<< HEAD
 	this->ordinalNumber = ordinalNumber;
 }
 
 Lesson::Lesson(int month, int day, int ordinalNumber)
+=======
+	string expect1;
+	try 
+	{
+		if (ordinalNumber > 5 || ordinalNumber <= 0)
+		{
+			expect1 = "课程时间输入异常!!!";
+			throw expect1;
+		}
+
+
+	}
+	catch (string goal)
+	{
+		cout << goal << endl;
+	}
+
+	this->ordinalNumber = ordinalNumber;
+	
+}
+
+Lesson::Lesson(int month, int day, int ordinalNumber):Date( month, day)
+>>>>>>> dev
 
 //重载构造函数，缺省年的构造
 
 {
 	Date::Date(month, day);
+<<<<<<< HEAD
 	this->ordinalNumber=ordinalNumber;
+=======
+	string expect1;
+	try
+	{
+		if (ordinalNumber > 5 || ordinalNumber <= 0)
+		{
+			expect1 = "课时间输入异常!!!";
+			throw expect1;
+		}	
+	}
+	catch (string goal)
+	{
+		cout << goal << endl;
+	}
+
+	this->ordinalNumber = ordinalNumber;
+	
+>>>>>>> dev
 }
 
 Lesson::Lesson(const Lesson& obj) : Date(obj)
@@ -42,7 +89,26 @@ Lesson::Lesson(const Date& obj, int num):Date(obj)
 
 {
 	Date::Date(obj);
+<<<<<<< HEAD
 	this->ordinalNumber = num;
+=======
+	string expect1;
+	try
+	{
+		if (ordinalNumber > 5 || ordinalNumber <= 0)
+		{
+			expect1 = "课程序数输入异常!!!";
+			throw expect1;
+		}
+	}
+	catch (string goal)
+	{
+		cout << goal << endl;
+	}
+
+	this->ordinalNumber = num;
+	
+>>>>>>> dev
 	//cout << "日期构造函数！" << endl;
 }
 

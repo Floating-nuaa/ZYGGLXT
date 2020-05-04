@@ -7,4 +7,8 @@ bool checkBigPassword(string s);
 bool saveAccount(string name, string password);
 bool checkPassword(string input);
 bool savaStudentData(Student);
+<<<<<<< HEAD
+=======
+bool checkSaveAddress(string);
+>>>>>>> dev
 #endif
