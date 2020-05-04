@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include "Student.h"
+#include "BaseFile.h"
 using namespace std;
 
 
@@ -41,8 +42,6 @@ bool checkBigPassword(string s)
 	return 0;
 }
 
-
-
 bool saveAccount(string name, string password) 
 
 //保存账户说明：前方结尾是回车
@@ -79,8 +78,6 @@ bool saveAccount(string name, string password)
 	
 	return 1;
 }
-
-
 
 bool checkPassword(string input) 
 
@@ -128,8 +125,52 @@ bool checkPassword(string input)
 		
 }
 
-
 bool saveStudentData(Student obj) 
 {
 	return 1;
+}
+
+bool checkSaveAddress(string saveAddress) 
+
+//功能函数说明：
+//这是检测更改文件储存路径是否合法的函数
+//合法返回1 否则返回零
+//会创建一个可以删除的测试文件
+{
+
+	if (saveAddress[0] != 'E' && saveAddress[0] != 'C' && saveAddress[0] != 'D') 
+	{
+		return 0;
+	}
+	if (saveAddress[1] != ':') 
+	{
+		return 0;
+	}
+	if (saveAddress[2] != '\\')
+	{
+		return 0;
+	}
+	//以上的检测很不完善，但几乎能避免因为格式不正确，引起的在相对路径下建立
+	//同名文件的问题
+	ofstream checkin;
+	
+	string  fileAddress = saveAddress;
+	
+	string fileName = "检测路径.txt";
+	
+	string file = fileAddress + fileName;
+	
+	checkin.open(file, ios::out);
+
+	if (!checkin) 
+	
+	{
+		return 0; 
+	}
+	checkin << "路径检测成功！！！！" << endl;
+	checkin << "(本文件可以移除)" << endl;
+	return 1;
+
+	checkin.close();
+
 }

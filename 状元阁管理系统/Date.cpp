@@ -11,12 +11,14 @@ Date::Date(int year, int month, int day) {
     this->year = year;
     this->month = month;
     this->day = day;
+    Simplify();
 }
 
 Date::Date(int month, int day) {
     this->month = month;
     this->day = day;
     this->year = 2020;
+    Simplify();
 }
 
 Date::Date() {

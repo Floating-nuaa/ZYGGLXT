@@ -117,8 +117,6 @@ void register_two()
 	
 }
 
-
-
 void login_main()
 
 //首界面功能选择函数

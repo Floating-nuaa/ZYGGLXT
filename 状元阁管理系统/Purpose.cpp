@@ -1,8 +1,14 @@
 #include "Purpose.h"
-#include <string.h>
-Purpose::Purpose(char name){
+#include <string>
+
+Purpose::Purpose(char name)
+
+{
 	this->name = name;
 }
-Purpose::Purpose() {
+
+Purpose::Purpose() 
+
+{
 	name = '0';
 }
