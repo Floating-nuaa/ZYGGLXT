@@ -122,7 +122,7 @@ bool checkPassword(string input)
 			throw 0;
 			return 0;
 		}
-		
+		return 0;
 }
 
 bool saveStudentData(Student obj) 

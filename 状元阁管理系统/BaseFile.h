@@ -1,7 +1,9 @@
 #ifndef BASEFILE_H_
 #define BASEFILE_H_
 #include <string>
+#include <fstream>
 using namespace std;
+
 class BaseFile 
 
 	//创建基础文件类，是所有文件类的基类
@@ -40,6 +42,9 @@ public :
 
 	void display();
 
+	virtual ~BaseFile(){}
+
+	//virtual bool saveThisFile();
 };
 
 #endif // !BASEFILE_H_

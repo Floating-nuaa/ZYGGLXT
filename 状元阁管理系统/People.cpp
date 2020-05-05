@@ -45,9 +45,17 @@ People::People(char* name, char sex):ID(numID) {
 	char pho[10] = "?";
 	strcpy_s(this->phone, pho);
 }
+
+People::People() :ID(-1)
+{
+	gender = '0';
+	strcpy_s(name, "test");
+	strcpy_s(phone, "test");
+}
+
 void People::display() 
 {
-	cout << name << " " << gender << " " << phone<<" ";
+	cout << "姓名  " << name << "  性别  " << gender << "  电话号码" << phone << "  " << endl;
 }
 
 void People::setGender(char sex) 
