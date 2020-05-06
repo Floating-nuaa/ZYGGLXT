@@ -1,7 +1,7 @@
 #include "BaseFile.h"
 #include "stdafx.h"
 #include <string>
-
+#include <fstream>
 
 string BaseFile :: REGISTERADDRESS= "E:\\VisualStudio\\Data\\";
 
@@ -152,3 +152,4 @@ void BaseFile::display()
 {
 	cout << completeFile << endl;
 }
+

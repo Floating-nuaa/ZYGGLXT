@@ -45,6 +45,21 @@
     <Filter Include="源文件\显示层">
       <UniqueIdentifier>{0c2a4630-ca58-4ab6-9139-496da30320c3}</UniqueIdentifier>
     </Filter>
+<<<<<<< HEAD
+>>>>>>> dev
+=======
+    <Filter Include="头文件\文件类">
+      <UniqueIdentifier>{801810b1-4201-47f0-9c6d-653cef09be3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\数据层">
+      <UniqueIdentifier>{5fcb12b5-3b25-4418-aabd-a2f2cf629f6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\业务类">
+      <UniqueIdentifier>{346e2ea5-7841-4bc6-a37a-81cb0d3841c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\业务层">
+      <UniqueIdentifier>{cb208b4e-1087-4d5c-95b5-461e0d7ec7f3}</UniqueIdentifier>
+    </Filter>
 >>>>>>> dev
   </ItemGroup>
   <ItemGroup>
@@ -100,12 +115,33 @@
     <ClCompile Include="FatherTable.cpp">
       <Filter>源文件\外显层</Filter>
     </ClCompile>
-    <ClCompile Include="BaseFile.cpp">
-      <Filter>源文件\内置层</Filter>
-    </ClCompile>
     <ClCompile Include="PremaryMenu.cpp">
       <Filter>源文件\显示层</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenu.cpp">
+      <Filter>源文件\显示层</Filter>
+    </ClCompile>
+    <ClCompile Include="FeasibleCmd.cpp">
+      <Filter>源文件\显示层</Filter>
+    </ClCompile>
+    <ClCompile Include="PeoNum.cpp">
+      <Filter>源文件\数据层</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseFile.cpp">
+      <Filter>源文件\数据层</Filter>
+    </ClCompile>
+    <ClCompile Include="AddMode.cpp">
+      <Filter>源文件\业务层</Filter>
+    </ClCompile>
+    <ClCompile Include="STDInfo.cpp">
+      <Filter>源文件\数据层</Filter>
+    </ClCompile>
+    <ClCompile Include="AddSTdMenu.cpp">
+      <Filter>源文件\显示层</Filter>
 >>>>>>> dev
+    </ClCompile>
+    <ClCompile Include="AddSTD.cpp">
+      <Filter>源文件\业务层</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -152,9 +188,6 @@
     <ClInclude Include="FatherTable.h">
       <Filter>头文件\抽象类</Filter>
     </ClInclude>
-    <ClInclude Include="BaseFile.h">
-      <Filter>头文件\标准类</Filter>
-    </ClInclude>
     <ClInclude Include="Menu.h">
       <Filter>头文件\显示类</Filter>
     </ClInclude>
@@ -164,6 +197,30 @@
     <ClInclude Include="PremaryMenu.h">
       <Filter>头文件\显示类</Filter>
 >>>>>>> dev
+    </ClInclude>
+    <ClInclude Include="FeasibleCmd.h">
+      <Filter>头文件\显示类</Filter>
+    </ClInclude>
+    <ClInclude Include="Handler.h">
+      <Filter>头文件\抽象类</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseFile.h">
+      <Filter>头文件\文件类</Filter>
+    </ClInclude>
+    <ClInclude Include="PeoNum.h">
+      <Filter>头文件\文件类</Filter>
+    </ClInclude>
+    <ClInclude Include="AddSTD.h">
+      <Filter>头文件\业务类</Filter>
+    </ClInclude>
+    <ClInclude Include="AddMode.h">
+      <Filter>头文件\业务类</Filter>
+    </ClInclude>
+    <ClInclude Include="STDInfo.h">
+      <Filter>头文件\文件类</Filter>
+    </ClInclude>
+    <ClInclude Include="AddSTDMenu.h">
+      <Filter>头文件\显示类</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

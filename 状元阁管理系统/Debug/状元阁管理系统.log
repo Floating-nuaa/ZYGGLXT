@@ -1,8 +1,14 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿  Date.cpp
 E:\VisualStudio\ZYGGLXT\状元阁管理系统\Date.cpp(306): warning C4715: “isRunYear”: 不是所有的控件路径都返回值
 E:\VisualStudio\ZYGGLXT\状元阁管理系统\Date.cpp(327): warning C4715: “monthHowDays”: 不是所有的控件路径都返回值
 =======
 ﻿  Test.cpp
+>>>>>>> dev
+=======
+﻿  STDInfo.cpp
+  Test.cpp
+  正在生成代码...
 >>>>>>> dev
   状元阁管理系统.vcxproj -> E:\VisualStudio\ZYGGLXT\Debug\状元阁管理系统.exe

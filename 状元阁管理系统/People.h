@@ -18,7 +18,7 @@ protected:
     char name[15];//姓名
     char gender;//性别
     char phone[20];//电话号码
-    const int ID;//状元阁唯一识别号,不可更改
+    int ID;//状元阁唯一识别号,不可更改
 
 public:
     
@@ -27,6 +27,7 @@ public:
     People(char* name);
     People(char* name, char sex);
     People(const People&);
+    People();
 
     static int checkNumID();
     

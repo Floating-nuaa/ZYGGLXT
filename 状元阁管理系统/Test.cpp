@@ -2,6 +2,7 @@
 #include <string>
 #include <fstream>
 #include "Date.h"
+<<<<<<< HEAD
 #include "People.h"
 #include "DEFINE.cpp"
 #include "Purpose.h"
@@ -16,12 +17,18 @@
 #include "BaseFile.h"
 #include "PremaryMenu.h"
 >>>>>>> dev
+=======
+#include "PeoNum.h"
+#include "AddSTDMenu.h"
+#include "AddSTD.h"
+#include "FeasibleCmd.h"
+
+>>>>>>> dev
 using namespace std;
 
-extern string welcome();
 
-int main(){
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 	char name[29] = "laopan";
 	People people(name);
@@ -44,14 +51,14 @@ int main(){
 	BF.changeSaveAddress();
 	BaseFile AF;
 	AF.display();*/
+=======
+int main() {
+>>>>>>> dev
 
-	Menu* PpppR;
-	PpppR = new PremaryMenu;
-	PpppR->display();
-	delete PpppR;
-	PpppR = NULL;
+	AddSTD AST;
+	AST.getInfo();
+	AST.saveThisFile();
 
 >>>>>>> dev
 	return 0;
-
 }

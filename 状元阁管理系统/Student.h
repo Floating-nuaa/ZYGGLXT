@@ -18,7 +18,7 @@ private:
 	int downPayment;//预付订金
 	Purpose sub;//科目
 	string requirement;//学生的要求
-	Table table;//一个学生的课表
+	//Table table;//一个学生的课表
 
 public:
 
@@ -40,10 +40,12 @@ public:
 
 	Student(char*, char, Purpose, string requirement = "无",int downPayment = 0);
 
+	Student();
+
 	Student(const Student& obj);//拷贝构造函数
 
-
-
+	Student operator = (const Student& obj);
+	
 	void display();
 
 
@@ -54,7 +56,7 @@ public:
 
 	void setRequirement(string);
 
-	void setTable();
+	//void setTable();
 
 
 

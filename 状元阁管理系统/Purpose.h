@@ -2,17 +2,28 @@
 #define PURPOSE_H_
 #include <string.h>
 #include <iostream>
+#include <string>
+#include <vector>
+#include <map>
 using namespace std;
+
 class Purpose
+
 {
 
 private:
-	char name;
+
+	vector<string> list;//是一个string向量表，内置了科目
+
 public:
-	Purpose(char );
+	
+	Purpose( vector <string>  );
 	Purpose();
-	char getName() { return name; }
-	void display() { cout << name<<" "; }
+
+	string getList();
+	void display();
+
+	Purpose operator=(const Purpose&);
 };
 
 #endif

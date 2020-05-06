@@ -140,42 +140,59 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AddMode.cpp" />
+    <ClCompile Include="AddSTD.cpp" />
+    <ClCompile Include="AddSTdMenu.cpp" />
     <ClCompile Include="BaseFile.cpp" />
     <ClCompile Include="Date.cpp" />
     <ClCompile Include="DEFINE.cpp" />
 <<<<<<< HEAD
 =======
     <ClCompile Include="FatherTable.cpp" />
+<<<<<<< HEAD
+>>>>>>> dev
+=======
+    <ClCompile Include="FeasibleCmd.cpp" />
 >>>>>>> dev
     <ClCompile Include="Lesson.cpp" />
     <ClCompile Include="LogIn.cpp" />
+    <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="PeoNum.cpp" />
     <ClCompile Include="People.cpp" />
     <ClCompile Include="PremaryMenu.cpp" />
     <ClCompile Include="Purpose.cpp" />
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="STDInfo.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="Table.cpp" />
     <ClCompile Include="Teacher.cpp" />
     <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AddSTDMenu.h" />
     <ClInclude Include="BaseFile.h" />
+    <ClInclude Include="FeasibleCmd.h" />
     <ClInclude Include="Date.h" />
+    <ClInclude Include="Handler.h" />
     <ClInclude Include="Lesson.h" />
 <<<<<<< HEAD
     <ClInclude Include="People.h" />
 =======
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="PeoNum.h" />
     <ClInclude Include="People.h" />
     <ClInclude Include="PremaryMenu.h" />
 >>>>>>> dev
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="STDInfo.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="Purpose.h" />
     <ClInclude Include="Table.h" />
     <ClInclude Include="FatherTable.h" />
     <ClInclude Include="Teacher.h" />
+    <ClInclude Include="AddMode.h" />
+    <ClInclude Include="AddSTD.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
