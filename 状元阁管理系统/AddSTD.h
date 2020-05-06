@@ -4,15 +4,21 @@
 #include "Student.h"
 #include "PeoNum.h"
 #include "STDInfo.h"
+
 class AddSTD :public AddMode 
 
-{
+	//刚开始我想把查询模块和增加模块分开的
+	// 现在觉得这俩放一起挺好的
+	//为了避免来回改名字，类名就不变了
 
+{
+private:
+	//void setStdsID(); //内置函数，声明成student的友元函数
 protected:
 	
-	Student student;
-	STDInfo saveAddress;
-
+	Student student;//学生对象
+	STDInfo saveAddress;//文件地址对象
+	
 public:
 	
 	AddSTD();
@@ -22,5 +28,8 @@ public:
 
 	bool saveThisFile();//保存文件
 
+	bool readInfo(string);
+
+	void diaplay();
 };
 #endif // !ADDSTD_H_
