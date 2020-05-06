@@ -140,8 +140,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AddMode.cpp" />
-    <ClCompile Include="AddSTD.cpp" />
+    <ClCompile Include="AddTEAMenu.cpp" />
+    <ClCompile Include="OperaMode.cpp" />
+    <ClCompile Include="OperateSTD.cpp" />
     <ClCompile Include="AddSTdMenu.cpp" />
     <ClCompile Include="BaseFile.cpp" />
     <ClCompile Include="Date.cpp" />
@@ -151,6 +152,7 @@
     <ClCompile Include="Lesson.cpp" />
     <ClCompile Include="LogIn.cpp" />
     <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="OperateTEA.cpp" />
     <ClCompile Include="PeoNum.cpp" />
     <ClCompile Include="People.cpp" />
     <ClCompile Include="PremaryMenu.cpp" />
@@ -160,10 +162,12 @@
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="Table.cpp" />
     <ClCompile Include="Teacher.cpp" />
+    <ClCompile Include="TEAInfo.cpp" />
     <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AddSTDMenu.h" />
+    <ClInclude Include="AddTEAMenu.h" />
     <ClInclude Include="BaseFile.h" />
     <ClInclude Include="FeasibleCmd.h" />
     <ClInclude Include="Date.h" />
@@ -171,6 +175,7 @@
     <ClInclude Include="Lesson.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="OperateTEA.h" />
     <ClInclude Include="PeoNum.h" />
     <ClInclude Include="People.h" />
     <ClInclude Include="PremaryMenu.h" />
@@ -181,8 +186,9 @@
     <ClInclude Include="Table.h" />
     <ClInclude Include="FatherTable.h" />
     <ClInclude Include="Teacher.h" />
-    <ClInclude Include="AddMode.h" />
-    <ClInclude Include="AddSTD.h" />
+    <ClInclude Include="OperateMode.h" />
+    <ClInclude Include="OperateSTD.h" />
+    <ClInclude Include="TEAInfo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

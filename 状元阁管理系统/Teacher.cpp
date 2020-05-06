@@ -4,26 +4,59 @@
 
 using namespace std;
 
-Teacher::Teacher(char* name, char sex, char* phone, char* QQ, int salary) :People(name, sex, phone) {
+Teacher::Teacher(char* name, char sex, char* phone, char* QQ, int salary)
+	:People(name, sex, phone) 
+
+{
 	strcpy_s(this->QQ, QQ);
 	this->salary = salary;
 }
 
+Teacher::Teacher() :People()
+{
+	strcpy_s(this->QQ, "Test");
+	this->salary = 60;
+}
+
+Teacher::Teacher(const Teacher& obj) :People(obj)
+
+{
+	strcpy_s(this->QQ, obj.QQ);
+	this->salary = obj.salary;
+}
+
+Teacher::~Teacher(){}
 
 
-void Teacher::display() {
+
+void Teacher::display() 
+
+{
 	People::display();
-	cout << QQ << " " << salary << endl;
+	cout <<"QQ  "<< QQ << " " << salary << endl;
 }
 
+void Teacher::setQQ(char* QQ) 
 
-
-void Teacher::setQQ(char* QQ) {
+{
 	strcpy_s(this->QQ, QQ);
 }
 
-
-
-void Teacher::setSalary(int salary) {
+void Teacher::setSalary(int salary) 
+{
 	this->salary = salary;
 }
+
+
+Teacher Teacher:: operator =(const Teacher& obj) 
+
+{
+	strcpy_s(this->name, obj.name);
+	strcpy_s(this->QQ, obj.QQ);
+	strcpy_s(this->phone, obj.phone);
+	this->salary = obj.salary;
+	this->gender = obj.gender;
+
+	return *this;
+}
+

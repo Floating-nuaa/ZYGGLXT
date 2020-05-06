@@ -55,7 +55,7 @@ People::People() :ID(-1)
 
 void People::display() 
 {
-	cout << "姓名  " << name << "  性别  " << gender << "  电话号码" << phone << "  " << endl;
+	cout << "姓名  " << name << "  性别  " << gender << "  电话号码  " << phone << "  " << endl;
 }
 
 void People::setGender(char sex) 

@@ -26,3 +26,12 @@ STDInfo STDInfo::operator=(const STDInfo& obj)
 	return *this;
 }
 STDInfo::~STDInfo(){ }
+
+void STDInfo::setName(string name)
+{
+	string temp = ".dat";
+	string FM = name + temp;
+	//uniqueAddress = "STDInfo\\";
+	fileName = FM;
+	completeFile = saveAddress + uniqueAddress + fileName;
+}

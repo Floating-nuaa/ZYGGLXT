@@ -14,6 +14,7 @@ class Purpose
 private:
 
 	vector<string> list;//是一个string向量表，内置了科目
+	string subject[6];
 
 public:
 	

@@ -108,16 +108,25 @@
     <ClCompile Include="BaseFile.cpp">
       <Filter>源文件\数据层</Filter>
     </ClCompile>
-    <ClCompile Include="AddMode.cpp">
-      <Filter>源文件\业务层</Filter>
-    </ClCompile>
     <ClCompile Include="STDInfo.cpp">
       <Filter>源文件\数据层</Filter>
     </ClCompile>
     <ClCompile Include="AddSTdMenu.cpp">
       <Filter>源文件\显示层</Filter>
     </ClCompile>
-    <ClCompile Include="AddSTD.cpp">
+    <ClCompile Include="TEAInfo.cpp">
+      <Filter>源文件\数据层</Filter>
+    </ClCompile>
+    <ClCompile Include="OperateSTD.cpp">
+      <Filter>源文件\业务层</Filter>
+    </ClCompile>
+    <ClCompile Include="OperaMode.cpp">
+      <Filter>源文件\业务层</Filter>
+    </ClCompile>
+    <ClCompile Include="AddTEAMenu.cpp">
+      <Filter>源文件\显示层</Filter>
+    </ClCompile>
+    <ClCompile Include="OperateTEA.cpp">
       <Filter>源文件\业务层</Filter>
     </ClCompile>
   </ItemGroup>
@@ -161,26 +170,35 @@
     <ClInclude Include="FeasibleCmd.h">
       <Filter>头文件\显示类</Filter>
     </ClInclude>
-    <ClInclude Include="Handler.h">
-      <Filter>头文件\抽象类</Filter>
-    </ClInclude>
     <ClInclude Include="BaseFile.h">
       <Filter>头文件\文件类</Filter>
     </ClInclude>
     <ClInclude Include="PeoNum.h">
       <Filter>头文件\文件类</Filter>
     </ClInclude>
-    <ClInclude Include="AddSTD.h">
-      <Filter>头文件\业务类</Filter>
-    </ClInclude>
-    <ClInclude Include="AddMode.h">
-      <Filter>头文件\业务类</Filter>
-    </ClInclude>
     <ClInclude Include="STDInfo.h">
       <Filter>头文件\文件类</Filter>
     </ClInclude>
     <ClInclude Include="AddSTDMenu.h">
       <Filter>头文件\显示类</Filter>
+    </ClInclude>
+    <ClInclude Include="TEAInfo.h">
+      <Filter>头文件\文件类</Filter>
+    </ClInclude>
+    <ClInclude Include="OperateSTD.h">
+      <Filter>头文件\业务类</Filter>
+    </ClInclude>
+    <ClInclude Include="OperateMode.h">
+      <Filter>头文件\业务类</Filter>
+    </ClInclude>
+    <ClInclude Include="Handler.h">
+      <Filter>头文件\业务类</Filter>
+    </ClInclude>
+    <ClInclude Include="AddTEAMenu.h">
+      <Filter>头文件\显示类</Filter>
+    </ClInclude>
+    <ClInclude Include="OperateTEA.h">
+      <Filter>头文件\业务类</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -27,8 +27,9 @@ public:
     People(char* name);
     People(char* name, char sex);
     People(const People&);
+    
     People();
-
+    virtual ~People(){}
     static int checkNumID();
     
     void setName(char *);

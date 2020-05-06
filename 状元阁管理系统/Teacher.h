@@ -13,7 +13,7 @@ class Teacher :public People {
 private:
 	
 	char QQ[20];
-	vector <Purpose> table;//科目
+	//vector <Purpose> table;//科目
 	int salary;//工资标准
 
 public:
@@ -22,8 +22,16 @@ public:
 	//姓名 性别 phone QQ salary
 	
 	Teacher(char*, char, char*, char*, int salary=60);
+
+	Teacher();
+	~Teacher();
+	Teacher(const Teacher& obj);
 	void setQQ(char*);
+	
 	void setSalary(int);
+	
 	void display();
+
+	Teacher operator=(const Teacher& obj);
 };
 #endif
