@@ -1,5 +1,5 @@
 #include "AddTEAMenu.h"
-
+#include <string.h>
 
 
 AddTEAMenu::AddTEAMenu(){}
@@ -35,6 +35,10 @@ void AddTEAMenu::catchAndAnylasis()
 	string name, sex, phone, QQ;
 	int salary = 60;
 	char cname[15], csex = 'F', cphone[20], cQQ[20];
+	memset(cname, '\0', 15);
+
+	memset(cphone, '\0', 20);
+	memset(cQQ, '\0', 20);
 	cin >> name >> sex >> phone >> QQ;
 	if (display2()) 
 	{
@@ -55,8 +59,9 @@ void AddTEAMenu::catchAndAnylasis()
 	{
 		csex = 'F';
 	}
-
-	Teacher TEA(cname, csex, cphone, cQQ, salary);
+	Purpose sub;
+	sub = catchPurpose();
+	Teacher TEA(cname, csex, cphone, cQQ, sub,salary);
 	
 	teacher = TEA;
 }
@@ -80,4 +85,22 @@ Teacher AddTEAMenu::getTeacher()
 
 {
 	return this->teacher;
+}
+
+Purpose AddTEAMenu::catchPurpose()
+
+{
+	vector<string> list;
+	int a = 1;
+	cout << "\t请输入教学科目数量:" << endl;
+	cin >> a;
+	string ttt;
+	for (int i = 1; i <= a; i++)
+	{
+		cin >> ttt;
+		list.push_back(ttt);
+	}
+	Purpose pur(list);
+	return pur;
+
 }

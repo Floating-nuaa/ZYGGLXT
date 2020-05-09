@@ -200,5 +200,11 @@
     <ClInclude Include="OperateTEA.h">
       <Filter>头文件\业务类</Filter>
     </ClInclude>
+    <ClInclude Include="Money.h">
+      <Filter>头文件\标准类</Filter>
+    </ClInclude>
+    <ClInclude Include="Money.cpp">
+      <Filter>源文件\内置层</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

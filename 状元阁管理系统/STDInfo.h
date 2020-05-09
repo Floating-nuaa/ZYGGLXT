@@ -15,11 +15,13 @@ public:
 	
 	STDInfo();
 	
-	~STDInfo();
+	virtual ~STDInfo();
 
 	STDInfo operator = (const STDInfo&);
 
 	void setName(string Name);
+
+
 };
 #endif // ! STDINFO_H_
 

@@ -16,6 +16,7 @@ protected:
 
 	void catchAndAnylasis();
 	bool display2();
+	Purpose catchPurpose();
 public:
 	
 	AddTEAMenu();

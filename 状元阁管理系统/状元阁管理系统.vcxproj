@@ -189,6 +189,8 @@
     <ClInclude Include="OperateMode.h" />
     <ClInclude Include="OperateSTD.h" />
     <ClInclude Include="TEAInfo.h" />
+    <ClInclude Include="Money.h" />
+    <ClInclude Include="Money.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

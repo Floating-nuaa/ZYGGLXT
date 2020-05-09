@@ -13,18 +13,31 @@ class Purpose
 
 private:
 
-	vector<string> list;//是一个string向量表，内置了科目
-	string subject[6];
+	char subject[7][10];
+	int sum;
+
+	//把vector存车的方式改成了string数组和记录数量的变量
 
 public:
 	
-	Purpose( vector <string>  );
-	Purpose();
+	Purpose( vector <string>  );//含参数构造
+	
+	Purpose();//无参数构造
+	
+	Purpose(const Purpose& obj);//拷贝构造
+	
 
-	string getList();
+	~Purpose();//析构
+	
+
+
 	void display();
 
+
+
 	Purpose operator=(const Purpose&);
+
+
 };
 
 #endif

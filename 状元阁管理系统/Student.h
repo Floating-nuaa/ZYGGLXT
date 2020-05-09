@@ -17,8 +17,7 @@ private:
 	char QQ[20];
 	int downPayment;//预付订金
 	Purpose sub;//科目
-	string requirement;//学生的要求
-	//Table table;//一个学生的课表
+	char requirement[100];//学生的要求
 
 public:
 
@@ -56,12 +55,6 @@ public:
 
 	void setRequirement(string);
 
-	//void setTable();
-
-
-
-
-	void changeTable();
 
 };
 #endif;

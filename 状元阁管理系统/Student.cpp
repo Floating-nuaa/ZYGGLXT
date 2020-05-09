@@ -7,66 +7,70 @@
 
 using namespace std;
 
+
+
 Student::Student(char* name, char sex, char* phone, char* QQ, Purpose subj, string requirement , int downpayment )
-	:People(name,sex,phone)
+	:People(name,sex,phone),sub(subj)
+
 {
+
 	strcpy_s(this->QQ, QQ);
-	this->sub = subj;
-	this->requirement = requirement;
 	this->downPayment = downpayment;
+	strcpy_s(this->requirement, requirement.c_str());
+
 }
 
 Student::Student(char* name, char sex, char* phone, Purpose subj,string requirement , int downpayment )
-	:People(name,sex,phone) 
+	:People(name,sex,phone),sub(subj)
 {
-	this->sub = subj;
-	this->requirement = requirement;
+	
+	strcpy_s(this->requirement, requirement.c_str());
 	this->downPayment = downpayment;
 	this->downPayment = downpayment;
 }
 
 Student::Student(char* name, char* phone, Purpose subj, string requirement , int downpayment ) 
-:People (name,phone)
+:People (name,phone), sub(subj)
 {
-	this->sub = subj;
-	this->requirement = requirement;
+	
+	strcpy_s(this->requirement, requirement.c_str());
 	this->downPayment = downpayment;
 	this->downPayment = downpayment;
 
 }
 
 Student::Student(char* name, Purpose subj, string requirement, int downpayment )
-	:People(name) 
+	:People(name) ,sub(subj)
 {
-	this->sub = subj;
-	this->requirement = requirement;
+	
+	strcpy_s(this->requirement, requirement.c_str());
 	this->downPayment = downpayment;
 	this->downPayment = downpayment;
 
 }
 
 Student::Student(char* name, char sex, Purpose subj, string requirement , int downpayment)
-	:People(name,sex)
+	:People(name,sex),sub(subj)
+
 {
-	this->sub = subj;
-	this->requirement = requirement;
-	this->downPayment = downpayment;
+	
+	strcpy_s(this->requirement, requirement.c_str());
+	
 	this->downPayment = downpayment;
 
 }
 
-Student::Student(const Student& obj) :People(obj)
+Student::Student(const Student& obj) :People(obj),sub(obj.sub)
 {
 	strcpy_s(this->QQ, obj.QQ);
-	this->sub = obj.sub;
-	this->requirement = obj.requirement;
+	strcpy_s(this->requirement, obj.requirement); 
 	this->downPayment = obj.downPayment;
 }
 
 Student::Student() :People() 
 {
 	strcpy_s(QQ, "Test");
-	requirement = "test";
+	strcpy_s(requirement, "test");
 	downPayment = 0;
 }
 /* char name[15];//姓名
@@ -90,7 +94,7 @@ Student::Student() :People()
 	strcpy_s(this->QQ, obj.QQ);
 	this->downPayment = obj.downPayment;
 	this->sub = obj.sub;
-	this->requirement = obj.requirement;
+	strcpy_s(this->requirement , obj.requirement);
 
 	return *this;
 }
@@ -118,15 +122,5 @@ void Student::setDownPayment(int DP)
 
 void Student::setRequirement(string s)
 {
-	this->requirement = s;
-}
-
-/*void Student::setTable() 
-{	
-	Table temp;
-	this->table = temp;
-}*/
-
-void Student::changeTable() {
-	//有待研究
+	strcpy_s(requirement, s.c_str());
 }

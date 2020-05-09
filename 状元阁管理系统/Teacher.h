@@ -13,7 +13,7 @@ class Teacher :public People {
 private:
 	
 	char QQ[20];
-	//vector <Purpose> table;//科目
+	Purpose sub;//科目
 	int salary;//工资标准
 
 public:
@@ -21,11 +21,12 @@ public:
 	//构造函数 ， 添加老师只需一个构造函数，薪水为60
 	//姓名 性别 phone QQ salary
 	
-	Teacher(char*, char, char*, char*, int salary=60);
-
-	Teacher();
-	~Teacher();
+	Teacher(char*, char, char*, char*, Purpose ,int salary=60);
 	Teacher(const Teacher& obj);
+	Teacher();
+
+	~Teacher();
+
 	void setQQ(char*);
 	
 	void setSalary(int);

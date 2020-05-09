@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <vector>
 #include <fstream>
 #include "Date.h"
 #include "PeoNum.h"
@@ -15,17 +16,21 @@ using namespace std;
 int main() 
 
 {
-	OperateTEA OT,OA;
-	
-	Teacher TE;
-	
-	OT.getInfoFromScreen();
-	OT.saveThisFile();
+	FeasibleCmd *FE;
+	FE = new FeasibleCmd;
+	delete FE;
 
-	OA.readPreFile();
-	TE=OA.getTeacher();
+	OperateSTD OS;
 	
-	TE.display();
+	Student ss;
+	
+	//OS.getInfoFromScreen();
+	//OS.saveThisFile();
+	
+	OS.readPreFile();
+	ss=OS.getStudent();
 
+	ss.display();
 	return 0;
+
 }
