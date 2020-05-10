@@ -1,5 +1,4 @@
 #include "TableInfo.h"
-#include "BaseFile.h"
 
 TableInfo::TableInfo()
 {

@@ -1,19 +1,18 @@
 #ifndef PERINFO_H_
 #define PERINFO_H_
 #include "STDInfo.h"
-class PerInfo :public STDInfo 
+
+class PerInfo :public STDInfo
 
 
 {
-private:
-
+public:
+	
 	void setName(string Name);
 
-public:
-
 	PerInfo( );
 
-	PerInfo( );
+	PerInfo(const PerInfo&);
 
 	virtual ~PerInfo();
 

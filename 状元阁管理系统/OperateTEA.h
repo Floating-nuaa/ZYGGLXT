@@ -1,12 +1,17 @@
 #ifndef  OPERATETEA_H_
 #define OPERATETEA_H_
-#include "Teacher.h"
+
 #include "AddTEAMenu.h"
 #include "TEAInfo.h"
 #include "OperateMode.h"
 
 class OperateTEA : public OperateMode 
 {
+
+private :
+	//ÐÞ¸ÄID
+	void setTeasID(People&);
+
 protected:
 	
 	Teacher teacher;

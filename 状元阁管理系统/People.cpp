@@ -106,3 +106,11 @@ int People::getID()
 {
 	return this->ID; 
 }
+
+People People::operator =(const People& obj) 
+{
+	strcpy_s(this->name, obj.name);
+	strcpy_s(this->phone, obj.phone);
+	this->gender = obj.gender;
+	return *this;
+}

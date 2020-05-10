@@ -2,7 +2,8 @@
 #include "stdafx.h"
 #include <string>
 #include <fstream>
-
+#include <iostream>
+using namespace std;
 string BaseFile :: REGISTERADDRESS= "E:\\VisualStudio\\Data\\";
 
 void BaseFile::RESETADDRESS(string RERE) 

@@ -14,7 +14,7 @@ using namespace std;
 
 PeoNum::PeoNum() 
 {
-	uniqueAddress = "PersonInfo\\";
+	uniqueAddress = "PerInfo\\";
 	fileName = "PeoNum.txt";
 	completeFile = saveAddress + uniqueAddress + fileName;
 	NowNum = -1;

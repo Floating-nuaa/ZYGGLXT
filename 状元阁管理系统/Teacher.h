@@ -34,5 +34,10 @@ public:
 	void display();
 
 	Teacher operator=(const Teacher& obj);
+
+	friend class OperateTEA;
+
+
 };
 #endif
+

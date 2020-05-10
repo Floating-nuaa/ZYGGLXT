@@ -1,12 +1,9 @@
 #include "OperateSTD.h"
-#include "STDInfo.h"
-#include "PerInfo.h"
 #include "PeoNum.h"
-#include <fstream>
 #include "AddSTDMenu.h"
+#include "PerInfo.h"
 
-using namespace std;
-
+#include <fstream>
 
 OperateSTD::OperateSTD() {}
 
@@ -20,8 +17,8 @@ void OperateSTD::getInfoFromScreen()
 	AddSTDMenu  ASM;
 
 	ASM.display();
-	student =  ASM.getStudent();
-	string name(student.getName());
+	stud =  ASM.getStudent();
+	string name(stud.getName());
 
 	STDInfo SI(name);
 	saveAddress = SI;
@@ -29,33 +26,34 @@ void OperateSTD::getInfoFromScreen()
 
 bool OperateSTD::saveThisFile() 
 {
+	setStdsID(this->stud);
 	ofstream file(saveAddress.getCompleteAddress(), ios::out | ios::binary);
-	
+
 	if (!file) 
 	
 	{
-		cout << "学生信息文件打开失败，请检查路径是否正确！" << endl;
+		cout << "学生个人信息文件打开失败，请检查路径是否正确！" << endl;
 		return 0;
 	}
 	
-	file.write((char*)&student, sizeof(student));
+	file.write((char*)&stud, sizeof(stud));
 	file.close();
-	
 	PerInfo PI;//创建人信息保存地址
 	
 	ofstream perFile;
+
 	perFile.open(PI.getCompleteAddress(), ios::binary |ios::app);
 	
 	if (!perFile) 
 	{
-		cout << "信息总文件打开失败，请检查路径是否正确！" << endl;
+		cout << "人员信息总文件打开失败，请检查路径是否正确！" << endl;
 		
 		return 0;
 
 	}
-	setStdsID(this->student);
-	perFile.write((char*)&student, sizeof(student));
+	perFile.write((char*)&stud, sizeof(stud));
 	perFile.close();
+	
 	return 1;
 }
 
@@ -79,7 +77,7 @@ bool OperateSTD::readPreFile( )
 		return 0;
 	}
 
-	file.read((char*)&student, sizeof(student));
+	file.read((char*)&stud, sizeof(stud));
 	file.close();
 	//student.display();
 	return 1;
@@ -89,11 +87,15 @@ bool OperateSTD::readPreFile( )
 Student OperateSTD::getStudent() 
 
 {
-	return this->student;
+	return this->stud;
 }
-void OperateSTD::setStdsID(Student& obj) 
+
+void OperateSTD::setStdsID(People& obj) 
 
 {
+	//更改ID
 	PeoNum PN;
+
 	obj.ID = PN.returnNum();
+
 }

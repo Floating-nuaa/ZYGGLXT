@@ -141,6 +141,21 @@
     <ClCompile Include="PerInfo.cpp">
       <Filter>源文件\数据层</Filter>
     </ClCompile>
+    <ClCompile Include="CashRegister.cpp">
+      <Filter>源文件\业务层</Filter>
+    </ClCompile>
+    <ClCompile Include="TollMenu.cpp">
+      <Filter>源文件\显示层</Filter>
+    </ClCompile>
+    <ClCompile Include="Manager.cpp">
+      <Filter>源文件\关于人的实现</Filter>
+    </ClCompile>
+    <ClCompile Include="Record.cpp">
+      <Filter>源文件\数据层</Filter>
+    </ClCompile>
+    <ClCompile Include="TransactionRecord.cpp">
+      <Filter>源文件\数据层</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Date.h">
@@ -148,9 +163,6 @@
     </ClInclude>
     <ClInclude Include="stdafx.h">
       <Filter>头文件\标准类</Filter>
-    </ClInclude>
-    <ClInclude Include="Student.h">
-      <Filter>头文件\关于人的类</Filter>
     </ClInclude>
     <ClInclude Include="Teacher.h">
       <Filter>头文件\关于人的类</Filter>
@@ -197,9 +209,6 @@
     <ClInclude Include="TEAInfo.h">
       <Filter>头文件\文件类</Filter>
     </ClInclude>
-    <ClInclude Include="OperateSTD.h">
-      <Filter>头文件\业务类</Filter>
-    </ClInclude>
     <ClInclude Include="OperateMode.h">
       <Filter>头文件\业务类</Filter>
     </ClInclude>
@@ -229,6 +238,27 @@
     </ClInclude>
     <ClInclude Include="PerInfo.h">
       <Filter>头文件\文件类</Filter>
+    </ClInclude>
+    <ClInclude Include="OperateSTD.h">
+      <Filter>头文件\业务类</Filter>
+    </ClInclude>
+    <ClInclude Include="Student.h">
+      <Filter>头文件\关于人的类</Filter>
+    </ClInclude>
+    <ClInclude Include="CashRegister.h">
+      <Filter>头文件\业务类</Filter>
+    </ClInclude>
+    <ClInclude Include="TollMenu.h">
+      <Filter>头文件\显示类</Filter>
+    </ClInclude>
+    <ClInclude Include="TransactionRecord.h">
+      <Filter>头文件\标准类</Filter>
+    </ClInclude>
+    <ClInclude Include="Manager.h">
+      <Filter>头文件\关于人的类</Filter>
+    </ClInclude>
+    <ClInclude Include="Record.h">
+      <Filter>头文件\抽象类</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

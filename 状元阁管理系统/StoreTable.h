@@ -30,6 +30,7 @@ public:
 
 
 	void buildStoreTable( Table );
+
 	int getNum();
 	Lesson* getLessonTable();
 	

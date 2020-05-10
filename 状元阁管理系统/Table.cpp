@@ -194,7 +194,7 @@ Table::Table(StoreTable& obj)
 	//注意这里是子类给父类赋值
 	//其实这两个信息没什么用，都在优先队列里
 	startDate = obj.lessonTable[0];
-	endDate = obj.lessonTable[obj.num - 1];
+	//endDate = obj.lessonTable[obj.num - 1];
 }
 
 void Table::translateFromStoreTable(StoreTable& obj) 
@@ -206,6 +206,6 @@ void Table::translateFromStoreTable(StoreTable& obj)
 		this->lessonTimeTable.push(obj.lessonTable[i]);
 	}
 	startDate = obj.lessonTable[0];
-	endDate = obj.lessonTable[obj.num - 1];
+	//endDate = obj.lessonTable[obj.num - 1];
 
 }

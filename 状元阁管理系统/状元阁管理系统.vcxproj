@@ -141,6 +141,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AddTEAMenu.cpp" />
+    <ClCompile Include="CashRegister.cpp" />
+    <ClCompile Include="Manager.cpp" />
     <ClCompile Include="OperaMode.cpp" />
     <ClCompile Include="OperateSTD.cpp" />
     <ClCompile Include="AddSTdMenu.cpp" />
@@ -159,6 +161,7 @@
     <ClCompile Include="PerInfo.cpp" />
     <ClCompile Include="PremaryMenu.cpp" />
     <ClCompile Include="Purpose.cpp" />
+    <ClCompile Include="Record.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="STDInfo.cpp" />
     <ClCompile Include="StoreTable.cpp" />
@@ -168,37 +171,44 @@
     <ClCompile Include="Teacher.cpp" />
     <ClCompile Include="TEAInfo.cpp" />
     <ClCompile Include="Test.cpp" />
+    <ClCompile Include="TollMenu.cpp" />
+    <ClCompile Include="TransactionRecord.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AddSTDMenu.h" />
     <ClInclude Include="AddTEAMenu.h" />
     <ClInclude Include="BaseFile.h" />
+    <ClInclude Include="CashRegister.h" />
     <ClInclude Include="FeasibleCmd.h" />
     <ClInclude Include="Date.h" />
     <ClInclude Include="Handler.h" />
     <ClInclude Include="Lesson.h" />
     <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="Manager.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="OperateSTD.h" />
     <ClInclude Include="OperateTable.h" />
     <ClInclude Include="OperateTEA.h" />
     <ClInclude Include="PeoNum.h" />
     <ClInclude Include="People.h" />
     <ClInclude Include="PerInfo.h" />
     <ClInclude Include="PremaryMenu.h" />
+    <ClInclude Include="Record.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="STDInfo.h" />
     <ClInclude Include="StoreTable.h" />
-    <ClInclude Include="Student.h" />
     <ClInclude Include="Purpose.h" />
+    <ClInclude Include="Student.h" />
     <ClInclude Include="Table.h" />
     <ClInclude Include="FatherTable.h" />
     <ClInclude Include="TableInfo.h" />
     <ClInclude Include="Teacher.h" />
     <ClInclude Include="OperateMode.h" />
-    <ClInclude Include="OperateSTD.h" />
     <ClInclude Include="TEAInfo.h" />
     <ClInclude Include="Money.h" />
     <ClInclude Include="Money.cpp" />
+    <ClInclude Include="TollMenu.h" />
+    <ClInclude Include="TransactionRecord.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

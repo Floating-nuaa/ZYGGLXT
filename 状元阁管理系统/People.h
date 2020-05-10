@@ -1,8 +1,7 @@
 #ifndef PEOPLE_H_
 #define PEOPLE_H_
-#include "People.h"
-#include <iostream>
-using namespace std;
+
+//#include "OperateSTD.h"
 
 class People
 
@@ -23,13 +22,20 @@ protected:
 public:
     
     People(char* name, char sex, char* phone);
-    People(char*name, char* phone,char sex='.');
+    People(char*name, char* phone,char sex='F');
     People(char* name);
     People(char* name, char sex);
     People(const People&);
     
     People();
+   
+    
+    
     virtual ~People(){}
+    
+    
+    People operator =(const People&);
+    
     static int checkNumID();
     
     void setName(char *);
@@ -40,6 +46,10 @@ public:
     char getGender();
     char* getPhone();
     int getID();
+
+   
+    friend class OperateSTD;
+    friend class OperateTEA;
 
 };
 #endif

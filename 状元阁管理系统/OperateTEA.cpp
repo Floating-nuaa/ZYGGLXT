@@ -1,5 +1,6 @@
 #include "OperateTEA.h"
-
+#include "PeoNum.h"
+#include "PerInfo.h"
 
 OperateTEA::OperateTEA(){}
 
@@ -25,10 +26,13 @@ void OperateTEA::getInfoFromScreen()
 	
 	saveAddress = TI;
 }
+
 bool OperateTEA::saveThisFile()
 
 //保存文件
 {
+	setTeasID(this->teacher);
+
 	ofstream file(saveAddress.getCompleteAddress(), ios::out | ios::binary);
 
 	if (!file)
@@ -41,8 +45,23 @@ bool OperateTEA::saveThisFile()
 	file.write((char*)&teacher, sizeof(teacher));
 	file.close();
 
-	return 1;
+	PerInfo PI;//创建人信息保存地址
 
+	ofstream perFile;
+
+	perFile.open(PI.getCompleteAddress(), ios::binary | ios::app);
+
+	if (!perFile)
+	{
+		cout << "人员信息总文件打开失败，请检查路径是否正确！" << endl;
+
+		return 0;
+
+	}
+	file.write((char*)&teacher, sizeof(teacher));
+	perFile.close();
+
+	return 1;
 }
 bool OperateTEA::readPreFile()
 
@@ -78,5 +97,15 @@ Teacher OperateTEA::getTeacher()
 {
 
 	return this->teacher;
+
+}
+
+void OperateTEA::setTeasID(People& obj)
+
+{
+	//更改ID
+	PeoNum PN;
+
+	obj.ID = PN.returnNum();
 
 }

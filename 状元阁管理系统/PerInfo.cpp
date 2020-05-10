@@ -2,13 +2,6 @@
 
 PerInfo::PerInfo()
 {
-	uniqueAddress = "PersonInfo\\";
-	fileName = "testAllPerson.txt";
-	completeFile = saveAddress + uniqueAddress + fileName;
-}
-
-PerInfo::PerInfo()
-{
 	string temp = "AllPerson.dat";
 	string FM = temp;
 	uniqueAddress = "PerInfo\\";

@@ -1,9 +1,11 @@
+#pragma warning (disable:4996)
+#include <time.h>
 #include "stdafx.h"
+#include <conio.h>
 #include <string>
 #include <iostream>
 #include <fstream>
-#include "Student.h"
-#include "BaseFile.h"
+
 using namespace std;
 
 
@@ -125,11 +127,6 @@ bool checkPassword(string input)
 		return 0;
 }
 
-bool saveStudentData(Student obj) 
-{
-	return 1;
-}
-
 bool checkSaveAddress(string saveAddress) 
 
 //功能函数说明：
@@ -172,5 +169,50 @@ bool checkSaveAddress(string saveAddress)
 	return 1;
 
 	checkin.close();
+
+}
+
+string getStringWithoutShow()
+
+{
+	int i = 0;
+	char ch,password[30];
+	while ((ch = _getch()) != '\r')
+	{
+		if (ch == '\b' && i > 0)
+		{
+			printf("\b \b");
+			i--;
+		}
+		else
+		{
+			password[i++] = ch;
+			cout << '*';
+		}
+	}
+	password[i] = '\0';
+
+	string pass(password);
+	cout << endl;
+	return pass;
+}
+
+string TimeStampToStandard(int a ) 
+
+{
+	//time_t now;
+	//int unixTime = (int)time(&now);
+	int unixTime = a;
+	time_t tick = (time_t)unixTime;
+
+	struct tm tm;
+	char s[100];
+	tm = *localtime(&tick);
+
+	strftime(s, sizeof(s), "%Y-%m-%d %H:%M:%S", &tm);
+	
+	string Standard(s);
+
+	return Standard;
 
 }

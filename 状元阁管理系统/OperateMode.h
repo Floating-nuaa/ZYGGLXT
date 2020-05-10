@@ -10,9 +10,6 @@ class OperateMode
 	//刚开始我想把查询模块和增加模块分开的
 	// 现在觉得这俩放一起挺好
 {
-protected:
-	
-	
 
 public:
 	
