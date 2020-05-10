@@ -2,9 +2,10 @@
 #define OPERATESTD_H_
 
 #include "OperateMode.h"
-#include "Student.h"
 #include "PeoNum.h"
 #include "STDInfo.h"
+#include "Student.h"
+
 
 class OperateSTD :public OperateMode 
 
@@ -14,7 +15,9 @@ class OperateSTD :public OperateMode
 
 {
 private:
-	//void setStdsID(); //内置函数，声明成student的友元函数
+
+	void setStdsID( Student &);			//内置函数，声明成Student的友元函数
+								//修改自己数据的ID，进行数据保护
 protected:
 	
 	Student student;//学生对象

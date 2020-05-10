@@ -18,7 +18,7 @@ protected:
     char name[15];//姓名
     char gender;//性别
     char phone[20];//电话号码
-    int ID;//状元阁唯一识别号,不可更改
+    int ID;//状元阁唯一识别号,存入文件时候进行更新
 
 public:
     
@@ -36,10 +36,10 @@ public:
     void setGender(char sex);
     void setPhone(char *);
     void display();
-    //virtual void showInScreen() = 0;
     char* getName();
     char getGender();
     char* getPhone();
     int getID();
+
 };
 #endif

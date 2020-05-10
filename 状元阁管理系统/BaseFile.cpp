@@ -21,6 +21,20 @@ BaseFile::BaseFile() :saveAddress(REGISTERADDRESS)
 	completeFile = saveAddress + uniqueAddress + fileName;
 }
 
+BaseFile::BaseFile(const BaseFile& obj) 
+{
+	uniqueAddress = obj.saveAddress;//功能文件夹
+	fileName = obj.fileName;//文件的名
+	completeFile = obj.completeFile;//完整文件路径
+}
+
+BaseFile BaseFile::operator=(const BaseFile& obj) 
+{
+	uniqueAddress = obj.saveAddress;//功能文件夹
+	fileName = obj.fileName;//文件的名
+	completeFile = obj.completeFile;//完整文件路径
+	return *this;
+}
 BaseFile::BaseFile(string UA, string FA):saveAddress(REGISTERADDRESS)
 
 //第一个参数是功能描述，第二个参数是文件名称

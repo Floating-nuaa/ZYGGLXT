@@ -32,7 +32,7 @@ Purpose::Purpose(vector <string> a)
 	}
 	catch (int goal) 
 	{
-		cout << "错误代码936 \t";
+		cout << "错误代码\t" <<goal;
 		cout << "Subject数组爆栈，丢失了第七个以后的科目信息" << endl;
 	}
 	
@@ -89,7 +89,7 @@ Purpose Purpose::operator=(const Purpose& obj)
 
 		cout << "数组越界，错误代码"<<goal << endl;
 	}
-	
+	return *this;
 }
 
 

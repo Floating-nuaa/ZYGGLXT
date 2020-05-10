@@ -129,6 +129,18 @@
     <ClCompile Include="OperateTEA.cpp">
       <Filter>源文件\业务层</Filter>
     </ClCompile>
+    <ClCompile Include="TableInfo.cpp">
+      <Filter>源文件\数据层</Filter>
+    </ClCompile>
+    <ClCompile Include="OperateTable.cpp">
+      <Filter>源文件\业务层</Filter>
+    </ClCompile>
+    <ClCompile Include="StoreTable.cpp">
+      <Filter>源文件\数据层</Filter>
+    </ClCompile>
+    <ClCompile Include="PerInfo.cpp">
+      <Filter>源文件\数据层</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Date.h">
@@ -205,6 +217,18 @@
     </ClInclude>
     <ClInclude Include="Money.cpp">
       <Filter>源文件\内置层</Filter>
+    </ClInclude>
+    <ClInclude Include="OperateTable.h">
+      <Filter>头文件\业务类</Filter>
+    </ClInclude>
+    <ClInclude Include="TableInfo.h">
+      <Filter>头文件\文件类</Filter>
+    </ClInclude>
+    <ClInclude Include="StoreTable.h">
+      <Filter>头文件\实物类</Filter>
+    </ClInclude>
+    <ClInclude Include="PerInfo.h">
+      <Filter>头文件\文件类</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

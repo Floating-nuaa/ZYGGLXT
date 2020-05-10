@@ -15,7 +15,9 @@ protected:
 public:
 
 	OperateTEA();
+	
 	~OperateTEA();
+
 	OperateTEA(const OperateTEA&);
 
 	void getInfoFromScreen();//把保护变量里的STD 填入信息

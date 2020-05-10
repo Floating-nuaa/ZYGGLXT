@@ -166,9 +166,46 @@ void Table::display()
 	{
 
 		Lesson lesson (lessonTimeTable.top());
+
 		lesson.display();
+		
 		lessonTimeTable.pop();
 
 	}
+
+}
+
+
+int Table::getNum() 
+
+{
+	return this->number;
+}
+
+Table::Table(StoreTable& obj) 
+
+{
+	this->number = obj.num;
+	for (int i = 0; i < obj.num; i++) 
+	{
+		this->lessonTimeTable.push(obj.lessonTable[i]);
+	}
+
+	//注意这里是子类给父类赋值
+	//其实这两个信息没什么用，都在优先队列里
+	startDate = obj.lessonTable[0];
+	endDate = obj.lessonTable[obj.num - 1];
+}
+
+void Table::translateFromStoreTable(StoreTable& obj) 
+{
+	
+	this->number = obj.num;
+	for (int i = 0; i < obj.num; i++)
+	{
+		this->lessonTimeTable.push(obj.lessonTable[i]);
+	}
+	startDate = obj.lessonTable[0];
+	endDate = obj.lessonTable[obj.num - 1];
 
 }

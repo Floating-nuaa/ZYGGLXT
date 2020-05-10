@@ -1,6 +1,7 @@
 #include "OperateSTD.h"
-#include "Student.h"
 #include "STDInfo.h"
+#include "PerInfo.h"
+#include "PeoNum.h"
 #include <fstream>
 #include "AddSTDMenu.h"
 
@@ -40,6 +41,21 @@ bool OperateSTD::saveThisFile()
 	file.write((char*)&student, sizeof(student));
 	file.close();
 	
+	PerInfo PI;//创建人信息保存地址
+	
+	ofstream perFile;
+	perFile.open(PI.getCompleteAddress(), ios::binary |ios::app);
+	
+	if (!perFile) 
+	{
+		cout << "信息总文件打开失败，请检查路径是否正确！" << endl;
+		
+		return 0;
+
+	}
+	setStdsID(this->student);
+	perFile.write((char*)&student, sizeof(student));
+	perFile.close();
 	return 1;
 }
 
@@ -53,6 +69,7 @@ bool OperateSTD::readPreFile( )
 	cin >> thisName;
 	cout << endl;
 	saveAddress.setName(thisName);
+
 	ifstream file(saveAddress.getCompleteAddress(), ios::in | ios::binary);
 
 	if (!file)
@@ -73,4 +90,10 @@ Student OperateSTD::getStudent()
 
 {
 	return this->student;
+}
+void OperateSTD::setStdsID(Student& obj) 
+
+{
+	PeoNum PN;
+	obj.ID = PN.returnNum();
 }

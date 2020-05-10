@@ -83,10 +83,26 @@ int People::checkNumID()
 
 
 
-char* People::getName() { return name; }
+char* People::getName() 
 
-char People::getGender() { return gender; }
+{
+	return name;
+}
 
-char* People::getPhone() { return phone; }
+char People::getGender() 
 
-int People::getID() { return this->ID; }
+{
+	return gender;
+}
+
+char* People::getPhone()
+
+{
+	return phone; 
+}
+
+int People::getID()
+
+{
+	return this->ID; 
+}

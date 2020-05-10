@@ -35,3 +35,11 @@ void STDInfo::setName(string name)
 	fileName = FM;
 	completeFile = saveAddress + uniqueAddress + fileName;
 }
+
+STDInfo::STDInfo(const STDInfo& obj) 
+
+{
+	uniqueAddress = obj.saveAddress;//功能文件夹
+	fileName = obj.fileName;//文件的名
+	completeFile = obj.completeFile;//完整文件路径
+}

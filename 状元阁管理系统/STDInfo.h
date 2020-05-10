@@ -15,7 +15,10 @@ public:
 	
 	STDInfo();
 	
+	STDInfo(const STDInfo&);
+
 	virtual ~STDInfo();
+
 
 	STDInfo operator = (const STDInfo&);
 

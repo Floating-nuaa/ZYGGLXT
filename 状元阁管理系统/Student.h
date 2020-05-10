@@ -1,7 +1,7 @@
 #ifndef STUDENT_H_
 #define STUDENT_H_
 #include "People.h"
-#include "Table.h"
+#include "OperateSTD.h"
 #include "Purpose.h"
 #include "Date.h"
 #include <string>
@@ -11,6 +11,8 @@ class Student : public People {
 	//学生类，是People 的派生类,已经有的的成员有，name,ID,gender,phone ，phone 是家长的手机号
 
 	//还要记录学生的QQ号，科目（内置分数），学生的其他要求，是否缴纳了定金
+	
+	friend void OperateSTD::setStdsID(Student&);
 
 private:
 
@@ -55,6 +57,7 @@ public:
 
 	void setRequirement(string);
 
+	
 
 };
 #endif;

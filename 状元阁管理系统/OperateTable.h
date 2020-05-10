@@ -1,0 +1,32 @@
+#ifndef OPERATETABLE_H_
+#define OPERATETABLE_H_
+#include "OperateMode.h"
+#include "Table.h"
+#include "TableInfo.h"	//保存文件的地址
+
+class OperateTable : public OperateMode 
+{
+	//操作学生课表的类
+
+protected :
+
+	Table table;
+	TableInfo saveAddress;
+
+public:
+
+	OperateTable( Table &tab);
+	OperateTable();
+	~OperateTable();
+
+	//对父类虚函数进行重写 
+
+	virtual bool readPreFile();			//读取前置文件，把数据读出到当前的Table
+	
+	virtual bool saveThisFile();		//保存当前文件，把当前的Table保存文件
+
+	Table getTable();			//返回这个让table对象
+
+};
+#endif // !OPERATETABLE_H_
+

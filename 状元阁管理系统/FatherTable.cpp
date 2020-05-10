@@ -8,9 +8,12 @@ FatherTable::FatherTable(People* peo)
 
 {
 
-	strcpy_s(this->name, peo->getName());
-	this->ID = peo->getID();
-	selfName = "FatherTable";
+	strcpy_s(this->ownerName, peo->getName());
+	
+	this->ownerID = peo->getID();
+
+	string ss(peo->getName());
+	selfName = ss+"的FatherTable";
 
 }
 
@@ -20,14 +23,14 @@ FatherTable::FatherTable()
 	
 	char name[20] = "实验的机器人";
 	People pe(name);
-	strcpy_s(this->name, pe.getName());
-
-	selfName = "FatherTable";
+	strcpy_s(this->ownerName, pe.getName());
+	string ss = "机器人的";
+	selfName = ss+"FatherTable";
 
 }
 void FatherTable::display() 
 {
-	cout << this->name << "的"<<this->getSelfName()<<endl;
+	cout << selfName<<endl;
 }
 
 string FatherTable::getSelfName()
@@ -36,4 +39,14 @@ string FatherTable::getSelfName()
 {	
 
 	return selfName;
+}
+string FatherTable::getOwnerName()
+{
+	string name(this->ownerName);
+	return name;
+}
+
+int FatherTable::getOwnerID() 
+{
+	return this->ownerID;
 }

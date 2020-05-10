@@ -14,22 +14,25 @@ protected :
 	
 	//char dataHeader[30];
 
-	char name[20];//所有者姓名
+	char ownerName[20];//所有者姓名
 
-	int ID;//所有者的状元阁唯一识别号
+	int ownerID;//所有者的状元阁唯一识别号
 
 	string selfName;
 
 public :
 
 	FatherTable(People*);
+
 	FatherTable();
 
 	void display();//展示一下
-	void saveFatherTable();//保存到文件中
-	void updateFather();//更新FatherTable
 	
 	virtual string getSelfName();
+
+	string getOwnerName();
+
+	int getOwnerID();
 
 };
 
