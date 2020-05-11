@@ -171,6 +171,9 @@
     <ClCompile Include="RunningRecord.cpp">
       <Filter>源文件\数据层\记录数据</Filter>
     </ClCompile>
+    <ClCompile Include="RunningMenu.cpp">
+      <Filter>源文件\显示层</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Date.h">
@@ -280,6 +283,9 @@
     </ClInclude>
     <ClInclude Include="RunningRecord.h">
       <Filter>头文件\标准类</Filter>
+    </ClInclude>
+    <ClInclude Include="RunningMenu.h">
+      <Filter>头文件\显示类</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -163,6 +163,7 @@
     <ClCompile Include="Purpose.cpp" />
     <ClCompile Include="Record.cpp" />
     <ClCompile Include="RecordInfo.cpp" />
+    <ClCompile Include="RunningMenu.cpp" />
     <ClCompile Include="RunningRecord.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="STDInfo.cpp" />
@@ -197,6 +198,7 @@
     <ClInclude Include="PremaryMenu.h" />
     <ClInclude Include="Record.h" />
     <ClInclude Include="RecordInfo.h" />
+    <ClInclude Include="RunningMenu.h" />
     <ClInclude Include="RunningRecord.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="STDInfo.h" />
