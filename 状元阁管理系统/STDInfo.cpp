@@ -25,13 +25,15 @@ STDInfo STDInfo::operator=(const STDInfo& obj)
 	completeFile=obj.completeFile;//完整文件路径
 	return *this;
 }
+
 STDInfo::~STDInfo(){ }
 
 void STDInfo::setName(string name)
 {
+	//只改变文件名，不敢变储存位置
+
 	string temp = ".dat";
 	string FM = name + temp;
-	//uniqueAddress = "STDInfo\\";
 	fileName = FM;
 	completeFile = saveAddress + uniqueAddress + fileName;
 }

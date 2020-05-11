@@ -31,7 +31,9 @@ public :
 	BaseFile(string UA, string FA);	//第一个参数是功能描述uniqueAddress，第二个参数是文件名称filename
 
 	BaseFile(const BaseFile&);
+	
 	BaseFile operator=(const BaseFile&);
+
 	string getCompleteAddress();
 
 	string getSaveAddress();

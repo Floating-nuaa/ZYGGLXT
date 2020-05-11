@@ -99,3 +99,20 @@ void OperateSTD::setStdsID(People& obj)
 	obj.ID = PN.returnNum();
 
 }
+
+bool OperateSTD::readPreFile(string STDname)
+{
+	saveAddress.setName(STDname);
+
+	ifstream file(saveAddress.getCompleteAddress(), ios::in | ios::binary);
+
+	if (!file)
+	{
+		cout << "学生信息文件打开失败，请检查路径和姓名是否正确！" << endl;
+		return 0;
+	}
+	file.read((char*)&stud, sizeof(stud));
+	
+	file.close();
+	return 1;
+}

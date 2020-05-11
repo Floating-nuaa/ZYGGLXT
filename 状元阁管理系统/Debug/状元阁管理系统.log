@@ -1,5 +1,4 @@
-﻿  BaseFile.cpp
-E:\VisualStudio\ZYGGLXT\状元阁管理系统\BaseFile.cpp(152,14): warning C4101: “N”: 未引用的局部变量
-  stdafx.cpp
+﻿  Test.cpp
+  TollMenu.cpp
   正在生成代码...
   状元阁管理系统.vcxproj -> E:\VisualStudio\ZYGGLXT\Debug\状元阁管理系统.exe

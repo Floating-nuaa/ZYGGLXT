@@ -55,6 +55,15 @@
     <Filter Include="源文件\业务层">
       <UniqueIdentifier>{cb208b4e-1087-4d5c-95b5-461e0d7ec7f3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\数据层\文件数据">
+      <UniqueIdentifier>{d2ef6170-74f6-4038-b7d8-2ac44e07b5af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\数据层\记录数据">
+      <UniqueIdentifier>{104777da-8544-4648-bda8-ce7f5c4e16ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\数据层\信息数据">
+      <UniqueIdentifier>{a8e28158-68a0-48cf-9178-9543605ee6e5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Date.cpp">
@@ -102,20 +111,8 @@
     <ClCompile Include="FeasibleCmd.cpp">
       <Filter>源文件\显示层</Filter>
     </ClCompile>
-    <ClCompile Include="PeoNum.cpp">
-      <Filter>源文件\数据层</Filter>
-    </ClCompile>
-    <ClCompile Include="BaseFile.cpp">
-      <Filter>源文件\数据层</Filter>
-    </ClCompile>
-    <ClCompile Include="STDInfo.cpp">
-      <Filter>源文件\数据层</Filter>
-    </ClCompile>
     <ClCompile Include="AddSTdMenu.cpp">
       <Filter>源文件\显示层</Filter>
-    </ClCompile>
-    <ClCompile Include="TEAInfo.cpp">
-      <Filter>源文件\数据层</Filter>
     </ClCompile>
     <ClCompile Include="OperateSTD.cpp">
       <Filter>源文件\业务层</Filter>
@@ -129,17 +126,8 @@
     <ClCompile Include="OperateTEA.cpp">
       <Filter>源文件\业务层</Filter>
     </ClCompile>
-    <ClCompile Include="TableInfo.cpp">
-      <Filter>源文件\数据层</Filter>
-    </ClCompile>
     <ClCompile Include="OperateTable.cpp">
       <Filter>源文件\业务层</Filter>
-    </ClCompile>
-    <ClCompile Include="StoreTable.cpp">
-      <Filter>源文件\数据层</Filter>
-    </ClCompile>
-    <ClCompile Include="PerInfo.cpp">
-      <Filter>源文件\数据层</Filter>
     </ClCompile>
     <ClCompile Include="CashRegister.cpp">
       <Filter>源文件\业务层</Filter>
@@ -150,11 +138,38 @@
     <ClCompile Include="Manager.cpp">
       <Filter>源文件\关于人的实现</Filter>
     </ClCompile>
+    <ClCompile Include="BaseFile.cpp">
+      <Filter>源文件\数据层\文件数据</Filter>
+    </ClCompile>
     <ClCompile Include="Record.cpp">
-      <Filter>源文件\数据层</Filter>
+      <Filter>源文件\数据层\记录数据</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordInfo.cpp">
+      <Filter>源文件\数据层\文件数据</Filter>
+    </ClCompile>
+    <ClCompile Include="STDInfo.cpp">
+      <Filter>源文件\数据层\文件数据</Filter>
+    </ClCompile>
+    <ClCompile Include="PerInfo.cpp">
+      <Filter>源文件\数据层\文件数据</Filter>
+    </ClCompile>
+    <ClCompile Include="StoreTable.cpp">
+      <Filter>源文件\数据层\信息数据</Filter>
+    </ClCompile>
+    <ClCompile Include="TEAInfo.cpp">
+      <Filter>源文件\数据层\文件数据</Filter>
+    </ClCompile>
+    <ClCompile Include="TableInfo.cpp">
+      <Filter>源文件\数据层\文件数据</Filter>
     </ClCompile>
     <ClCompile Include="TransactionRecord.cpp">
-      <Filter>源文件\数据层</Filter>
+      <Filter>源文件\数据层\记录数据</Filter>
+    </ClCompile>
+    <ClCompile Include="PeoNum.cpp">
+      <Filter>源文件\数据层\信息数据</Filter>
+    </ClCompile>
+    <ClCompile Include="RunningRecord.cpp">
+      <Filter>源文件\数据层\记录数据</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -259,6 +274,12 @@
     </ClInclude>
     <ClInclude Include="Record.h">
       <Filter>头文件\抽象类</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordInfo.h">
+      <Filter>头文件\文件类</Filter>
+    </ClInclude>
+    <ClInclude Include="RunningRecord.h">
+      <Filter>头文件\标准类</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

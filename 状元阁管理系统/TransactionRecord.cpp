@@ -28,5 +28,5 @@ TransactionRecord TransactionRecord::operator=(const TransactionRecord& obj)
 	this->payment = obj.payment;
 	strcpy_s(this->collectWay, obj.collectWay);
 	strcpy_s(this->remarks, obj.remarks);
-
+	return *this;
 }

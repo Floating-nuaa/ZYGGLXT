@@ -15,4 +15,8 @@ string getStringWithoutShow();
 
 string TimeStampToStandard(int );
 
+bool checkToContinue();
+
+void operationCancled();
+
 #endif

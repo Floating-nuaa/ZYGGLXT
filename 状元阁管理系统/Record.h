@@ -21,7 +21,7 @@ class Record
 protected:
 
 	Manager operatorManager;		//操作者
-	int timeStamp;			//系统时间戳，记录操作时的时间
+	int timeStamp;					//系统时间戳，记录操作时的时间
 
 
 public:
@@ -35,6 +35,9 @@ public:
 	Record(const Record&);
 
 	virtual Record operator =(const Record&);
+
+	virtual int getTimeStamp();
+
 };
 
 

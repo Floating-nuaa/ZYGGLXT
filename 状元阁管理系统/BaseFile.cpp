@@ -75,7 +75,6 @@ void BaseFile::setFileName(string FA)
 }
 
 
-
 void BaseFile::changeSaveAddress() 
 {
 
@@ -139,7 +138,7 @@ void BaseFile::changeSaveAddress()
 			else
 			
 			{
-				throw 1;
+				throw -1;
 			}
 		}
 
@@ -151,7 +150,8 @@ void BaseFile::changeSaveAddress()
 
 		catch (int N)
 		{
-			cout << "操作取消！" << endl;
+
+			cout << "操作代码-1：  操作取消！" << endl;
 		}
 		
 	}

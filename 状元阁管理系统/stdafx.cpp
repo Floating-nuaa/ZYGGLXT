@@ -215,4 +215,22 @@ string TimeStampToStandard(int a )
 
 	return Standard;
 
+}\
+
+bool checkToContinue( )
+{
+	string temp="N";
+	cout << "是否执行或继续此项操作 (Y or N)" << endl;
+	cin >> temp;
+	if (temp[0] != 'Y' && temp[0] != 'y') 
+	{
+		return false;
+	}
+	return true;
+}
+
+void operationCancled() 
+
+{
+	cout << "根据您输入的命令，系统做出如下反馈:   操作被取消 ！ " << endl;
 }

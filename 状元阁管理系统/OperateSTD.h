@@ -27,15 +27,17 @@ protected:
 
 public:
 
-	OperateSTD();
-	~OperateSTD();
+	OperateSTD( );
+	~OperateSTD( );
 
-	void getInfoFromScreen();//把保护变量里的STD 填入信息
+	void getInfoFromScreen( );//把保护变量里的STD 填入信息
 
-	bool saveThisFile();//保存文件
+	bool saveThisFile( );//保存文件
 
-	bool readPreFile();//从文件中读取文件信息
-
+	bool readPreFile( );//无参 从文件中读取文件信息
+	
+	bool readPreFile( string );//包含学生姓名参数读取学生信息
+	
 	Student getStudent();
 
 };
