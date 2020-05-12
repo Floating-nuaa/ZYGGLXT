@@ -142,6 +142,7 @@
   <ItemGroup>
     <ClCompile Include="AddTEAMenu.cpp" />
     <ClCompile Include="CashRegister.cpp" />
+    <ClCompile Include="MainEntrance.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="OperaMode.cpp" />
     <ClCompile Include="OperateSTD.cpp" />
@@ -152,7 +153,7 @@
     <ClCompile Include="FatherTable.cpp" />
     <ClCompile Include="FeasibleCmd.cpp" />
     <ClCompile Include="Lesson.cpp" />
-    <ClCompile Include="LogIn.cpp" />
+    <ClCompile Include="LoginMenu.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="OperateTable.cpp" />
     <ClCompile Include="OperateTEA.cpp" />
@@ -186,6 +187,8 @@
     <ClInclude Include="Date.h" />
     <ClInclude Include="Handler.h" />
     <ClInclude Include="Lesson.h" />
+    <ClInclude Include="LoginMenu.h" />
+    <ClInclude Include="MainEntrance.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Manager.h" />
     <ClInclude Include="Menu.h" />
@@ -198,7 +201,6 @@
     <ClInclude Include="PremaryMenu.h" />
     <ClInclude Include="Record.h" />
     <ClInclude Include="RecordInfo.h" />
-    <ClInclude Include="RelationMap.h" />
     <ClInclude Include="RunningMenu.h" />
     <ClInclude Include="RunningRecord.h" />
     <ClInclude Include="stdafx.h" />

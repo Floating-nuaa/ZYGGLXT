@@ -2,6 +2,7 @@
 #include <string>
 #include <string.h>
 #include <iostream>
+
 using namespace std;
 
 int People::numID = 1;//初始化ID,后续从文件中读取
@@ -55,7 +56,10 @@ People::People() :ID(-1)
 
 void People::display() 
 {
-	cout << "姓名  " << name << "  性别  " << gender << "  电话号码  " << phone << "  " << endl;
+	cout << "姓名      " << name << endl;
+	cout << "性别      " << gender << endl;
+	cout << "电话号码  " << phone << endl;
+	cout << "ID        " << ID << endl;
 }
 
 void People::setGender(char sex) 

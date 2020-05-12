@@ -9,6 +9,7 @@ class Lesson :public Date
 private:
 
 	int ordinalNumber;//记录这是第几节课
+   
 
 public:
 

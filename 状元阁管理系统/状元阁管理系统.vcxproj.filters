@@ -75,9 +75,6 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>源文件\内置层</Filter>
     </ClCompile>
-    <ClCompile Include="LogIn.cpp">
-      <Filter>源文件\外显层</Filter>
-    </ClCompile>
     <ClCompile Include="People.cpp">
       <Filter>源文件\关于人的实现</Filter>
     </ClCompile>
@@ -174,6 +171,12 @@
     <ClCompile Include="RunningMenu.cpp">
       <Filter>源文件\显示层</Filter>
     </ClCompile>
+    <ClCompile Include="MainEntrance.cpp">
+      <Filter>源文件\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginMenu.cpp">
+      <Filter>源文件\显示层</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Date.h">
@@ -226,9 +229,6 @@
     </ClInclude>
     <ClInclude Include="TEAInfo.h">
       <Filter>头文件\文件类</Filter>
-    </ClInclude>
-    <ClInclude Include="OperateMode.h">
-      <Filter>头文件\业务类</Filter>
     </ClInclude>
     <ClInclude Include="Handler.h">
       <Filter>头文件\业务类</Filter>
@@ -287,8 +287,14 @@
     <ClInclude Include="RunningMenu.h">
       <Filter>头文件\显示类</Filter>
     </ClInclude>
-    <ClInclude Include="RelationMap.h">
+    <ClInclude Include="MainEntrance.h">
       <Filter>头文件\标准类</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginMenu.h">
+      <Filter>头文件\标准类</Filter>
+    </ClInclude>
+    <ClInclude Include="OperateMode.h">
+      <Filter>头文件\业务类</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

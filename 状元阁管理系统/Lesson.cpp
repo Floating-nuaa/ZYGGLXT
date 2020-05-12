@@ -141,3 +141,9 @@ bool Lesson::operator <(const Lesson& obj)const
 	//否则都是返回0
 	return 0;
 }
+
+int Lesson::getOriginalNumber() 
+{
+	return this->ordinalNumber;
+}
+

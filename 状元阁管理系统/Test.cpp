@@ -5,6 +5,9 @@
 #include "stdafx.h"
 #include <time.h>
 #include <fstream>
+#include "FeasibleCmd.h"
+#include "MainEntrance.h"
+#include "LoginMenu.h"
 using namespace std;
 
 int main() 
@@ -23,9 +26,8 @@ int main()
 	RM.display();
 	*/
 
-	RelationMap RM;
-	ofstream file;
-	file.close();
+	MainEntrance ME;
+	ME.ShowPre_Login();
 	return 0;
 
 }
