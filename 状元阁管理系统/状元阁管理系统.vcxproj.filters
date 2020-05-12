@@ -287,5 +287,8 @@
     <ClInclude Include="RunningMenu.h">
       <Filter>头文件\显示类</Filter>
     </ClInclude>
+    <ClInclude Include="RelationMap.h">
+      <Filter>头文件\标准类</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

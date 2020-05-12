@@ -28,5 +28,7 @@ RunningRecord RunningRecord:: operator= (const RunningRecord& obj)
 	strcpy_s(this->remarks, obj.remarks);
 	strcpy_s(this->payer, obj.payer);
 	strcpy_s(this->collectWay, obj.collectWay);
+	return *this;
+
 }
 

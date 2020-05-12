@@ -198,6 +198,7 @@
     <ClInclude Include="PremaryMenu.h" />
     <ClInclude Include="Record.h" />
     <ClInclude Include="RecordInfo.h" />
+    <ClInclude Include="RelationMap.h" />
     <ClInclude Include="RunningMenu.h" />
     <ClInclude Include="RunningRecord.h" />
     <ClInclude Include="stdafx.h" />
