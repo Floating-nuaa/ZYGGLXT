@@ -6,11 +6,12 @@
 using namespace std;
 
 
-Table::Table(People* peo, Date startDate, Date endDate,int num):FatherTable(peo)
+Table::Table(People* peo, Date startDate, Date endDate,int num,char* name):FatherTable(peo)
 
 				//起止时间，推入队列,从开始到结束推入
 
 {
+	strcpy_s(this->theOtherName, name);
 	if (num > 5)
 	{
 		cout << "请注意，课程时间超出正常范围！" << endl;
@@ -32,11 +33,12 @@ Table::Table(People* peo, Date startDate, Date endDate,int num):FatherTable(peo)
 
 }
 
-Table::Table(People* peo) :FatherTable(peo)
+Table::Table(People* peo, char* name) :FatherTable(peo)
 
 	//只传入人，然后进行输入课表，推入队列
 
 {
+	strcpy_s(this->theOtherName, name);
 	
 	selfName = "StudentTable";
 
@@ -110,11 +112,13 @@ Table::Table(People* peo) :FatherTable(peo)
 
 }
 
-Table::Table(People* peo, Date startDate, int x,int num) :FatherTable(peo)
+Table::Table(People* peo, Date startDate, int x,int num, char* name) :FatherTable(peo)
 	
 	//开始时间，课程节数,x是有几节课，num是第几节课
 
 {
+	strcpy_s(this->theOtherName, name);
+
 	if (num > 5)
 	{
 		cout << "请注意，课程时间超出正常范围！" << endl;
@@ -141,6 +145,7 @@ Table::Table() :FatherTable( )
 	strcpy_s(this->name, pe.getName());
 	this->ID = pe.getID();
 	*/
+	strcpy_s(this->theOtherName, "test");
 
 	selfName = "StudentTable";
 	
@@ -150,13 +155,15 @@ Table::Table() :FatherTable( )
 }
 
 
-void Table::display() 
+void Table::displaySTD() 
 
 //展示一下课表
 
 {
 	FatherTable::display();
 
+	cout << "教师是 :  " << this->theOtherName << endl;
+	
 	cout << "课程节数： " << this->number << endl;
 
 	while(!lessonTimeTable.empty())
@@ -175,6 +182,32 @@ void Table::display()
 
 }
 
+void Table::displayTEA()
+
+//展示一下课表
+
+{
+	FatherTable::display();
+
+	cout << "该节课学生是 :  " << this->theOtherName << endl;
+
+	cout << "课程节数： " << this->number << endl;
+
+	while (!lessonTimeTable.empty())
+
+		//循环拿出优先队列中的课程
+
+	{
+
+		Lesson lesson(lessonTimeTable.top());
+
+		lesson.display();
+
+		lessonTimeTable.pop();
+
+	}
+
+}
 
 int Table::getNum() 
 
@@ -185,7 +218,10 @@ int Table::getNum()
 Table::Table(StoreTable& obj) 
 
 {
+	strcpy_s(this->theOtherName, obj.theOtherName);
+
 	this->number = obj.num;
+
 	for (int i = 0; i < obj.num; i++) 
 	{
 		this->lessonTimeTable.push(obj.lessonTable[i]);
@@ -199,13 +235,27 @@ Table::Table(StoreTable& obj)
 
 void Table::translateFromStoreTable(StoreTable& obj) 
 {
+	strcpy_s(this->theOtherName, obj.theOtherName);
 	
 	this->number = obj.num;
+
 	for (int i = 0; i < obj.num; i++)
 	{
 		this->lessonTimeTable.push(obj.lessonTable[i]);
 	}
 	startDate = obj.lessonTable[0];
 	//endDate = obj.lessonTable[obj.num - 1];
+
+}
+
+
+void Table::ReviseTeam() 
+
+{
+
+	char TempName[15];
+	strcpy_s(TempName, this->ownerName);
+	strcpy_s(this->ownerName, this->theOtherName);
+	strcpy_s(this->theOtherName, TempName);
 
 }

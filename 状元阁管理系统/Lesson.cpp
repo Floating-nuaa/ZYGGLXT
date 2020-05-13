@@ -73,6 +73,7 @@ Lesson::Lesson(const Lesson& obj) : Date(obj)
 Lesson::Lesson(const Date& obj, int num):Date(obj)
 
 {
+	this->ordinalNumber = num;
 	Date::Date(obj);
 	string expect1;
 	try
@@ -88,7 +89,7 @@ Lesson::Lesson(const Date& obj, int num):Date(obj)
 		cout << goal << endl;
 	}
 
-	this->ordinalNumber = num;
+	
 	
 	//cout << "日期构造函数！" << endl;
 }

@@ -13,27 +13,31 @@ class StoreTable
 {
 protected:
 
+	char theOtherName[15];
 	Lesson lessonTable[100];		//课表数组
 	int num;				//课程数
 
 public:
+
 	friend class Table;
 
 	StoreTable();
 
 	~StoreTable();
 
-	StoreTable( Table & );
+	StoreTable( Table  );
 
 	StoreTable(const StoreTable& );
 
-
+	string GetTheOtherName();
 
 	void buildStoreTable( Table );
 
 	int getNum();
+	
 	Lesson* getLessonTable();
 	
+	void setOtherName(string name);
 };
 
 #endif // ! STORETABLE_H_

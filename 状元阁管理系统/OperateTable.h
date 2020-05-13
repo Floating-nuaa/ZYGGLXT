@@ -24,6 +24,8 @@ public:
 	virtual bool readPreFile();			//读取前置文件，把数据读出到当前的Table
 	
 	virtual bool saveThisFile();		//保存当前文件，把当前的Table保存文件
+	
+	bool readPreFile(string name);
 
 	Table getTable();			//返回这个让table对象
 

@@ -4,32 +4,39 @@
 #include "RelationMap.h"
 #include "stdafx.h"
 #include <time.h>
+#include "Student.h"
 #include <fstream>
+#include "OperateTable.h"
 #include "FeasibleCmd.h"
-#include "MainEntrance.h"
-#include "LoginMenu.h"
 using namespace std;
 
 int main() 
 
 {
-	/*FeasibleCmd FC;
+	FeasibleCmd FC;
 	
 	char name[20] = "panpan";
 	char phone[30] = "15832513211";
 	char ssh[20] = "123456";
-	
-	Manager ma(name, 'F', phone, ssh);
-	
-	RunningMenu RM(ma);
+	Purpose P;
+	Student ma(name,P );
+	char na[15] = "¿œ≈÷";
+	Date d1(2020, 1, 5), d2(2020, 1, 10);
+	Table T1(&ma,d1,d2,3,na),T2,T3;
 
-	RM.display();
-	*/
+	OperateTable OT1(T1),OT2,OT3;
+	OT1.saveThisFile();
+	
+	OT2.readPreFile("panpan");
+	T2=OT2.getTable();
+	T2.displaySTD();
 
-	MainEntrance ME;
-	ME.ShowPre_Login();
+	system("pause");
+	OT3.readPreFile("¿œ≈÷");
+	T3 = OT3.getTable();
+	T3.displayTEA();
+	
 	return 0;
-
 }
 
 	
