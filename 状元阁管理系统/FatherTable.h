@@ -34,7 +34,7 @@ public :
 	string getOwnerName();
 
 	int getOwnerID();
-
+	void setOwnerName();
 };
 
 #endif // ! FATHER_TABLE_H_

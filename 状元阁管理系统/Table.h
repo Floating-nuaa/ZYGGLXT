@@ -39,7 +39,7 @@ protected:
     int classType;//记录课程类型
 
 public:
-    
+    friend class OperateTable;
     friend class StoreTable;
 
     //构造函数
@@ -73,6 +73,9 @@ public:
     
     string getSelfName();
 
+    int getClassType();
+
+    string getTheOtherName();
 };
 #endif 
 

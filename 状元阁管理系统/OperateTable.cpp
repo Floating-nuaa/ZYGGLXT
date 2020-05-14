@@ -66,6 +66,7 @@ bool OperateTable::saveThisFile()
 	{
 		cout << "错误代码： " << goal<<"  ";
 		cout << "学生课表文件保存失败，请检查路径是否非法！" << endl;
+		cout << "当前路径:  " << this->saveAddress.getCompleteAddress() << endl;
 		return 0;
 	}
 	
@@ -75,9 +76,11 @@ bool OperateTable::saveThisFile()
 
 	ST2.setOtherName(objTab.getOwnerName());
 	ST2.buildStoreTable(objTab);
+	
 	string str = objTab.getOwnerName();
 	
 	this->saveAddress.setName(str);
+	this->saveAddress.GiveTeacherALife();
 
 	try {
 		file.open(saveAddress.getCompleteAddress(), ios::out | ios::binary);
@@ -94,6 +97,7 @@ bool OperateTable::saveThisFile()
 	{
 		cout << "错误代码： " << goal << "  ";
 		cout << "教师课表文件保存失败，请检查路径是否非法！" << endl;
+		cout << "当前路径:  " << this->saveAddress.getCompleteAddress() << endl;
 		return 0;
 	}
 	file.close();
@@ -130,17 +134,20 @@ bool OperateTable::readPreFile()
 		file.read((char*)&ST, sizeof(ST));
 
 		file.flush();
+
+		file.close();
+
+		this->table.translateFromStoreTable(ST);
 	}
 	catch (int goal)
 	{
 		cout << "错误代码： " << goal << "  ";
 		cout << "课表文件打开失败，请检查路径是否非法！" << endl;
+		cout << "当前路径:  " << this->saveAddress.getCompleteAddress() << endl;
 		return 0;
 	}
 
-	file.close();
-
-	this->table.translateFromStoreTable(ST);
+	
 	
 	return 1;
 
@@ -158,6 +165,7 @@ bool OperateTable::readPreFile(string name)
 	fstream file;
 
 	try {
+
 		file.open(saveAddress.getCompleteAddress(), ios::in | ios::binary);
 		if (!file)
 		{
@@ -169,20 +177,128 @@ bool OperateTable::readPreFile(string name)
 		file.read((char*)&ST, sizeof(ST));
 		
 		file.flush();
+
+		file.close();
+
+		this->table.translateFromStoreTable(ST);
 	}
 	catch (int goal)
 	{
 		cout << "错误代码： " << goal << "  ";
 		cout << "课表文件打开失败，请检查路径是否非法！" << endl;
+		cout << "当前路径:  " << this->saveAddress.getCompleteAddress() << endl;
 		return 0;
 	}
 
-	file.close();
-
-	this->table.translateFromStoreTable(ST);
 
 	return 1;
 
 }
+
+//把Table转换为.csv 文件，只限于当前对象
+bool OperateTable::transformSTToCSV() 
+
+{
+
+	saveAddress.ForStudentCSV(this->table.getOwnerName());
+	
+	ofstream file;
+	try {
+		file.open(this->saveAddress.getCompleteAddress(), ios::out | ios::app);
+
+		if (!file)
+		{
+			throw 987;
+		}
+		file  <<this->table.getSelfName()<<endl;
+		file << translateNumToClassType(table.getClassType()) << endl;
+
+		while (!table.lessonTimeTable.empty())
+
+			//循环拿出优先队列中的课程
+
+		{
+
+			Lesson lesson(table.lessonTimeTable.top());
+
+			file<<lesson.getMonth();
+			file << ".";
+			file << lesson.getDay();
+			file << ",";
+			table.lessonTimeTable.pop();
+
+		}
+		file << "\n";
+		for (int i = 1; i <= table.getNum(); i++) 
+		{
+			file << table.getTheOtherName() << ",";
+		}
+		file << "\n\n";
+		file.close();
+	}
+	catch (int goal) 
+	{
+		cout << "错误代码： " << goal << "  ";
+		cout << "课表文件打开失败，请检查路径是否非法！" << endl;
+		cout << "当前路径:  " << this->saveAddress.getCompleteAddress() << endl;
+		return 0;
+	}
+	return 1;
+
+}
+
+
+
+bool OperateTable::transformTTToCSV()
+
+{
+
+	saveAddress.ForTeacherCSV(this->table.getOwnerName());
+
+	ofstream file;
+	try {
+		file.open(this->saveAddress.getCompleteAddress(), ios::out | ios::app);
+
+		if (!file)
+		{
+			throw 987;
+		}
+		file << this->table.getSelfName() << endl;
+		file << translateNumToClassType(table.getClassType()) << endl;
+
+		while (!table.lessonTimeTable.empty())
+
+			//循环拿出优先队列中的课程
+
+		{
+
+			Lesson lesson(table.lessonTimeTable.top());
+
+			file << lesson.getMonth();
+			file << ".";
+			file << lesson.getDay();
+			file << ",";
+			table.lessonTimeTable.pop();
+
+		}
+		file << "\n";
+		for (int i = 1; i <= table.getNum(); i++)
+		{
+			file << table.getTheOtherName() << ",";
+		}
+		file << "\n\n";
+		file.close();
+	}
+	catch (int goal)
+	{
+		cout << "错误代码： " << goal << "  ";
+		cout << "课表文件打开失败，请检查路径是否非法！" << endl;
+		cout << "当前路径:  " << this->saveAddress.getCompleteAddress() << endl;
+		return 0;
+	}
+
+	return 1;
+}
+
 
 

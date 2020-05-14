@@ -2,6 +2,7 @@
 #define OPERATETABLE_H_
 #include "OperateMode.h"
 #include "Table.h"
+#include "stdafx.h"
 #include "TableInfo.h"	//保存文件的地址
 
 class OperateTable : public OperateMode 
@@ -26,6 +27,10 @@ public:
 	virtual bool saveThisFile();		//保存当前文件，把当前的Table保存文件
 	
 	bool readPreFile(string name);
+
+	bool transformSTToCSV();
+
+	bool transformTTToCSV();
 
 	Table getTable();			//返回这个让table对象
 

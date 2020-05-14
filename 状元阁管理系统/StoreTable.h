@@ -13,6 +13,9 @@ class StoreTable
 {
 protected:
 
+	char ownerName[20];			//所有者姓名
+	int ownerID;				//所有者ID
+
 	char selfName[50];
 	char theOtherName[15];
 	

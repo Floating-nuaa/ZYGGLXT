@@ -1,6 +1,4 @@
-﻿  OperateSTD.cpp
-  OperateTEA.cpp
-  PeoNum.cpp
-  PerInfo.cpp
-  正在生成代码...
+﻿  OperateTable.cpp
+E:\VisualStudio\ZYGGLXT\状元阁管理系统\OperateTable.cpp(301): warning C4715: “OperateTable::transformTTToCSV”: 不是所有的控件路径都返回值
+E:\VisualStudio\ZYGGLXT\状元阁管理系统\OperateTable.cpp(248): warning C4715: “OperateTable::transformSTToCSV”: 不是所有的控件路径都返回值
   状元阁管理系统.vcxproj -> E:\VisualStudio\ZYGGLXT\Debug\状元阁管理系统.exe

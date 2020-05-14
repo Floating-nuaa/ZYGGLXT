@@ -180,6 +180,9 @@ Table::Table(const Table& obj):FatherTable(obj)
 Table::Table(StoreTable& obj) 
 
 {
+	strcpy_s(this->ownerName, obj.ownerName);
+	this->ownerID = obj.ownerID;
+
 	this->classType = obj.classType;
 
 	this->selfName = obj.selfName;
@@ -207,6 +210,10 @@ Table::Table(StoreTable& obj)
 void Table::translateFromStoreTable(StoreTable& obj) 
 
 {
+	strcpy_s(this->ownerName, obj.ownerName);
+	
+	this->ownerID = obj.ownerID;
+
 	this->classType = obj.classType;
 
 	this->selfName = obj.selfName;
@@ -334,6 +341,14 @@ string Table::getSelfName()
 
 
 
+int Table::getClassType() 
+{
+	return this->classType;
+}
 
 
-
+string Table::getTheOtherName() 
+{
+	string str = this->theOtherName;
+	return str;
+}

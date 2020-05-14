@@ -18,7 +18,10 @@ public:
 	TableInfo operator = (const TableInfo&);
 
 	void setName(string Name);
+	void GiveTeacherALife( );
 
+	void ForTeacherCSV(string name);
+	void ForStudentCSV(string name);
 };
 
 #endif // !TABLEINFO_H_

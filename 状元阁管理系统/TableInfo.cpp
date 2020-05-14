@@ -3,7 +3,7 @@
 TableInfo::TableInfo()
 {
 	//无参数构造测试文件名
-	uniqueAddress = "TABInfo\\";
+	uniqueAddress = "TABInfo\\DataTable\\";
 	fileName = "testStudent.txt";
 	completeFile = saveAddress + uniqueAddress + fileName;
 }
@@ -14,7 +14,7 @@ TableInfo::TableInfo(string Name)
 	string temp = ".dat";
 
 	string FM = Name + temp;
-	uniqueAddress = "TABInfo\\";
+	uniqueAddress = "TABInfo\\DataTable\\";
 	fileName = FM;
 	completeFile = saveAddress + uniqueAddress + fileName;
 
@@ -33,6 +33,7 @@ TableInfo TableInfo::operator=(const TableInfo& obj)
 }
 
 
+
 TableInfo::~TableInfo() 
 {
 	//析构函数，不需要什么参数
@@ -44,5 +45,28 @@ void TableInfo::setName(string name)
 	string FM = name + temp;
 	//只修改了文件名
 	fileName = FM;
+	completeFile = saveAddress + uniqueAddress + fileName;
+}
+
+
+
+void TableInfo::GiveTeacherALife()
+	//为教师课表设置新的路径
+{ 
+	uniqueAddress = "TABInfo\\DataTable\\";
+	completeFile = saveAddress + uniqueAddress + fileName;
+}
+
+void TableInfo::ForTeacherCSV(string name) 
+{
+	fileName = name + ".csv";
+	uniqueAddress = "TABInfo\\VisionTable\\TEATable\\";
+	completeFile = saveAddress + uniqueAddress + fileName;
+}
+
+void TableInfo::ForStudentCSV(string name) 
+{
+	fileName = name + ".csv";
+	uniqueAddress = "TABInfo\\VisionTable\\STDTable\\";
 	completeFile = saveAddress + uniqueAddress + fileName;
 }
