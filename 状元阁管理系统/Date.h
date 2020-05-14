@@ -1,6 +1,7 @@
 #ifndef DATE_A_
 #define DATE_A_
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 

@@ -25,7 +25,8 @@ public :
 	FatherTable(People*);
 
 	FatherTable();
-
+	FatherTable(const FatherTable&);
+	FatherTable operator=(const FatherTable&);
 	void display();//展示一下
 	
 	virtual string getSelfName();

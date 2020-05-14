@@ -36,7 +36,9 @@ Date::Date(const Date& obj) {
 
 
 void Date::display() {
-    cout << "日期： "<<year << " " << month << " " << day << "    ";
+    cout << "日期： " << year;
+    cout << setw(4) << month;
+    cout << setw(4) << day<<"   ";
 }
 
 

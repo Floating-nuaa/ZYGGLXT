@@ -12,6 +12,8 @@ OperateTable::~OperateTable()
 	//析构函数，无需操作
 }
 
+
+
 OperateTable::OperateTable() :table(),saveAddress()
 
 {
@@ -30,14 +32,20 @@ OperateTable::OperateTable ( Table &tab ) : table( tab )
 
 }
 
+
+
 Table OperateTable::getTable()
 {
 	return this->table;
 }
 
+
+
 bool OperateTable::saveThisFile() 
+
 {
 	Table objTab(this->table);
+
 	fstream file;
 	StoreTable ST1,ST2;
 
@@ -93,6 +101,8 @@ bool OperateTable::saveThisFile()
 	return 1;
 
 }
+
+
 
 bool OperateTable::readPreFile() 
 

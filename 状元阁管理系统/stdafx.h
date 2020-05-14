@@ -1,6 +1,7 @@
 #ifndef  STDAFX_H_
 #define STDAFX_H_
 #include <string>
+#include <map>
 using namespace std;
 
 bool checkBigPassword(string s);
@@ -18,5 +19,7 @@ string TimeStampToStandard(int );
 bool checkToContinue();
 
 void operationCancled();
+
+string translateNumToClassType(int);
 
 #endif

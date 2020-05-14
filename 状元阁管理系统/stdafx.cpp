@@ -234,3 +234,28 @@ void operationCancled()
 {
 	cout << "根据您输入的命令，系统做出如下反馈:   操作被取消 ！ " << endl;
 }
+
+
+string translateNumToClassType(int key) 
+{
+	map<int, string > classType;
+	classType.insert(pair<int, string>(1, "一对一课程"));
+	classType.insert(pair<int, string>(2, "一对二课程"));
+	classType.insert(pair<int, string>(3, "一对三课程"));
+	classType.insert(pair<int, string>(4, "一对四课程"));
+	classType.insert(pair<int, string>(5, "小班课课程"));
+	classType.insert(pair<int, string>(6, "其他类课程"));
+	
+	string Type = "未查找到此种课程类型 ";
+	
+	auto it = classType.find(key);
+
+	if (it != classType.end())
+	{
+		Type = (*it).second;
+	}
+	return Type;
+
+}
+
+

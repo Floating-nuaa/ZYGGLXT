@@ -8,6 +8,7 @@
     两份课表，分别进行储存，都用人的姓名进行命名
 
 *******************************************************************/
+
 #ifndef TABLE_H_
 #define TABLE_H_
 #include "Lesson.h"
@@ -15,6 +16,7 @@
 #include "Purpose.h"
 #include "FatherTable.h"
 #include <queue>
+#include "stdafx.h"
 #include "StoreTable.h"
 
 
@@ -24,36 +26,40 @@ class Table : public FatherTable
 
 protected:
 
-    char theOtherName[15];
-
-    int number;//课程节数
-
+    //这是一个优先队列，存放课程
+    priority_queue <Lesson> lessonTimeTable;
+    
     Date startDate;
     Date endDate;
-
-    priority_queue <Lesson> lessonTimeTable;
-
-    //这是一个优先队列，存放日期
     
-    
+    int number;//课程节数
+
+    char theOtherName[15];//配对教师姓名
+
+    int classType;//记录课程类型
+
 public:
     
     friend class StoreTable;
 
     //构造函数
+    Table();
 
-    Table(People*, Date startDate, Date endDate,int num, char* name);
+    Table(People*, Date startDate, Date endDate,int num, char* name,int Type);
     //起止时间，推入队列
     
-    Table(People*, char* name);
+    Table(People*, char* name, int Type);
     //只传入人，然后进行输入课表，推入队列
     
-    Table(People*, Date startDate, int x,int num, char* name);
+    Table(People*, Date startDate, int x,int num, char* name,int Type);
     //开始时间，课程节数
-    
-    Table();
-    
+
+    Table(const Table&);
+
     Table( StoreTable& );
+    
+    Table operator =(const Table&);
+    
 
     void ReviseTeam();
 
@@ -65,6 +71,8 @@ public:
     
     int getNum();
     
+    string getSelfName();
+
 };
 #endif 
 

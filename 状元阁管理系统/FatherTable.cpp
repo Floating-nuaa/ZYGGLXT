@@ -28,10 +28,34 @@ FatherTable::FatherTable()
 	selfName = ss+"FatherTable";
 
 }
+
+FatherTable::FatherTable(const FatherTable& obj) 
+
+{
+	this->ownerID = obj.ownerID;
+	strcpy_s(this->ownerName, obj.ownerName);
+	this->selfName = obj.selfName;
+}
+
+
+
+FatherTable FatherTable::operator=(const FatherTable& obj)
+
+{
+	this->ownerID = obj.ownerID;
+	strcpy_s(this->ownerName, obj.ownerName);
+	this->selfName = obj.selfName;
+	return *this;
+}
+
+
+
 void FatherTable::display() 
 {
 	cout << selfName<<endl;
 }
+
+
 
 string FatherTable::getSelfName()
 
@@ -40,13 +64,22 @@ string FatherTable::getSelfName()
 
 	return selfName;
 }
+
+
+
 string FatherTable::getOwnerName()
 {
 	string name(this->ownerName);
 	return name;
 }
 
+
+
 int FatherTable::getOwnerID() 
 {
 	return this->ownerID;
 }
+
+
+
+
