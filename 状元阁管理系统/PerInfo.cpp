@@ -1,11 +1,11 @@
 #include "PerInfo.h"
 
-PerInfo::PerInfo()
+PerInfo::PerInfo(string name)
 {
-	string temp = "AllPerson.dat";
-	string FM = temp;
+
 	uniqueAddress = "PerInfo\\";
-	fileName = FM;
+	string temp = ".dat";
+	fileName = name + temp;
 	completeFile = saveAddress + uniqueAddress + fileName;
 
 }
@@ -21,8 +21,8 @@ PerInfo::~PerInfo() { }
 
 void PerInfo::setName(string name)
 {
-	string temp = "AllPerson.dat";
-	fileName = temp;
+	string temp = ".dat";
+	fileName = name+temp;
 	completeFile = saveAddress + uniqueAddress + fileName;
 }
 
@@ -33,3 +33,6 @@ PerInfo::PerInfo(const PerInfo& obj)
 	fileName = obj.fileName;//文件的名
 	completeFile = obj.completeFile;//完整文件路径
 }
+
+
+

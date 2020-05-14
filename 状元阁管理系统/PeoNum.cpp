@@ -118,3 +118,4 @@ void PeoNum::update(int a)
 	file << a << endl;
 	file.close();
 }
+

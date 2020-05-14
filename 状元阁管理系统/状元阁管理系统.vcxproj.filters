@@ -177,6 +177,9 @@
     <ClCompile Include="LoginMenu.cpp">
       <Filter>源文件\显示层</Filter>
     </ClCompile>
+    <ClCompile Include="register.cpp">
+      <Filter>源文件\Test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Date.h">

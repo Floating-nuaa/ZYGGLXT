@@ -164,6 +164,7 @@
     <ClCompile Include="Purpose.cpp" />
     <ClCompile Include="Record.cpp" />
     <ClCompile Include="RecordInfo.cpp" />
+    <ClCompile Include="register.cpp" />
     <ClCompile Include="RunningMenu.cpp" />
     <ClCompile Include="RunningRecord.cpp" />
     <ClCompile Include="stdafx.cpp" />

@@ -27,6 +27,7 @@ void OperateSTD::getInfoFromScreen()
 bool OperateSTD::saveThisFile() 
 {
 	setStdsID(this->stud);
+
 	ofstream file(saveAddress.getCompleteAddress(), ios::out | ios::binary);
 
 	if (!file) 
@@ -38,15 +39,18 @@ bool OperateSTD::saveThisFile()
 	
 	file.write((char*)&stud, sizeof(stud));
 	file.close();
-	PerInfo PI;//创建人信息保存地址
+
+	PerInfo PI("TotalStudent");//创建人信息保存地址
 	
 	ofstream perFile;
 
-	perFile.open(PI.getCompleteAddress(), ios::binary |ios::app);
+	perFile.open(PI.getCompleteAddress(), ios::binary |ios::app|ios::out);
 	
 	if (!perFile) 
 	{
-		cout << "人员信息总文件打开失败，请检查路径是否正确！" << endl;
+		cout << "学生信息总文件打开失败，请检查路径是否正确！" << endl;
+
+		cout << "当前路径是 :  " << PI.getCompleteAddress() << endl;
 		
 		return 0;
 

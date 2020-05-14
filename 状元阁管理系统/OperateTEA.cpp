@@ -45,15 +45,15 @@ bool OperateTEA::saveThisFile()
 	file.write((char*)&teacher, sizeof(teacher));
 	file.close();
 
-	PerInfo PI;//创建人信息保存地址
+	PerInfo PI("TotalTeacher");//创建人信息保存地址
 
 	ofstream perFile;
 
-	perFile.open(PI.getCompleteAddress(), ios::binary | ios::app);
+	perFile.open(PI.getCompleteAddress(), ios::binary | ios::app|ios::out);
 
 	if (!perFile)
 	{
-		cout << "人员信息总文件打开失败，请检查路径是否正确！" << endl;
+		cout << "教师信息总文件打开失败，请检查路径是否正确！" << endl;
 
 		return 0;
 
@@ -63,6 +63,7 @@ bool OperateTEA::saveThisFile()
 
 	return 1;
 }
+
 bool OperateTEA::readPreFile()
 
 //从文件中读取文件信息

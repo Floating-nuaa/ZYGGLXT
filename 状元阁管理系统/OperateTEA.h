@@ -25,7 +25,7 @@ public:
 
 	OperateTEA(const OperateTEA&);
 
-	void getInfoFromScreen();//把保护变量里的STD 填入信息
+	void getInfoFromScreen();//把保护变量里的TEA 填入信息
 
 	bool saveThisFile();//保存文件
 
