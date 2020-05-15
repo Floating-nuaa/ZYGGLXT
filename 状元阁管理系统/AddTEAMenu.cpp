@@ -34,8 +34,8 @@ void AddTEAMenu::catchAndAnylasis()
 {
 	string name, sex, phone, QQ;
 	int salary = 60;
-	char cname[15], csex = 'F', cphone[20], cQQ[20];
-	memset(cname, '\0', 15);
+	char cname[30], csex = 'F', cphone[20], cQQ[20];
+	memset(cname, '\0', 30);
 
 	memset(cphone, '\0', 20);
 	memset(cQQ, '\0', 20);

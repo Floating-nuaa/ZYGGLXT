@@ -140,6 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AddTABMenu.cpp" />
     <ClCompile Include="AddTEAMenu.cpp" />
     <ClCompile Include="CashRegister.cpp" />
     <ClCompile Include="MainEntrance.cpp" />
@@ -181,6 +182,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AddSTDMenu.h" />
+    <ClInclude Include="AddTABMenu.h" />
     <ClInclude Include="AddTEAMenu.h" />
     <ClInclude Include="BaseFile.h" />
     <ClInclude Include="CashRegister.h" />

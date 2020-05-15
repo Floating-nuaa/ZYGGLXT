@@ -325,7 +325,7 @@ void Table::ReviseTeam()
 
 	selfName = "教师: " + str + " 的课表 ";
 	
-	char TempName[15];
+	char TempName[30];
 	strcpy_s(TempName, this->ownerName);
 	strcpy_s(this->ownerName, this->theOtherName);
 	strcpy_s(this->theOtherName, TempName);

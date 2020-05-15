@@ -14,7 +14,7 @@ private:
 
 protected:
     
-    char name[15];//姓名
+    char name[30];//姓名
     char gender;//性别
     char phone[20];//电话号码
     int ID;//状元阁唯一识别号,存入文件时候进行更新

@@ -7,27 +7,32 @@ bool isRunYear(int x);
 
 
 
-Date::Date(int year, int month, int day) {
+Date::Date(int year, int month, int day) 
+
+{
     this->year = year;
     this->month = month;
     this->day = day;
     Simplify();
 }
 
-Date::Date(int month, int day) {
+Date::Date(int month, int day) 
+{
     this->month = month;
     this->day = day;
     this->year = 2020;
     Simplify();
 }
 
-Date::Date() {
+Date::Date()
+{
     year = 2020;
     month = 1;
     day = 1;
 }
 
-Date::Date(const Date& obj) {
+Date::Date(const Date& obj) 
+{
     year = obj.year;
     month = obj.month;
     day = obj.day;
@@ -35,7 +40,8 @@ Date::Date(const Date& obj) {
 
 
 
-void Date::display() {
+void Date::display() 
+{
     cout << "ÈÕÆÚ£º " << year;
     cout << setw(4) << month;
     cout << setw(4) << day<<"   ";
@@ -329,3 +335,12 @@ int monthHowDays(int year, int month) {
             return 28;
     }
 }
+
+
+
+
+
+
+
+
+

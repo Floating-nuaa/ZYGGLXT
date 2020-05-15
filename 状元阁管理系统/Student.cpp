@@ -83,7 +83,7 @@ Student::Student() :People()
 	string requirement;
 	*/
 
-	Student Student::operator = (const Student& obj)
+	Student Student::operator = (const Student obj)
 
 	//ÖØÔØ =ÔËËã·û
 {

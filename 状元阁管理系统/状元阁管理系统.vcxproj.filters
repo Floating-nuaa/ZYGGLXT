@@ -93,9 +93,6 @@
     <ClCompile Include="Lesson.cpp">
       <Filter>源文件\内置层</Filter>
     </ClCompile>
-    <ClCompile Include="Table.cpp">
-      <Filter>源文件\外显层</Filter>
-    </ClCompile>
     <ClCompile Include="FatherTable.cpp">
       <Filter>源文件\外显层</Filter>
     </ClCompile>
@@ -179,6 +176,12 @@
     </ClCompile>
     <ClCompile Include="register.cpp">
       <Filter>源文件\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Table.cpp">
+      <Filter>源文件\数据层\信息数据</Filter>
+    </ClCompile>
+    <ClCompile Include="AddTABMenu.cpp">
+      <Filter>源文件\显示层</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -298,6 +301,9 @@
     </ClInclude>
     <ClInclude Include="OperateMode.h">
       <Filter>头文件\业务类</Filter>
+    </ClInclude>
+    <ClInclude Include="AddTABMenu.h">
+      <Filter>头文件\显示类</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -43,7 +43,7 @@ public:
 
 	Student(const Student& obj);//¿½±´¹¹Ôìº¯Êý
 
-	Student operator = (const Student& obj);
+	Student operator = (const Student obj);
 
 	void display();
 

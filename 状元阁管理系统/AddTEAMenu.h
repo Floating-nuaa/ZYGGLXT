@@ -17,10 +17,12 @@ protected:
 	void catchAndAnylasis();
 	bool display2();
 	Purpose catchPurpose();
+
 public:
 	
 	AddTEAMenu();
 	~AddTEAMenu();
+
 	AddTEAMenu(const AddTEAMenu&);
 
 	void display();//ÖØÔØMenuÀàµÄdisplay

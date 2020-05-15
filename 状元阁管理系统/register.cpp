@@ -5,7 +5,7 @@
 	char ssh[20] = "123456";
 	Purpose P;
 	Student ma(name,P );
-	char na[15] = "≈Àº—ª‘";
+	char na[30] = "≈Àº—ª‘";
 	Date d1(2020, 1, 5), d2(2020, 1, 32);
 	Table T1(&ma,d1,d2,3,na,1),T2,T3;
 	OperateTable OT1(T1),OT2,OT3;

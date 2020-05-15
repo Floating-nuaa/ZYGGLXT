@@ -113,7 +113,7 @@ void AddSTDMenu:: catchAndAnylasis(int a)
 {
 	string name, sex, phone, QQ, requirement;
 	int downpayment = 0;
-	char cname[15], csex='F', cphone[20], cQQ[20];
+	char cname[30], csex='F', cphone[20], cQQ[20];
 	Purpose purpose;
 
 	switch (a)

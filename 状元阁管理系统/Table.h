@@ -34,7 +34,7 @@ protected:
     
     int number;//课程节数
 
-    char theOtherName[15];//配对教师姓名
+    char theOtherName[30];//配对教师姓名
 
     int classType;//记录课程类型
 

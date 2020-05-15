@@ -17,7 +17,7 @@ protected:
 	int ownerID;				//所有者ID
 
 	char selfName[50];
-	char theOtherName[15];
+	char theOtherName[30];
 	
 	Lesson lessonTable[100];			//课表数组
 	
