@@ -1,2 +1,5 @@
-﻿  Test.cpp
+﻿  RegisterManagerMenu.cpp
+E:\VisualStudio\ZYGGLXT\状元阁管理系统\RegisterManagerMenu.cpp(93,13): warning C4101: “goal”: 未引用的局部变量
+  Test.cpp
+  正在生成代码...
   状元阁管理系统.vcxproj -> E:\VisualStudio\ZYGGLXT\Debug\状元阁管理系统.exe

@@ -26,7 +26,7 @@ bool checkBigPassword(string s)
 	if (!password) 
 	{
 		cout << "password.txt can't be opened!" << endl;
-		exit(0);
+		throw 2514;
 	}
 	
 	char  pass[20];
@@ -42,6 +42,7 @@ bool checkBigPassword(string s)
 		return 1;
 	}
 	return 0;
+
 }
 
 bool saveAccount(string name, string password) 
@@ -92,6 +93,11 @@ bool checkPassword(string input)
 	
 	ifstream password;
 	password.open(file, ios::in);
+	if (!password)
+	{
+		cout << "password.txt can't be opened!" << endl;
+		throw 2514;
+	}
 	char pa[30];
 	string str;
 
@@ -258,4 +264,17 @@ string translateNumToClassType(int key)
 
 }
 
+char checkGender() 
+{
+	string temp;
+	cin >> temp;
+	if (temp[0] == 'F' || temp[0] == 'f'||temp=="Å®")
+	{
+		return 'F';
+	}
+	if (temp[0] == 'M' || temp[0] == 'm'||temp=="ÄÐ") 
+	{
+		return 'M';
+	}
 
+}

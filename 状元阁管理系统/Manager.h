@@ -24,6 +24,7 @@ public :
 
 	bool setSSH();
 	void display();
+
 };
 
 #endif // ! MANAGER_H_

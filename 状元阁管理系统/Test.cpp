@@ -7,6 +7,7 @@
 #include "Student.h"
 #include <fstream>
 #include "OperateTable.h"
+#include "RegisterManagerMenu.h"
 #include "FeasibleCmd.h"
 #include "AddTABMenu.h"
 #include "OperateSTD.h"
@@ -16,14 +17,8 @@ int main()
 
 {
 	FeasibleCmd FC;
-
-	//OperateSTD OS;
-	//OS.getInfoFromScreen();
-	//OS.saveThisFile();
-	Table T;
-	AddTABMenu AT;
-	AT.display();
-	T = AT.getTable();
-	T.displaySTD();
+	RegisterManagerMenu RM;
+	RM.display();
 	return 0;
+
 }

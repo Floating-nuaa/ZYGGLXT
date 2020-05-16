@@ -22,4 +22,5 @@ void operationCancled();
 
 string translateNumToClassType(int);
 
+char checkGender();
 #endif

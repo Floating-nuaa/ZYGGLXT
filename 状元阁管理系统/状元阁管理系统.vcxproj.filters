@@ -183,6 +183,9 @@
     <ClCompile Include="AddTABMenu.cpp">
       <Filter>源文件\显示层</Filter>
     </ClCompile>
+    <ClCompile Include="RegisterManagerMenu.cpp">
+      <Filter>源文件\显示层</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Date.h">
@@ -303,6 +306,9 @@
       <Filter>头文件\业务类</Filter>
     </ClInclude>
     <ClInclude Include="AddTABMenu.h">
+      <Filter>头文件\显示类</Filter>
+    </ClInclude>
+    <ClInclude Include="RegisterManagerMenu.h">
       <Filter>头文件\显示类</Filter>
     </ClInclude>
   </ItemGroup>
