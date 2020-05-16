@@ -143,6 +143,9 @@
     <ClCompile Include="AddTABMenu.cpp" />
     <ClCompile Include="AddTEAMenu.cpp" />
     <ClCompile Include="CashRegister.cpp" />
+    <ClCompile Include="ClassPrice.cpp" />
+    <ClCompile Include="ConClassPrice.cpp" />
+    <ClCompile Include="ConfigInfo.cpp" />
     <ClCompile Include="MainEntrance.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="OperaMode.cpp" />
@@ -189,6 +192,9 @@
     <ClInclude Include="AddTEAMenu.h" />
     <ClInclude Include="BaseFile.h" />
     <ClInclude Include="CashRegister.h" />
+    <ClInclude Include="ClassPrice.h" />
+    <ClInclude Include="ConClassPrice.h" />
+    <ClInclude Include="ConfigInfo.h" />
     <ClInclude Include="FeasibleCmd.h" />
     <ClInclude Include="Date.h" />
     <ClInclude Include="Handler.h" />

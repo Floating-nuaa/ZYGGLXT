@@ -12,14 +12,18 @@
 #include "AddTABMenu.h"
 #include "OperateTEA.h"
 #include "ViolationMenu.h"
+#include "ConClassPrice.h"
 using namespace std;
 
 int main() 
 
 {
-	RegisterManagerMenu RMM;
+	/*RegisterManagerMenu RMM;
 	RMM.display();
 	Manager ma = RMM.getManager();
 	ViolationMenu VM(ma);
-	VM.display();
+	VM.display();*/
+	ConClassPrice CC;
+	CC.initClassPrice();
+	
 }

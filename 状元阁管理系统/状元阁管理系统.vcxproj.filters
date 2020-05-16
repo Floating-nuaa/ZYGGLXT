@@ -64,6 +64,12 @@
     <Filter Include="源文件\数据层\信息数据">
       <UniqueIdentifier>{a8e28158-68a0-48cf-9178-9543605ee6e5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\Config">
+      <UniqueIdentifier>{3b3ee4ed-c611-4692-8c12-d314c2c1b325}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Config">
+      <UniqueIdentifier>{01184a87-70c9-49b8-9314-7b8b81d2cb78}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Date.cpp">
@@ -191,6 +197,15 @@
     </ClCompile>
     <ClCompile Include="ViolationMenu.cpp">
       <Filter>源文件\显示层</Filter>
+    </ClCompile>
+    <ClCompile Include="ConfigInfo.cpp">
+      <Filter>源文件\数据层\文件数据</Filter>
+    </ClCompile>
+    <ClCompile Include="ClassPrice.cpp">
+      <Filter>源文件\内置层</Filter>
+    </ClCompile>
+    <ClCompile Include="ConClassPrice.cpp">
+      <Filter>源文件\Config</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -322,6 +337,15 @@
     </ClInclude>
     <ClInclude Include="ViolationMenu.h">
       <Filter>头文件\显示类</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfigInfo.h">
+      <Filter>头文件\文件类</Filter>
+    </ClInclude>
+    <ClInclude Include="ClassPrice.h">
+      <Filter>头文件\标准类</Filter>
+    </ClInclude>
+    <ClInclude Include="ConClassPrice.h">
+      <Filter>头文件\Config</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

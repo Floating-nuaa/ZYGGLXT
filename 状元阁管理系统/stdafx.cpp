@@ -278,3 +278,109 @@ char checkGender()
 	}
 
 }
+
+string trnaslateVioCode(int first, int second)
+
+{
+	switch (first) 
+	{
+		case 1:
+		{
+			map<int, string > VioType;
+			
+			VioType.insert(pair<int, string>(1, "未使用本机构统一的页眉文档格式来打印文件"));
+			VioType.insert(pair<int, string>(2, "无课期间在自习室或其他教学地点玩手机"));
+			VioType.insert(pair<int, string>(3, "上课时间手机没有放到指定地点"));
+			VioType.insert(pair<int, string>(4, "上课期间教师之间闲聊或与学生闲聊"));
+			VioType.insert(pair<int, string>(5, "未及时与家长反馈"));
+			VioType.insert(pair<int, string>(6, "上课迟到但未超过5分钟"));
+			VioType.insert(pair<int, string>(7, "早退"));
+			VioType.insert(pair<int, string>(8, "组内没有及时进行教研"));
+		
+			string Type = "文件中未查找到此种类型的教学事故";
+			string FT = "一级教学事故 : ";
+			string Ans;
+			
+			auto it = VioType.find(second);
+
+			if (it != VioType.end())
+			{
+				Type = (*it).second;
+			}
+			Ans = FT + Type;
+			
+			return Ans;
+			
+			break;
+		
+		}
+		case 2: 
+		{
+			map<int, string > VioType;
+			
+			VioType.insert(pair<int, string>(1, "上课时间使用手机"));
+			VioType.insert(pair<int, string>(2, "上课花费大量时间让学生做题"));
+			VioType.insert(pair<int, string>(3, "上课迟到5分钟以上"));
+			VioType.insert(pair<int, string>(4, "私自调整课表未经管理人员同意"));
+			VioType.insert(pair<int, string>(5, "在有学生学习的地方，包括一楼大厅大声喧哗"));
+			
+			string Type = "文件中未查找到此种类型的教学事故";
+			string FT = "二级教学事故 : ";
+			string Ans;
+			
+			auto it = VioType.find(second);
+
+			if (it != VioType.end())
+			{
+				Type = (*it).second;
+			}
+			Ans = FT + Type;
+			
+			return Ans;
+			
+			break;
+
+		}
+		case 3: 
+		{
+			map<int, string > VioType;
+		
+			VioType.insert(pair<int, string>(1, "私自向学生收费，私自接课"));
+			VioType.insert(pair<int, string>(2, "不尊重管理人员，顶撞甚至辱骂"));
+			VioType.insert(pair<int, string>(3, "学生未毕业前与其谈恋爱甚至被其家了解造成不良影响"));
+
+			string Type = "文件中未查找到此种类型的教学事故";
+			string FT = "二级教学事故 : ";
+			string Ans;
+			
+			auto it = VioType.find(second);
+
+			if (it != VioType.end())
+			{
+				Type = (*it).second;
+			}
+			
+			Ans = FT + Type;
+			
+			return Ans;
+			
+			break;
+
+		}
+		default:
+		{
+			string Type;
+			Type = "未查找到此代码代表的教学事故，请仔细阅读此次教学事故的备注!";
+			return Type;
+		}
+
+	}
+	
+}
+
+
+
+
+
+
+
