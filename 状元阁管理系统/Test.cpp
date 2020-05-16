@@ -10,15 +10,16 @@
 #include "RegisterManagerMenu.h"
 #include "FeasibleCmd.h"
 #include "AddTABMenu.h"
-#include "OperateSTD.h"
+#include "OperateTEA.h"
+#include "ViolationMenu.h"
 using namespace std;
 
 int main() 
 
 {
-	FeasibleCmd FC;
-	RegisterManagerMenu RM;
-	RM.display();
-	return 0;
-
+	RegisterManagerMenu RMM;
+	RMM.display();
+	Manager ma = RMM.getManager();
+	ViolationMenu VM(ma);
+	VM.display();
 }

@@ -180,6 +180,8 @@
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="TollMenu.cpp" />
     <ClCompile Include="TransactionRecord.cpp" />
+    <ClCompile Include="ViolationMenu.cpp" />
+    <ClCompile Include="ViolationRecord.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AddSTDMenu.h" />
@@ -223,6 +225,8 @@
     <ClInclude Include="Money.cpp" />
     <ClInclude Include="TollMenu.h" />
     <ClInclude Include="TransactionRecord.h" />
+    <ClInclude Include="ViolationMenu.h" />
+    <ClInclude Include="ViolationRecord.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

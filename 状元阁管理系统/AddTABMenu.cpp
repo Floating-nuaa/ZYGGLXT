@@ -73,6 +73,7 @@ void AddTABMenu::display()
 				this->table = tab;
 				cout << "Success 课表记录成功!" << endl;
 				return;
+				break;
 			}
 
 			case 'B':
@@ -86,8 +87,9 @@ void AddTABMenu::display()
 				Table tab(&thisSTD, d1, num,whenClass, TEAname, classType);
 				this->table = tab;
 				cout << "Success 课表记录成功!" << endl;
+			
 				return;
-
+				break;
 			}
 
 			case 'C':
@@ -96,6 +98,7 @@ void AddTABMenu::display()
 				this->table = tab;
 				cout << "Success 课表记录成功!" << endl;
 				return;
+				break;
 			}
 		}
 

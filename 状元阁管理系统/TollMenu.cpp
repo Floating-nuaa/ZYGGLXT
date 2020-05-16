@@ -16,52 +16,63 @@ TollMenu::~TollMenu( )
 void TollMenu::display() 
 	//收银菜单
 {
-	system("CLS");
-	string STDname,PayWay,Remarks;
-	Student thisStud;
-	cout << "************************************************************" << endl << endl << endl;
-	cout << "\t\t缴纳课程费用" << endl << endl;
-	cout << "请输入学生姓名 :  ";
-	cin >> STDname;
-	cout << endl;
-
-	thisStud=checkSTDInfo(STDname);//
-	
-	cout << "交易提醒:  \t请核对缴费学生的个人信息...  " << endl;
-	if (!checkToContinue()) 
+	try 
 	{
-		operationCancled();
-		return ;
-	}
-	float payment;
-	cout << "请输入所缴纳费用：  ";
-	cin >> payment ;
-	if (display2()) 
-	
+		system("CLS");
+		string STDname, PayWay, Remarks;
+		Student thisStud;
+		cout << "************************************************************" << endl << endl << endl;
+		cout << "\t\t缴纳课程费用" << endl << endl;
+		cout << "请输入学生姓名 :  ";
+		cin >> STDname;
+		cout << endl;
+
+		thisStud = checkSTDInfo(STDname);//
+
+		cout << "交易提醒:  \t请核对缴费学生的个人信息...  " << endl;
+		if (!checkToContinue())
+		{
+			operationCancled();
+			return;
+		}
+		float payment;
+		cout << "请输入所缴纳费用：  ";
+		cin >> payment;
+		if (display2())
+
+		{
+			cout << "请输入收款方式 :  ";
+			cin >> PayWay;
+			cout << "请添加备注 :  ";
+			cin >> Remarks;
+		}
+
+
+		TransactionRecord thisTR(this->operatorManager, thisStud, payment, PayWay, Remarks);
+
+		if (!saveThisTranRecord(thisTR))
+			//如果文件保存失败	
+		{
+			cout << " 交易文件保存失败，请先在工作日志上记录此次收款信息，";
+			cout << "并及时联系开发人员Floating " << endl;
+			return;
+		}
+
+		cout << "  收银成功！ 交易详细信息如下 : " << endl;
+		cout << "收银管理员姓名  " << this->operatorManager.getName() << endl;
+		cout << "学生姓名        " << thisStud.getName() << endl;
+		cout << "收款金额        " << payment << endl;
+		system("pause");
+		return;
+
+
+	}catch(int goal)
 	{
-		cout << "请输入收款方式 :  ";
-		cin >> PayWay;
-		cout << "请添加备注 :  ";
-		cin >> Remarks;
+		cout << "Warning  学生信息获取失败，请检查是否存在" << endl;
+		cout << "请检查学生姓名拼写是否正确或储存路径是否存在" << endl;
+		cout << "错误代码  " << goal << endl;
 	}
-
-
-	TransactionRecord thisTR(this->operatorManager, thisStud, payment, PayWay, Remarks);
 	
-	if (!saveThisTranRecord(thisTR)) 
-		//如果文件保存失败	
-	{
-		cout << " 交易文件保存失败，请先在工作日志上记录此次收款信息，";
-		cout << "并及时联系开发人员Floating " << endl;
-		return ;
-	}
-
-	cout << "  收银成功！ 交易详细信息如下 : "<<endl;
-	cout << "收银管理员姓名  " << this->operatorManager.getName() << endl;
-	cout << "学生姓名        " << thisStud.getName() << endl;
-	cout << "收款金额        " << payment << endl;
-	system("pause");
-	return;
 }
 
 bool TollMenu::display2()  
@@ -79,7 +90,12 @@ Student TollMenu::checkSTDInfo(string STDname)
 
 	OperateSTD OS;
 	Student stud;
-	OS.readPreFile(STDname);
+	
+	if (!OS.readPreFile(STDname))
+	{
+		throw 4511;
+	}
+	
 	stud = OS.getStudent();
 	stud.display( );
 	return stud;

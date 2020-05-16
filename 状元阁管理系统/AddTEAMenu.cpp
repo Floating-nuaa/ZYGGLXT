@@ -40,9 +40,10 @@ void AddTEAMenu::catchAndAnylasis()
 	memset(cphone, '\0', 20);
 	memset(cQQ, '\0', 20);
 	cin >> name >> sex >> phone >> QQ;
+	cout << endl;
 	if (display2()) 
 	{
-		cout << "\t请输入更改后薪水： ";
+		cout << "请输入更改后薪水： ";
 		cin >> salary;
 	}
 	//转换成字符数组
@@ -71,7 +72,7 @@ bool AddTEAMenu:: display2()
 	//询问是否变更薪水
 
 {
-	cout << "\t是否变更默认薪水？Y or N :  " ;
+	cout << "是否变更默认薪水？Y or N :  " ;
 	string ans;
 	cin >> ans;
 	if (ans[0] == 'Y' || ans[0] == 'y') 
@@ -92,11 +93,15 @@ Purpose AddTEAMenu::catchPurpose()
 {
 	vector<string> list;
 	int a = 1;
-	cout << "\t请输入教学科目数量:" << endl;
+	cout << "请输入教学科目数量 :  " ;
 	cin >> a;
+	cout << endl;
 	string ttt;
+	cout << "请输入分别输入课程名称，中间用空格隔开 (如:语文 数学)" << endl;
+
 	for (int i = 1; i <= a; i++)
 	{
+		cout << "请输入第 " << i << " 个科目 :  ";
 		cin >> ttt;
 		list.push_back(ttt);
 	}

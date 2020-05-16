@@ -186,6 +186,12 @@
     <ClCompile Include="RegisterManagerMenu.cpp">
       <Filter>源文件\显示层</Filter>
     </ClCompile>
+    <ClCompile Include="ViolationRecord.cpp">
+      <Filter>源文件\数据层\记录数据</Filter>
+    </ClCompile>
+    <ClCompile Include="ViolationMenu.cpp">
+      <Filter>源文件\显示层</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Date.h">
@@ -299,9 +305,6 @@
     <ClInclude Include="MainEntrance.h">
       <Filter>头文件\标准类</Filter>
     </ClInclude>
-    <ClInclude Include="LoginMenu.h">
-      <Filter>头文件\标准类</Filter>
-    </ClInclude>
     <ClInclude Include="OperateMode.h">
       <Filter>头文件\业务类</Filter>
     </ClInclude>
@@ -309,6 +312,15 @@
       <Filter>头文件\显示类</Filter>
     </ClInclude>
     <ClInclude Include="RegisterManagerMenu.h">
+      <Filter>头文件\显示类</Filter>
+    </ClInclude>
+    <ClInclude Include="ViolationRecord.h">
+      <Filter>头文件\标准类</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginMenu.h">
+      <Filter>头文件\显示类</Filter>
+    </ClInclude>
+    <ClInclude Include="ViolationMenu.h">
       <Filter>头文件\显示类</Filter>
     </ClInclude>
   </ItemGroup>

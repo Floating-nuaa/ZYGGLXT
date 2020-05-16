@@ -27,6 +27,8 @@ public:
 	~RegisterManagerMenu();
 	virtual void display();//填入成员的属性
 
+	Manager getManager();
+
 };
 
 

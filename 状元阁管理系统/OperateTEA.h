@@ -31,6 +31,8 @@ public:
 
 	bool readPreFile();//从文件中读取文件信息
 
+	bool readPreFile(string name);
+
 	Teacher getTeacher();
 
 };

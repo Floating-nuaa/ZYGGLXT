@@ -171,3 +171,8 @@ bool RegisterManagerMenu::saveThisMan(string name)
 	return 1;
 }
 
+
+Manager RegisterManagerMenu::getManager() 
+{
+	return this->Man;
+}

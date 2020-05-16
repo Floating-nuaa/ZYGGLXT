@@ -60,7 +60,7 @@ bool OperateTEA::saveThisFile()
 	}
 	file.write((char*)&teacher, sizeof(teacher));
 	perFile.close();
-
+	cout << "Success  教师信息保存成功!" << endl;
 	return 1;
 }
 
@@ -110,3 +110,29 @@ void OperateTEA::setTeasID(People& obj)
 	obj.ID = PN.returnNum();
 
 }
+
+
+bool OperateTEA::readPreFile(string name)
+
+//从文件中读取文件信息
+
+{
+	string thisName = name ;
+	saveAddress.setName(thisName);
+
+	ifstream file(saveAddress.getCompleteAddress(), ios::in | ios::binary);
+
+	if (!file)
+
+	{
+		cout << "教师信息文件打开失败，请检查路径和姓名是否正确！" << endl;
+		return 0;
+	}
+
+	file.read((char*)&teacher, sizeof(teacher));
+	file.close();
+	return 1;
+
+}
+
+
