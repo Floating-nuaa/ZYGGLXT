@@ -21,7 +21,7 @@ public:
 	//构造函数 ， 添加老师只需一个构造函数，薪水为60
 	//姓名 性别 phone QQ salary
 	
-	Teacher(char*, char, char*, char*, Purpose ,int salary=60);
+	Teacher(char* name, char sex, char* phone, char* QQ, Purpose subj, int salary=60);
 	Teacher(const Teacher& obj);
 	Teacher();
 

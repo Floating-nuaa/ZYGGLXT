@@ -52,7 +52,7 @@ bool OperateTable::saveThisFile()
 	ST1.buildStoreTable(this->table);
 
 	try {
-		file.open(saveAddress.getCompleteAddress(), ios::out | ios::binary);
+		file.open(saveAddress.getCompleteAddress(), ios::out | ios::binary|ios::app);
 		if (!file)
 		{
 			//打开文件失败，抛出异常
@@ -195,7 +195,57 @@ bool OperateTable::readPreFile(string name)
 
 }
 
+bool OperateTable::readPreFile(string name, int oridinal) 
+//oridinal 代表第几个数据
+{
+	string thisName = name;
+	saveAddress.setName(thisName);
+
+	StoreTable ST;
+	fstream file;
+
+	try {
+
+		file.open(saveAddress.getCompleteAddress(), ios::in | ios::binary);
+		if (!file)
+		{
+			//打开文件失败，抛出异常
+
+			throw 987;
+		}
+		short t = (oridinal-1) * sizeof(this->table);
+		
+		file.seekg(t, ios::beg);
+		/*************************************************************
+			重载要点，调整读取指针
+		**************************************************************/
+
+		file.read((char*)&ST, sizeof(ST));
+		if (file.eof())
+		{
+			return false;
+		}
+		file.close();
+
+		this->table.translateFromStoreTable(ST);
+	}
+	catch (int goal)
+	{
+		cout << "错误代码： " << goal << "  ";
+		cout << "课表文件打开失败，请检查路径是否非法！" << endl;
+		cout << "当前路径:  " << this->saveAddress.getCompleteAddress() << endl;
+		return 0;
+	}
+	return true;
+}
+
+
+/**************************************************************************
 //把Table转换为.csv 文件，只限于当前对象
+	第一个是转换学生课表，第二个转换教师课表，储存路径不同
+***************************************************************************/
+
+
 bool OperateTable::transformSTToCSV() 
 
 {
@@ -246,8 +296,6 @@ bool OperateTable::transformSTToCSV()
 	return 1;
 
 }
-
-
 
 bool OperateTable::transformTTToCSV()
 

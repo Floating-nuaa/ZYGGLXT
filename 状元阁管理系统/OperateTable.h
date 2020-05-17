@@ -28,6 +28,8 @@ public:
 	
 	bool readPreFile(string name);
 
+	bool readPreFile(string name, int ordinal);//读出这个人的第几个课表
+
 	bool transformSTToCSV();
 
 	bool transformTTToCSV();

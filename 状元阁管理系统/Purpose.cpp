@@ -96,7 +96,7 @@ Purpose Purpose::operator=(const Purpose& obj)
 
 void Purpose::display() 
 {
-	cout << "科目： ";
+	cout << "科目:     ";
 	
 	for (int i = 0; i < sum; i++) 
 	{

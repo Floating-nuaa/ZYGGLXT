@@ -18,20 +18,23 @@ using namespace std;
 int main() 
 
 {
-	/*RegisterManagerMenu RMM;
-	RMM.display();
-	Manager ma = RMM.getManager();
-	ViolationMenu VM(ma);
-	VM.display();*/
-	OperateSTD OS;
-	Student s;
-	//OS.getInfoFromScreen();
-	//OS.saveThisFile();
-	OS.readPreFile("≈Ì¡’ƒ»");
-	s = OS.getStudent();
-	s.display();
-	OS.updateStudentInfo(s.getName());
-	s = OS.getStudent();
-	s.display();
+	OperateTEA OT,OT1;
+	Teacher T,T1;
+	/*OT.getInfoFromScreen();
+	OT.saveThisFile();
+	OT.getInfoFromScreen();
+	OT.saveThisFile();*/
+	OT.getInfoFromScreen();
+	OT.saveThisFile();
+	OT.readPreFile(3);
+	T = OT.getTeacher();
+	T.display();
 	return 0;
+
 }
+
+
+
+
+
+

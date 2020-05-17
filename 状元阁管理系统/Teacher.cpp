@@ -34,7 +34,8 @@ void Teacher::display()
 
 {
 	People::display();
-	cout <<"QQ  "<< QQ << " " << salary << endl;
+	cout << "QQ        " << QQ << endl;
+	cout << "ʱн      " << salary << endl;
 	sub.display();
 }
 
@@ -53,11 +54,9 @@ void Teacher::setSalary(int salary)
 Teacher Teacher:: operator =(const Teacher& obj) 
 
 {
-	strcpy_s(this->name, obj.name);
+	People::operator=(obj);
 	strcpy_s(this->QQ, obj.QQ);
-	strcpy_s(this->phone, obj.phone);
 	this->salary = obj.salary;
-	this->gender = obj.gender;
 	this->sub = obj.sub;
 	return *this;
 }

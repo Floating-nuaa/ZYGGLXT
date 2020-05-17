@@ -16,6 +16,11 @@ protected:
 	
 	Teacher teacher;
 	TEAInfo saveAddress;
+	
+	void getChangeInfo();
+	bool catchElection();
+	bool doChangeInfo(int election);
+	Purpose catchPurpose();
 
 public:
 
@@ -29,11 +34,19 @@ public:
 
 	bool saveThisFile();//保存文件
 
-	bool readPreFile();//从文件中读取文件信息
+	bool readPreFile();//从私人文件中读取文件信息
 
 	bool readPreFile(string name);
 
+	bool readPreFile(int oridinal);//从教师总表中获取第几个老师的信息
+	
 	Teacher getTeacher();
+
+	bool updateStudentInfo(string STDname);
+
 
 };
 #endif // ! OPERATETEA_H_
+
+
+

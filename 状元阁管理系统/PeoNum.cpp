@@ -20,6 +20,11 @@ PeoNum::PeoNum()
 	NowNum = -1;
 }
 
+PeoNum::~PeoNum()
+{
+	//析构函数，无需操作
+}
+
 bool PeoNum::setFile(int a) 
 {
 	
@@ -92,19 +97,6 @@ bool PeoNum::getNum()
 	return 0;
 }
 
-int PeoNum::returnNum() 
-{
-
-	if (getNum()) 
-	{
-		return NowNum;
-	}
-
-	else {
-		cout << "获取NowNum失败!" << endl;
-	}
-	return -1;
-}
 
 void PeoNum::setNowNum(int a) 
 {
@@ -118,4 +110,20 @@ void PeoNum::update(int a)
 	file << a << endl;
 	file.close();
 }
+
+int PeoNum::returnNum() 
+{
+
+	if (getNum()) 
+	{
+		return NowNum;
+	}
+
+	else
+	{
+		cout << "获取NowNum失败!" << endl;
+	}
+	return -1;
+}
+
 

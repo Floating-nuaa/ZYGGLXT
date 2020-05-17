@@ -22,9 +22,11 @@ protected:
 public:
 	
 	//PeoNum( string UA = "PersonInfo\\", string FA = "PeoNum.txt");
+
 	PeoNum();
+	~PeoNum();
 	int returnNum();
-	~PeoNum(){}
+
 };
 #endif // !PEONUM_H_
 

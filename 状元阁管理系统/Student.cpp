@@ -87,10 +87,8 @@ Student::Student() :People()
 
 	//ÖØÔØ =ÔËËã·û
 {
-	strcpy_s(name, obj.name);
-	this->gender = obj.gender;
-	strcpy_s(phone, obj.phone);
-	this->ID = obj.ID;
+	People::operator=(obj);
+	
 	strcpy_s(this->QQ, obj.QQ);
 	this->downPayment = obj.downPayment;
 	this->sub = obj.sub;

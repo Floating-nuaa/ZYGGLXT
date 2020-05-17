@@ -116,5 +116,6 @@ People People::operator =(const People& obj)
 	strcpy_s(this->name, obj.name);
 	strcpy_s(this->phone, obj.phone);
 	this->gender = obj.gender;
+	this->ID = obj.ID;
 	return *this;
 }

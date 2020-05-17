@@ -98,7 +98,58 @@ bool OperateSTD::readPreFile( )
 
 }
 
+bool OperateSTD::readPreFile(string STDname)
+{
+	saveAddress.setName(STDname);
 
+	ifstream file(saveAddress.getCompleteAddress(), ios::in | ios::binary);
+
+	if (!file)
+	{
+		cout << "学生信息文件打开失败，请检查路径和姓名是否正确！" << endl;
+		cout << "当前的路径是 " << saveAddress.getCompleteAddress() << endl;
+		return 0;
+	}
+	file.read((char*)&stud, sizeof(stud));
+	
+	file.close();
+	return 1;
+}
+
+bool OperateSTD::readPreFile(int oridinal)
+//从学生总表中读出教师的数据
+//参数代表是第几个信息
+{
+	PerInfo PI("TotalStudent");//创建人信息保存地址
+
+	ifstream perFile;
+
+	perFile.open(PI.getCompleteAddress(), ios::binary | ios::in);
+
+	if (!perFile)
+	{
+		cout << "学生信息总文件打开失败，请检查路径是否正确！" << endl;
+		cout << "当前路径是 " << saveAddress.getCompleteAddress() << endl;
+		return 0;
+
+	}
+
+	short t = (oridinal - 1) * sizeof(this->stud);
+
+	perFile.seekg(t, ios::beg);
+
+	if (perFile.eof())
+	{
+		return false;
+	}
+
+	perFile.read((char*)&this->stud, sizeof(this->stud));
+
+	perFile.close();
+
+	return true;
+
+}
 
 Student OperateSTD::getStudent() 
 
@@ -116,26 +167,6 @@ void OperateSTD::setStdsID(People& obj)
 
 	obj.ID = PN.returnNum();
 
-}
-
-
-
-bool OperateSTD::readPreFile(string STDname)
-{
-	saveAddress.setName(STDname);
-
-	ifstream file(saveAddress.getCompleteAddress(), ios::in | ios::binary);
-
-	if (!file)
-	{
-		cout << "学生信息文件打开失败，请检查路径和姓名是否正确！" << endl;
-		cout << "当前的路径是 " << saveAddress.getCompleteAddress() << endl;
-		return 0;
-	}
-	file.read((char*)&stud, sizeof(stud));
-	
-	file.close();
-	return 1;
 }
 
 
@@ -199,8 +230,6 @@ void OperateSTD:: getChangeInfo()
 	this->stud.display();
 	
 }
-
-
 
 
 /*************************************************************
@@ -320,7 +349,6 @@ bool OperateSTD::doChangeInfo(int election)
 
 
 
-
 /*************************************************************
 		获取科目的方法
 **************************************************************/
@@ -329,20 +357,26 @@ Purpose OperateSTD::catchPurpose()
 {
 	vector<string> list;
 	int a = 1;
-	cout << "\t请输入报名科目数量:" << endl;
+	cout << "请输入教学科目数量 :  ";
 	cin >> a;
+	cout << endl;
 	string ttt;
+	cout << "请输入分别输入课程名称，中间用空格隔开 (如:语文 数学)" << endl;
+
 	for (int i = 1; i <= a; i++)
 	{
+		cout << "请输入第 " << i << " 个科目 :  ";
 		cin >> ttt;
 		list.push_back(ttt);
 	}
+	if (a == 0)
+	{
+		ttt = "无科目";
+		list.push_back(ttt);
+
+	}
 	Purpose pur(list);
 	return pur;
+
 }
-
-
-
-
-
 

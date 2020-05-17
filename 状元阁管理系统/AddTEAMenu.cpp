@@ -105,6 +105,12 @@ Purpose AddTEAMenu::catchPurpose()
 		cin >> ttt;
 		list.push_back(ttt);
 	}
+	if (a == 0)
+	{
+		ttt = "ÎŞ¿ÆÄ¿";
+		list.push_back(ttt);
+
+	}
 	Purpose pur(list);
 	return pur;
 

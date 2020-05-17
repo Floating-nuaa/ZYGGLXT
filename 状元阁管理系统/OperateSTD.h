@@ -18,7 +18,7 @@ private:
 	//内置函数，声明成Student的友元函数
 	//修改自己数据的ID，进行数据保护
 	void setStdsID(People&);
-	Purpose catchPurpose();
+	
 
 protected:
 	
@@ -29,7 +29,7 @@ protected:
 	void getChangeInfo();
 	bool catchElection();
 	bool doChangeInfo(int election);
-
+	Purpose catchPurpose();
 public:
 
 	OperateSTD( );
@@ -43,6 +43,8 @@ public:
 	
 	bool readPreFile( string );//包含学生姓名参数读取学生信息
 	
+	bool readPreFile(int oridinal);//参数是学生的第几个信息
+
 	Student getStudent();
 
 	bool updateStudentInfo(string STDname);
