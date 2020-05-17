@@ -25,7 +25,6 @@ public:
 	PeoNum();
 	int returnNum();
 	~PeoNum(){}
-
 };
 #endif // !PEONUM_H_
 

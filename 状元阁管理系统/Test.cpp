@@ -10,7 +10,7 @@
 #include "RegisterManagerMenu.h"
 #include "FeasibleCmd.h"
 #include "AddTABMenu.h"
-#include "OperateTEA.h"
+#include "OperateSTD.h"
 #include "ViolationMenu.h"
 #include "ConClassPrice.h"
 using namespace std;
@@ -23,7 +23,15 @@ int main()
 	Manager ma = RMM.getManager();
 	ViolationMenu VM(ma);
 	VM.display();*/
-	ConClassPrice CC;
-	CC.initClassPrice();
-	
+	OperateSTD OS;
+	Student s;
+	//OS.getInfoFromScreen();
+	//OS.saveThisFile();
+	OS.readPreFile("≈Ì¡’ƒ»");
+	s = OS.getStudent();
+	s.display();
+	OS.updateStudentInfo(s.getName());
+	s = OS.getStudent();
+	s.display();
+	return 0;
 }

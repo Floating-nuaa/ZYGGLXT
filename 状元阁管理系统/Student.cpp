@@ -103,7 +103,9 @@ void Student::display()
 {
 	People::display();
 	
-	cout <<"  QQ  "<<QQ<<"  特殊需求  "<< requirement << "  已交定金  " << downPayment << endl;
+	cout << "QQ        " << QQ << endl;
+	cout << "特殊需求  " << requirement << endl;
+	cout << "已交定金  " << downPayment << endl;
 	
 	sub.display();
 }

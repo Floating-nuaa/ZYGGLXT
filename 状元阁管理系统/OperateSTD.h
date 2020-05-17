@@ -4,7 +4,7 @@
 #include "OperateMode.h"
 #include "STDInfo.h"
 #include "Student.h"
-
+#include "stdafx.h"
 
 class OperateSTD :public OperateMode
 
@@ -18,12 +18,17 @@ private:
 	//内置函数，声明成Student的友元函数
 	//修改自己数据的ID，进行数据保护
 	void setStdsID(People&);
-			
+	Purpose catchPurpose();
+
 protected:
 	
 
 	Student stud;//学生对象
 	STDInfo saveAddress;//文件地址对象
+
+	void getChangeInfo();
+	bool catchElection();
+	bool doChangeInfo(int election);
 
 public:
 
@@ -40,5 +45,9 @@ public:
 	
 	Student getStudent();
 
+	bool updateStudentInfo(string STDname);
+
+
 };
+
 #endif // !OperateSTD_H_

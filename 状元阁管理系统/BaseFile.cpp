@@ -68,10 +68,10 @@ string BaseFile::getfileName()
 }
 
 
-
 void BaseFile::setFileName(string FA) 
 {
 	fileName = FA; 
+	completeFile = saveAddress + uniqueAddress + fileName;
 }
 
 
