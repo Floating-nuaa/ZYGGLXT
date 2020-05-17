@@ -30,6 +30,7 @@ protected:
     priority_queue <Lesson> lessonTimeTable;
     
     Date startDate;
+
     Date endDate;
     
     int number;//课程节数
@@ -39,6 +40,7 @@ protected:
     int classType;//记录课程类型
 
 public:
+    
     friend class OperateTable;
     friend class StoreTable;
 
@@ -63,12 +65,18 @@ public:
 
     void ReviseTeam();
 
+    void ReviseTeamToSTD();
+
     void translateFromStoreTable(StoreTable&);
 
     void displaySTD();  //展示学生课表
 
     void displayTEA();  //展示老师课表
     
+    void shortShowSTD(); //简短展示学生表头信息
+    
+    void shortShowTEA(); //简短展示老师表头信息
+
     int getNum();
     
     string getSelfName();

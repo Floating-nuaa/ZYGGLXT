@@ -310,13 +310,41 @@ void Table::displayTEA()
 
 
 
+
+void Table::shortShowSTD()
+{
+	//简短展示学生表头信息
+	FatherTable::display();
+
+	string TYPE = translateNumToClassType(this->classType);
+
+	cout << "教师是   :  " << this->theOtherName << endl;
+	cout << "课程类型 :  " << TYPE << endl;
+	cout << "课程节数 :  " << this->number << endl;
+	
+}
+
+void Table:: shortShowTEA() 
+{
+	//简短展示老师表头信息
+	FatherTable::display();
+
+	string TYPE = translateNumToClassType(this->classType);
+
+	cout << "该节课学生是 :  " << this->theOtherName << endl;
+	cout << "课程类型 :  " << TYPE << endl;
+	cout << "课程节数： " << this->number << endl;
+
+}
+
+
+
+
 int Table::getNum() 
 
 {
 	return this->number;
 }
-
-
 
 void Table::ReviseTeam() 
 
@@ -351,4 +379,20 @@ string Table::getTheOtherName()
 {
 	string str = this->theOtherName;
 	return str;
+}
+
+
+void Table::ReviseTeamToSTD()
+
+{
+	string str = this->theOtherName;
+
+	selfName = "学生: " + str + " 的课表 ";
+
+	char TempName[30];
+
+	strcpy_s(TempName, this->ownerName);
+	strcpy_s(this->ownerName, this->theOtherName);
+	strcpy_s(this->theOtherName, TempName);
+
 }

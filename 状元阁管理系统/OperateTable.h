@@ -14,6 +14,13 @@ protected :
 	Table table;
 	TableInfo saveAddress;
 
+	bool checkIsThisTable();
+	bool changeThisTable();
+	bool addLesson();
+	bool deleteLesson();
+
+	int checkHowLongBelonging(Table TEATab);
+
 public:
 
 	OperateTable( Table &tab);
@@ -26,9 +33,13 @@ public:
 	
 	virtual bool saveThisFile();		//保存当前文件，把当前的Table保存文件
 	
+	bool saveThisFile(int ruler);
+
 	bool readPreFile(string name);
 
 	bool readPreFile(string name, int ordinal);//读出这个人的第几个课表
+	
+	bool updateThisTable();                //更新这个课表
 
 	bool transformSTToCSV();
 

@@ -148,3 +148,23 @@ int Lesson::getOriginalNumber()
 	return this->ordinalNumber;
 }
 
+bool Lesson::operator !=(const Lesson& obj)const 
+{
+	if (this->day != obj.day)
+	{
+		return true;
+	}
+	if (this->month != obj.month)
+	{
+		return true;
+	}
+	if (this->ordinalNumber != obj.ordinalNumber)
+	{
+		return true;
+	}
+
+	return false;
+
+
+}
+

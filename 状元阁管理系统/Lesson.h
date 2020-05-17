@@ -32,6 +32,6 @@ public:
 
     int getOriginalNumber();//返回这是第几节课
 
-
+    bool operator !=(const Lesson&)const;
 };
 #endif 
