@@ -12,6 +12,7 @@ RunningRecord::RunningRecord(Manager& man, float pay,
 
 RunningRecord::~RunningRecord(){}
 
+
 RunningRecord::RunningRecord(const RunningRecord& obj) :Record(obj)
 {
 	this->payment = obj.payment;

@@ -45,6 +45,8 @@ public:
 
 	bool transformTTToCSV();
 
+	void clearHidenTable();
+	
 	Table getTable();			//返回这个让table对象
 
 };

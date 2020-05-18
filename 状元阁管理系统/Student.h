@@ -54,5 +54,7 @@ public:
 	void setRequirement(string);
 
 	friend class OperateSTD;
+
+	int getDownPayment();
 };
 #endif;

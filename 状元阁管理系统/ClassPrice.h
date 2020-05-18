@@ -26,5 +26,8 @@ public:
 	void setClassPrice(int classTC, int IP, int OP, string remark);
 	
 	int getType();
+	int getInPrice();
+	int getOutPrice();
+
 };
 #endif

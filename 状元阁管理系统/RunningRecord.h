@@ -27,6 +27,7 @@ public:
 
 	~RunningRecord();
 	
+
 	RunningRecord(const RunningRecord&);
 
 	RunningRecord operator= (const RunningRecord&);

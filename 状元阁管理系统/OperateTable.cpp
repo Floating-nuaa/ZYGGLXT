@@ -746,3 +746,7 @@ int OperateTable::checkHowLongBelonging(Table TEATab)
 	}
 }
 
+void OperateTable::clearHidenTable()
+{
+	this->table.clearThisTable();
+}

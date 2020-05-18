@@ -18,7 +18,7 @@ protected :
 
 	int ownerID;//所有者的状元阁唯一识别号
 
-	string selfName;
+	string selfName;  //
 
 public :
 
@@ -34,7 +34,6 @@ public :
 	string getOwnerName();
 
 	int getOwnerID();
-	void setOwnerName();
 };
 
 #endif // ! FATHER_TABLE_H_

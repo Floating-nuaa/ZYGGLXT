@@ -1,2 +1,6 @@
-﻿  Test.cpp
+﻿  TollMenu.cpp
+  TransactionRecord.cpp
+  ViolationMenu.cpp
+  正在生成代码...
+E:\VisualStudio\ZYGGLXT\状元阁管理系统\TollMenu.cpp(210): warning C4715: “TollMenu::getClassTypeInPrice”: 不是所有的控件路径都返回值
   状元阁管理系统.vcxproj -> E:\VisualStudio\ZYGGLXT\Debug\状元阁管理系统.exe

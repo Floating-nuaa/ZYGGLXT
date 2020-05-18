@@ -6,6 +6,8 @@
 #include "stdafx.h"
 #include "OperateSTD.h"
 #include "RecordInfo.h"
+#include "OperateTable.h"
+#include "ConClassPrice.h"
 
 /******************************************************************
 	说明：这个类得封装性非常强，只对外部提供一个接口display
@@ -35,6 +37,9 @@ protected:
 	
 	Student checkSTDInfo(string STDname); 
 		//通过学生姓名查询学生信息，并生成一个学生对象返回会来 
+	int HowMuchToPay(Student &);
+
+	int getClassTypeInPrice(int );
 
 public:
 

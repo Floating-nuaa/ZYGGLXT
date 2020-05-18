@@ -23,7 +23,7 @@ Student::Student(char* name, char sex, char* phone, char* QQ, Purpose subj, stri
 Student::Student(char* name, char sex, char* phone, Purpose subj,string requirement , int downpayment )
 	:People(name,sex,phone),sub(subj)
 {
-	
+	strcpy_s(QQ, "无记录");
 	strcpy_s(this->requirement, requirement.c_str());
 	this->downPayment = downpayment;
 	this->downPayment = downpayment;
@@ -33,6 +33,7 @@ Student::Student(char* name, char* phone, Purpose subj, string requirement , int
 :People (name,phone), sub(subj)
 {
 	
+	strcpy_s(QQ, "无记录");
 	strcpy_s(this->requirement, requirement.c_str());
 	this->downPayment = downpayment;
 	this->downPayment = downpayment;
@@ -43,6 +44,7 @@ Student::Student(char* name, Purpose subj, string requirement, int downpayment )
 	:People(name) ,sub(subj)
 {
 	
+	strcpy_s(QQ, "无记录");
 	strcpy_s(this->requirement, requirement.c_str());
 	this->downPayment = downpayment;
 	this->downPayment = downpayment;
@@ -54,6 +56,7 @@ Student::Student(char* name, char sex, Purpose subj, string requirement , int do
 
 {
 	
+	strcpy_s(QQ, "无记录");
 	strcpy_s(this->requirement, requirement.c_str());
 	
 	this->downPayment = downpayment;
@@ -123,4 +126,9 @@ void Student::setDownPayment(int DP)
 void Student::setRequirement(string s)
 {
 	strcpy_s(requirement, s.c_str());
+}
+
+int Student:: getDownPayment()
+{
+	return this->downPayment;
 }

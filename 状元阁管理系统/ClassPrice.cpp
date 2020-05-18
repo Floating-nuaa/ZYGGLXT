@@ -36,3 +36,15 @@ int ClassPrice::getType()
 {
 	return this->classTypeCode;
 }
+
+
+int ClassPrice::getInPrice() 
+{
+	return this->inPrice;
+}
+
+
+int ClassPrice::getOutPrice()
+{
+	return this->outPrice;
+}

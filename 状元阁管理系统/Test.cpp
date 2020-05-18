@@ -9,6 +9,7 @@
 #include "OperateTable.h"
 #include "RegisterManagerMenu.h"
 #include "FeasibleCmd.h"
+#include "TollMenu.h"
 #include "AddTABMenu.h"
 #include "OperateSTD.h"
 #include "ViolationMenu.h"
@@ -18,14 +19,16 @@ using namespace std;
 int main() 
 
 {
-	Table T;
+	Manager M;
+	TollMenu T(M);
+	T.display();
 
 	/*AddTABMenu AT;
 	AT.display();
 	T = AT.getTable();
 	OperateTable OT(T);
 	OT.saveThisFile();
-	*/
+	
 	OperateTable OT,OT1;
 	OT.updateThisTable();
 	OT.readPreFile("≈Àº—ª‘");
@@ -34,6 +37,8 @@ int main()
 	OT1.readPreFile("–°∑…");
 	T = OT1.getTable();
 	T.displayTEA();
+	*/
+
 }
 
 

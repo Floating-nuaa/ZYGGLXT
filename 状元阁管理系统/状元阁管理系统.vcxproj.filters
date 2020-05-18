@@ -210,6 +210,9 @@
     <ClCompile Include="TabNum.cpp">
       <Filter>源文件\数据层\信息数据</Filter>
     </ClCompile>
+    <ClCompile Include="QueryRecord.cpp">
+      <Filter>源文件\业务层</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Date.h">
@@ -352,6 +355,12 @@
     </ClInclude>
     <ClInclude Include="TabNum.h">
       <Filter>头文件\文件类</Filter>
+    </ClInclude>
+    <ClInclude Include="SalaryTable.h">
+      <Filter>头文件\实物类</Filter>
+    </ClInclude>
+    <ClInclude Include="QueryRecord.h">
+      <Filter>头文件\抽象类</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
