@@ -207,6 +207,9 @@
     <ClCompile Include="ConClassPrice.cpp">
       <Filter>源文件\Config</Filter>
     </ClCompile>
+    <ClCompile Include="TabNum.cpp">
+      <Filter>源文件\数据层\信息数据</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Date.h">
@@ -346,6 +349,9 @@
     </ClInclude>
     <ClInclude Include="ConClassPrice.h">
       <Filter>头文件\Config</Filter>
+    </ClInclude>
+    <ClInclude Include="TabNum.h">
+      <Filter>头文件\文件类</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -2,7 +2,7 @@
 #define STORETABLE_H_
 #include "Table.h"
 #include "Lesson.h"
-
+#include "TabNum.h"
 
 class StoreTable 
 
@@ -24,6 +24,9 @@ protected:
 	int num;							//课程数
 	int classType;
 
+	int tableID;						//课表编号
+
+	
 public:
 
 	friend class Table;
@@ -48,6 +51,9 @@ public:
 
 	int getClassType();
 
+	void setTableID();					//更改课表的编号，在存入文件的时候更改
+
+	void setTableID( const  StoreTable &);
 };
 
 #endif // ! STORETABLE_H_

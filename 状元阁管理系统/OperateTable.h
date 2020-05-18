@@ -29,12 +29,12 @@ public:
 
 	//对父类虚函数进行重写 
 
-	virtual bool readPreFile();			//读取前置文件，把数据读出到当前的Table
-	
 	virtual bool saveThisFile();		//保存当前文件，把当前的Table保存文件
 	
 	bool saveThisFile(int ruler);
 
+	virtual bool readPreFile();			//读取前置文件，把数据读出到当前的Table
+	
 	bool readPreFile(string name);
 
 	bool readPreFile(string name, int ordinal);//读出这个人的第几个课表

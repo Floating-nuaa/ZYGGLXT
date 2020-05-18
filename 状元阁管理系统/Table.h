@@ -38,8 +38,11 @@ protected:
     char theOtherName[30];//配对教师姓名
 
     int classType;//记录课程类型
+    
+    int tableID;
 
 public:
+
     
     friend class OperateTable;
     friend class StoreTable;
@@ -77,6 +80,8 @@ public:
     
     void shortShowTEA(); //简短展示老师表头信息
 
+    void clearThisTable(); //清空当前课表内的内容
+
     int getNum();
     
     string getSelfName();
@@ -84,6 +89,8 @@ public:
     int getClassType();
 
     string getTheOtherName();
+
+    int getTableID();
 };
 #endif 
 

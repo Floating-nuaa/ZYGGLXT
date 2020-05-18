@@ -18,19 +18,22 @@ using namespace std;
 int main() 
 
 {
-	OperateTEA OT,OT1;
-	Teacher T,T1;
-	/*OT.getInfoFromScreen();
-	OT.saveThisFile();
-	OT.getInfoFromScreen();
-	OT.saveThisFile();*/
-	OT.getInfoFromScreen();
-	OT.saveThisFile();
-	OT.readPreFile(3);
-	T = OT.getTeacher();
-	T.display();
-	return 0;
+	Table T;
 
+	/*AddTABMenu AT;
+	AT.display();
+	T = AT.getTable();
+	OperateTable OT(T);
+	OT.saveThisFile();
+	*/
+	OperateTable OT,OT1;
+	OT.updateThisTable();
+	OT.readPreFile("≈Àº—ª‘");
+	T = OT.getTable();
+	T.displaySTD();
+	OT1.readPreFile("–°∑…");
+	T = OT1.getTable();
+	T.displayTEA();
 }
 
 

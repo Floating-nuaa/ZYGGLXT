@@ -83,7 +83,7 @@ void ViolationMenu::display()
 		}
 		return;
 	}
-	catch(int goal)
+	catch(int)
 	{
 		cout << "教师信息打开失败,请检查教师信息是否存在或姓名的拼写是否正确" << endl;
 		cout << "如不存在，请先创建教师信息!!!" << endl;

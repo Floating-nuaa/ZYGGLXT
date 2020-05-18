@@ -13,6 +13,7 @@ Table::Table(People* peo, Date startDate, Date endDate,int num,char* name, int T
 				//起止时间，推入队列,从开始到结束推入
 
 {
+	this->tableID = -1;
 	this->classType = Type;
 	strcpy_s(this->theOtherName, name);
 	if (num > 5)
@@ -41,6 +42,7 @@ Table::Table(People* peo, char* name, int Type):FatherTable(peo)
 	//只传入人，然后进行输入课表，推入队列
 
 {
+	this->tableID = -1;
 	this->classType = Type;
 	string str = peo->getName();//获得表格拥有着
 	selfName = "学生: " + str + " 的课表 ";
@@ -123,6 +125,7 @@ Table::Table(People* peo, Date startDate, int x,int num, char* name, int Type)
 	//开始时间，课程节数,x是有几节课，num是第几节课
 
 {
+	this->tableID = -1;
 	this->classType = Type;
 
 	string str = peo->getName();//获得表格拥有着
@@ -155,6 +158,7 @@ Table::Table() :FatherTable( )
 	strcpy_s(this->name, pe.getName());
 	this->ID = pe.getID();
 	*/
+	this->tableID = -1;
 	this->classType = 1;
 	strcpy_s(this->theOtherName, "test");
 
@@ -169,6 +173,7 @@ Table::Table() :FatherTable( )
 
 Table::Table(const Table& obj):FatherTable(obj)
 {
+	this->tableID = obj.tableID;
 	this->classType = obj.classType;
 	this->endDate = obj.endDate;
 	this->startDate = obj.startDate;
@@ -177,9 +182,12 @@ Table::Table(const Table& obj):FatherTable(obj)
 	strcpy_s(this->theOtherName, obj.theOtherName);
 }
 
+
+
 Table::Table(StoreTable& obj) 
 
 {
+	this->tableID = obj.tableID;
 	strcpy_s(this->ownerName, obj.ownerName);
 	this->ownerID = obj.ownerID;
 
@@ -210,6 +218,7 @@ Table::Table(StoreTable& obj)
 void Table::translateFromStoreTable(StoreTable& obj) 
 
 {
+	this->tableID = obj.tableID;
 	strcpy_s(this->ownerName, obj.ownerName);
 	
 	this->ownerID = obj.ownerID;
@@ -226,7 +235,9 @@ void Table::translateFromStoreTable(StoreTable& obj)
 	{
 		this->lessonTimeTable.push(obj.lessonTable[i]);
 	}
+	
 	startDate = obj.lessonTable[0];
+
 	//endDate是不需要的信息，为了避免警告将其初始化
 	endDate = obj.lessonTable[0];
 
@@ -236,9 +247,11 @@ void Table::translateFromStoreTable(StoreTable& obj)
 
 Table Table::operator=(const Table& obj) 
 {
+	this->tableID = obj.tableID;
 	this->classType = obj.classType;
 
 	FatherTable ::operator=(obj);
+
 	this->endDate = obj.endDate;
 	this->startDate = obj.startDate;
 	this->lessonTimeTable = obj.lessonTimeTable;
@@ -255,7 +268,7 @@ void Table::displaySTD()
 //展示一下课表
 
 {
-	FatherTable::display();
+	cout << "学生  " << this->ownerName << "  的课表" << endl;
 
 	string TYPE = translateNumToClassType(this->classType);
 	
@@ -284,7 +297,7 @@ void Table::displayTEA()
 //展示一下课表
 
 {
-	FatherTable::display();
+	cout << "教师  " << this->ownerName << "  的课表" << endl;
 
 	string TYPE = translateNumToClassType(this->classType);
 
@@ -339,13 +352,6 @@ void Table:: shortShowTEA()
 
 
 
-
-int Table::getNum() 
-
-{
-	return this->number;
-}
-
 void Table::ReviseTeam() 
 
 {
@@ -360,7 +366,31 @@ void Table::ReviseTeam()
 
 }
 
+void Table::ReviseTeamToSTD()
 
+{
+	string str = this->theOtherName;
+
+	selfName = "学生: " + str + " 的课表 ";
+
+	char TempName[30];
+
+	strcpy_s(TempName, this->ownerName);
+	strcpy_s(this->ownerName, this->theOtherName);
+	strcpy_s(this->theOtherName, TempName);
+
+}
+
+
+
+void Table::clearThisTable() 
+{
+	//循环清空队列里的课程
+	while (!lessonTimeTable.empty())
+	{
+		lessonTimeTable.pop();
+	}
+}
 
 string Table::getSelfName()
 {
@@ -375,6 +405,7 @@ int Table::getClassType()
 }
 
 
+
 string Table::getTheOtherName() 
 {
 	string str = this->theOtherName;
@@ -382,17 +413,16 @@ string Table::getTheOtherName()
 }
 
 
-void Table::ReviseTeamToSTD()
+
+int Table::getNum() 
 
 {
-	string str = this->theOtherName;
+	return this->number;
+}
 
-	selfName = "学生: " + str + " 的课表 ";
 
-	char TempName[30];
 
-	strcpy_s(TempName, this->ownerName);
-	strcpy_s(this->ownerName, this->theOtherName);
-	strcpy_s(this->theOtherName, TempName);
-
+int Table::getTableID() 
+{
+	return this->tableID;
 }

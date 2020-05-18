@@ -1,6 +1,2 @@
-﻿  OperateTable.cpp
-  OperateTEA.cpp
-  ViolationRecord.cpp
-  正在生成代码...
-E:\VisualStudio\ZYGGLXT\状元阁管理系统\OperateTable.cpp(720): warning C4715: “OperateTable::checkHowLongBelonging”: 不是所有的控件路径都返回值
+﻿  Test.cpp
   状元阁管理系统.vcxproj -> E:\VisualStudio\ZYGGLXT\Debug\状元阁管理系统.exe

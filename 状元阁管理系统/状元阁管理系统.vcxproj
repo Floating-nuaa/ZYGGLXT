@@ -178,6 +178,7 @@
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="Table.cpp" />
     <ClCompile Include="TableInfo.cpp" />
+    <ClCompile Include="TabNum.cpp" />
     <ClCompile Include="Teacher.cpp" />
     <ClCompile Include="TEAInfo.cpp" />
     <ClCompile Include="Test.cpp" />
@@ -224,6 +225,7 @@
     <ClInclude Include="Table.h" />
     <ClInclude Include="FatherTable.h" />
     <ClInclude Include="TableInfo.h" />
+    <ClInclude Include="TabNum.h" />
     <ClInclude Include="Teacher.h" />
     <ClInclude Include="OperateMode.h" />
     <ClInclude Include="TEAInfo.h" />

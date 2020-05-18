@@ -52,13 +52,14 @@ bool OperateTable::saveThisFile()
 	ST1.buildStoreTable(this->table);
 
 	try {
-		file.open(saveAddress.getCompleteAddress(), ios::out | ios::binary|ios::app);
+		file.open(saveAddress.getCompleteAddress(),ios::binary|ios::app);
 		if (!file)
 		{
 			//´ò¿ªÎÄ¼þÊ§°Ü£¬Å×³öÒì³£
 
 			throw 978;
 		}
+		ST1.setTableID();
 		file.write((char*)&ST1, sizeof(ST1));
 		file.flush();
 	}
@@ -74,23 +75,23 @@ bool OperateTable::saveThisFile()
 
 	objTab.ReviseTeam();
 
-	ST2.setOtherName(objTab.getOwnerName());
-
 	ST2.buildStoreTable(objTab);
 	
 	string str = objTab.getOwnerName();
 	
 	this->saveAddress.setName(str);
+
 	this->saveAddress.GiveTeacherALife();
 
 	try {
-		file.open(saveAddress.getCompleteAddress(), ios::out | ios::binary);
+		file.open(saveAddress.getCompleteAddress(), ios::app | ios::binary);
 		if (!file)
 		{
 			//´ò¿ªÎÄ¼þÊ§°Ü£¬Å×³öÒì³£
 
 			throw 978;
 		}
+		ST2.setTableID(ST1);
 		file.write((char*)&ST2, sizeof(ST2));
 		file.flush();
 	}
@@ -141,11 +142,13 @@ bool OperateTable::saveThisFile(int ruler) //µ÷ÓÃÕâ¸öµÄÊÇ½ÌÊ¦µÄ¿Î±í£¬½ÌÊ¦Ãû×ÖÔÚÇ
 
 	file.close();
 
+
+
 	int howLong;
 	howLong = checkHowLongBelonging(objTab);		//ÏÖÔÚÀï±ßÊÇ½ÌÊ¦¿Î±í
-	short tt = (howLong - 1) * sizeof(ST1);			
+	int tt = (howLong - 1) * sizeof(ST1);		//»ñµÃÆ«ÒÆÁ¿	
 
-	objTab.ReviseTeam();
+	objTab.ReviseTeamToSTD();
 
 	ST2.setOtherName(objTab.getOwnerName());
 
@@ -274,6 +277,7 @@ bool OperateTable::readPreFile(string name, int oridinal)
 //oridinal ´ú±íµÚ¼¸¸öÊý¾Ý
 {
 	string thisName = name;
+
 	saveAddress.setName(thisName);
 
 	StoreTable ST;
@@ -288,7 +292,7 @@ bool OperateTable::readPreFile(string name, int oridinal)
 
 			throw 987;
 		}
-		short t = (oridinal-1) * sizeof(this->table);
+		int t = (oridinal-1) * sizeof(ST);
 		
 		file.seekg(t, ios::beg);
 		/*************************************************************
@@ -434,15 +438,17 @@ bool OperateTable::updateThisTable()
 	cout << "\tÐÞ\t¸Ä\t¿Î\t±í" << endl<<endl;
 	cout << "ÇëÊäÈë½ÌÊ¦ÐÕÃû :  ";
 	cin >> TEAName;
-	bool flag;
+	bool flag=false;
 	while (readPreFile(TEAName,cnt))
 	{
 		
-		this->table.shortShowSTD();
+		
 		if (!checkIsThisTable()) 
 		{
 			
 			cout << endl;
+			cnt++;
+			this->table.clearThisTable();
 			continue;
 		}
 		if (changeThisTable())			//¿Î±í±ä¸ü
@@ -454,7 +460,7 @@ bool OperateTable::updateThisTable()
 			cout << "ÊÇ·ñÐÞ¸Ä´ËÎ»ÀÏÊ¦µÄÆäËû¿Î±í£¿" << endl;
 			if (!checkToContinue())
 			{
-				operationCancled();
+				cout << "ÐÞ¸Ä¿Î±í²Ù×÷Íê±Ï,ÇëÖ¸Ê¾!!" << endl;
 				return true;
 			}
 		}
@@ -531,12 +537,14 @@ bool OperateTable::changeThisTable()
 	system("cls");
 	
 	Table show(this->table);
+
 	show.displayTEA();
+	
 	cout << endl << endl;
 	
 	int temp = 0;
 	
-	while (temp <= 0 || temp > 3)
+	while (temp <= 0 || temp > 4)
 	{
 		cout << "1. Ôö¼Ó¿Î³Ì 2. É¾¼õ¿Î³Ì 3. µ÷Õû¿Î³ÌÊ±¼ä 4. µ÷Õû¿Î³ÌÀàÐÍ"<<endl;
 		cout << "ÇëÑ¡ÔñÒªÊ¹ÓÃµÄ¹¦ÄÜ :  ";
@@ -625,6 +633,7 @@ bool OperateTable::changeThisTable()
 
 				cout << "ÇëÊäÈëÐÂµÄ¿Î³ÌÀàÐÍµÄ¶ÔÓ¦±àºÅ(1-6)  " << endl;
 
+				cin >> type;
 			} while (type <= 0 || type > 6);
 
 			this->table.classType = type;
@@ -646,6 +655,7 @@ bool OperateTable::addLesson()
 	cout << "ÇëÊäÈëÈÕÆÚ      :  ";
 	cin >> day;
 	cout << "ÇëÊäÈëµÚ¼¸½Ú¿Î  :  ";
+	cin >> num;
 	Lesson lesson(month, day, num);
 	this->table.lessonTimeTable.push(lesson);
 	this->table.number++;
@@ -663,9 +673,10 @@ bool OperateTable::deleteLesson()
 	cout << "ÇëÊäÈëÈÕÆÚ      :  ";
 	cin >> day;
 	cout << "ÇëÊäÈëµÚ¼¸½Ú¿Î  :  ";
+	cin >> num;
 
 	Lesson lesson(month, day, num), tem;
-
+	priority_queue <Lesson> RegisterTimeTable;
 	int j = this->table.getNum();
 
 	while (j && this->table.lessonTimeTable.top() != lesson && !this->table.lessonTimeTable.empty())
@@ -673,17 +684,30 @@ bool OperateTable::deleteLesson()
 
 		tem = this->table.lessonTimeTable.top();
 		this->table.lessonTimeTable.pop();
-		this->table.lessonTimeTable.push(tem);
+		RegisterTimeTable.push(tem);
 		j--;
 
 	}
 	
 	if (!j)
 	{
+		while (!RegisterTimeTable.empty())
+		{
+			this->table.lessonTimeTable.push(RegisterTimeTable.top());
+			RegisterTimeTable.pop();
+		}
 		return false;
 	}
 	else
 	{
+		this->table.lessonTimeTable.pop();
+
+		while (!RegisterTimeTable.empty())
+		{
+			this->table.lessonTimeTable.push(RegisterTimeTable.top());
+			RegisterTimeTable.pop();
+		}
+
 		cout << "¿Î³ÌÉ¾³ý³É¹¦! É¾³ýµÄ¿Î³ÌÐÅÏ¢ÈçÏÂ : " << endl;
 		lesson.display();
 		return true;
@@ -694,27 +718,30 @@ bool OperateTable::deleteLesson()
 
 int OperateTable::checkHowLongBelonging(Table TEATab) 
 {
-	string STDName;
-	STDName=TEATab.getTheOtherName();
-	TableInfo testAddress;
-	testAddress.setName(STDName);
+	//´«ÈëµÄ²ÎÊýÊÇÐÞ¸ÄºóÀÏÊ¦¿Î±íµÄÒ»·Ý¿½±´
+	string STDName,TEAName;
+	
+	STDName = TEATab.getTheOtherName();		//»ñµÃÑ§ÉúÐÕÃû
+	int thisID = TEATab.getTableID();
 	int cnt = 1;
 	bool flag = 0;
+
 	while (readPreFile(STDName, cnt))
 
 	{
-		string filename1, filename2;
-		filename1 = this->table.getTheOtherName() + ",dat";
-		filename2 = this->saveAddress.getfileName();
-		if (filename1==filename2)
+		int temID;
+		temID = this->table.getTableID();
+		if (thisID==temID)
 		{
 			flag = 1;
 			return cnt;
 		}
 		cnt++;
 	}
+
 	if (!flag) 
 	{
+		cout << "²éÕÒhowlongÊ§°Ü" << endl;
 		return -1;//Ã»ÓÐÕÒµ½Ôò·µ»Ø-1
 	}
 }

@@ -9,6 +9,7 @@ StoreTable::~StoreTable(){}
 StoreTable::StoreTable():lessonTable()
 
 {
+	this->tableID = -1;
 	strcpy_s(this->ownerName, "Test");
 	this->ownerID = -1;
 	this->classType = 1;
@@ -21,6 +22,7 @@ StoreTable::StoreTable():lessonTable()
 StoreTable::StoreTable(const StoreTable& obj) 
 
 {
+	this->tableID = obj.tableID;
 	strcpy_s(this->ownerName, obj.ownerName);
 	this->ownerID = obj.ownerID;
 
@@ -43,6 +45,7 @@ StoreTable::StoreTable(const StoreTable& obj)
 StoreTable::StoreTable(Table tab)
 
 {
+	this->tableID = tab.tableID;
 	strcpy_s(this->ownerName, tab.ownerName);
 	this->ownerID = tab.ownerID;
 
@@ -70,7 +73,10 @@ StoreTable::StoreTable(Table tab)
 void StoreTable::buildStoreTable(Table tab)
 
 {
+	this->tableID = tab.tableID;
+
 	strcpy_s(this->ownerName, tab.ownerName);
+
 	this->ownerID = tab.ownerID;
 
 	this->classType = tab.classType;
@@ -121,8 +127,22 @@ int StoreTable::getNum()
 	return this->num;
 }
 
+
+
 int StoreTable::getClassType()
 {
 	return this->classType;
 }
 
+void StoreTable::setTableID()
+{
+	TabNum TM;
+
+	this->tableID = TM.returnNum();
+	return;
+}
+
+void StoreTable::setTableID(const StoreTable & obj) 
+{
+	this->tableID = obj.tableID;
+}
