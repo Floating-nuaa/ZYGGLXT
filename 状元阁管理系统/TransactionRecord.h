@@ -2,7 +2,7 @@
 #define  TRANSACTIONRECORD_H_
 #include "Record.h"
 #include "Student.h"
-
+#include "stdafx.h"
 class TransactionRecord :public Record
 
 	//交易记录类
@@ -27,6 +27,9 @@ public:
 	
 	virtual TransactionRecord operator =(const TransactionRecord&);
 
+	void display();
+
+	void shortShow();
 };
 
 #endif // ! TRANSACTIONRECORD_H_

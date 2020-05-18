@@ -173,7 +173,7 @@ void TollMenu::display()
 			return;
 		}
 
-		cout << "  收银成功！ 交易详细信息如下 : " << endl;
+		cout << "收银成功！ 交易详细信息如下 : " << endl;
 		cout << "收银管理员姓名  " << this->operatorManager.getName() << endl;
 		cout << "学生姓名        " << thisStud.getName() << endl;
 		cout << "收款金额        " << payment << endl;
@@ -207,6 +207,7 @@ int TollMenu::getClassTypeInPrice(int key)
 		 CP= (*it).second;
 		 return CP.getInPrice();
 	}
+	return -1;
 }
 
 

@@ -48,6 +48,8 @@ ViolationRecord QueryRecord::getViolationRecord(int ruler)
 	Date d;
 	ViolationRecord Violation(temp,test,0,0,d,"test");
 
+	int t = (ruler - 1) * sizeof(Violation);
+
 	RecordInfo ADD("ViolationRecord");
 	ifstream file;
 
@@ -59,6 +61,8 @@ ViolationRecord QueryRecord::getViolationRecord(int ruler)
 		cout << "请检查是否存在路径" << ADD.getCompleteAddress() << endl;
 		throw 4558;
 	}
+
+	file.seekg(t, ios::beg);
 
 	file.read((char*)&Violation, sizeof(Violation));
 
@@ -77,10 +81,12 @@ TransactionRecord QueryRecord::getTransactionRecord(int ruler)
 	Date d;
 	TransactionRecord Transaction(temp,test);
 
-	RecordInfo ADD("TransactionRecord");
-	ofstream file;
+	int t = (ruler - 1) * sizeof(Transaction);
 
-	file.open(ADD.getCompleteAddress(), ios::out | ios::binary | ios::app);
+	RecordInfo ADD("TransactionRecord");
+	ifstream file;
+
+	file.open(ADD.getCompleteAddress(), ios::in | ios::binary );
 
 	if (!file)
 	{
@@ -89,7 +95,9 @@ TransactionRecord QueryRecord::getTransactionRecord(int ruler)
 		throw 4558;
 	}
 
-	file.write((char*)&Transaction, sizeof(Transaction));
+	file.seekg(t, ios::beg);
+
+	file.read((char*)&Transaction, sizeof(Transaction));
 
 	file.close();
 
@@ -105,11 +113,13 @@ TransactionRecord QueryRecord::getHidenTransactionRecord(int ruler)
 	Student test;
 	Date d;
 	TransactionRecord Transaction(temp, test);
+	
+	int t = (ruler - 1) * sizeof(Transaction);
 
 	RecordInfo SUM;
-	ofstream file2;
+	ifstream file2;
 
-	file2.open(SUM.getCompleteAddress(), ios::out | ios::binary | ios::app);
+	file2.open(SUM.getCompleteAddress(), ios::in | ios::binary);
 
 	if (!file2)
 	{
@@ -118,7 +128,9 @@ TransactionRecord QueryRecord::getHidenTransactionRecord(int ruler)
 		throw 4558;
 	}
 
-	file2.write((char*)&Transaction, sizeof(Transaction));
+	file2.seekg(t, ios::beg);
+
+	file2.read((char*)&Transaction, sizeof(Transaction));
 
 	file2.close();
 

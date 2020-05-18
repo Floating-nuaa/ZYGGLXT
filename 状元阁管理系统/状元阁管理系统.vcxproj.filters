@@ -213,6 +213,9 @@
     <ClCompile Include="QueryRecord.cpp">
       <Filter>源文件\业务层</Filter>
     </ClCompile>
+    <ClCompile Include="SalaryTable.cpp">
+      <Filter>源文件\数据层\信息数据</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Date.h">

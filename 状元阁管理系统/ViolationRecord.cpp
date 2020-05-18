@@ -41,4 +41,29 @@ ViolationRecord ViolationRecord::operator =(const ViolationRecord& obj)
 	return *this;
 }
 
+void ViolationRecord::display() 
+{
+	string What = trnaslateVioCode(this->FirstVioCode, this->SecondCVioCode);
+	string When = TimeStampToStandard(this->timeStamp);
+	cout << "教学事故记录生成时间" << When << endl;
+	cout << "教师姓名 :  " << this->VioTeacher.getName() << endl;
+	cout << "发生时间 :  ";
+	this->OccurTime.display();
+	cout << endl;
+	
+	cout << "教学事故 :  " << What << endl;
+	cout << "事故备注 ： " << this->Remarks << endl;
+	cout << "是否查询教师个人信息或记录管理员信息" << endl;
+	if (checkToContinue())
+	{
+		cout << "当前教师信息如下:  " << endl;
+		this->VioTeacher.display();
+		cout << "生成记录管理员信息如下 :  " << endl;
+		this->operatorManager.display();
+
+	}
+	return;
+}
+
+
 

@@ -16,7 +16,7 @@
 #include "Record.h"
 #include "Teacher.h"
 
-class ViolationRecord :Record 
+class ViolationRecord :public Record 
 {
 protected:
 	
@@ -32,7 +32,8 @@ public :
 	~ViolationRecord();
 	ViolationRecord(const ViolationRecord&);
 	ViolationRecord operator =(const ViolationRecord&);
-
+	void display();
+	void shortShow();
 };
 
 #endif

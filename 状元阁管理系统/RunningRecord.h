@@ -2,6 +2,7 @@
 #define RUNNINGRECORD_H_
 #include "Record.h"
 #include <string>
+#include "stdafx.h"
 using namespace std;
 
 /**************************************************************
@@ -33,6 +34,10 @@ public:
 	RunningRecord operator= (const RunningRecord&);
 	
 	//重载一个赋值号
+
+
+	void display();
+	void shortShow();
 
 };
 #endif // !RUNNINGRECORD_H_

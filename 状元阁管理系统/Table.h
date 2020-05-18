@@ -80,6 +80,8 @@ public:
     
     void shortShowTEA(); //简短展示老师表头信息
 
+    void shortShortShowTEA(); //精简的展示信息
+
     void clearThisTable(); //清空当前课表内的内容
 
     int getNum();

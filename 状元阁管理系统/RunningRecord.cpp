@@ -1,4 +1,8 @@
 #include "RunningRecord.h"
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
 
 RunningRecord::RunningRecord(Manager& man, float pay, 
 	string Remarks, string payer , string collect )
@@ -33,3 +37,31 @@ RunningRecord RunningRecord:: operator= (const RunningRecord& obj)
 
 }
 
+
+void RunningRecord::display()
+{
+	string When = TimeStampToStandard(this->timeStamp);
+	cout << "记录时间 :  " << When;
+	cout << "开支费用 :  " << this->payment << endl;
+	cout << "开支用途 :  " << this->remarks << endl;
+	cout << "记录者   :  " << this->payer << endl;
+	cout << "是否查看此次记录的管理员信息和支付方式？" << endl;
+	if (checkToContinue()) 
+	{
+		cout << "支付方式 :  " << this->collectWay << endl;
+		cout << "记录管理员信息的详细信息 :  " << endl;
+		this->operatorManager.display();
+	}
+
+}
+
+
+void RunningRecord::shortShow()
+{
+	string When = TimeStampToStandard(this->timeStamp);
+
+	cout << setw(5)  << this->payment
+		 << setw(15) << this->remarks
+		 << setw(20) << When
+		 << endl;
+}

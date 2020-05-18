@@ -268,6 +268,8 @@ void Table::displaySTD()
 //展示一下课表
 
 {
+	Table objTab(*this);
+
 	cout << "学生  " << this->ownerName << "  的课表" << endl;
 
 	string TYPE = translateNumToClassType(this->classType);
@@ -276,17 +278,17 @@ void Table::displaySTD()
 	cout << "课程类型 :  " << TYPE << endl;
 	cout << "课程节数 :  " << this->number << endl;
 
-	while(!lessonTimeTable.empty())
+	while(!objTab.lessonTimeTable.empty())
 
 	//循环拿出优先队列中的课程
 	
 	{
 
-		Lesson lesson (lessonTimeTable.top());
+		Lesson lesson (objTab.lessonTimeTable.top());
 
 		lesson.display();
 		
-		lessonTimeTable.pop();
+		objTab.lessonTimeTable.pop();
 
 	}
 
@@ -297,6 +299,8 @@ void Table::displayTEA()
 //展示一下课表
 
 {
+	Table objTab(*this);
+
 	cout << "教师  " << this->ownerName << "  的课表" << endl;
 
 	string TYPE = translateNumToClassType(this->classType);
@@ -305,13 +309,13 @@ void Table::displayTEA()
 	cout << "课程类型 :  " << TYPE << endl;
 	cout << "课程节数： " << this->number << endl;
 
-	while (!lessonTimeTable.empty())
+	while (!objTab.lessonTimeTable.empty())
 
 		//循环拿出优先队列中的课程
 
 	{
 
-		Lesson lesson(lessonTimeTable.top());
+		Lesson lesson(objTab.lessonTimeTable.top());
 
 		lesson.display();
 
@@ -327,7 +331,8 @@ void Table::displayTEA()
 void Table::shortShowSTD()
 {
 	//简短展示学生表头信息
-	FatherTable::display();
+	cout << "学生  " << this->ownerName << "  的课表" << endl;
+
 
 	string TYPE = translateNumToClassType(this->classType);
 
@@ -340,13 +345,25 @@ void Table::shortShowSTD()
 void Table:: shortShowTEA() 
 {
 	//简短展示老师表头信息
-	FatherTable::display();
+	cout << "教师  " << this->ownerName << "  的课表" << endl;
+
 
 	string TYPE = translateNumToClassType(this->classType);
 
 	cout << "该节课学生是 :  " << this->theOtherName << endl;
 	cout << "课程类型 :  " << TYPE << endl;
 	cout << "课程节数： " << this->number << endl;
+
+}
+void Table::shortShortShowTEA() 
+{
+
+
+	string TYPE = translateNumToClassType(this->classType);
+
+	cout << setw(5) << this->theOtherName;
+	cout << setw(10) << TYPE;
+	cout << setw(5) << this->number << "节" << endl;
 
 }
 

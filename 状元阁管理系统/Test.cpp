@@ -14,14 +14,15 @@
 #include "OperateSTD.h"
 #include "ViolationMenu.h"
 #include "ConClassPrice.h"
+#include "SalaryTable.h"
 using namespace std;
 
 int main() 
 
 {
-	Manager M;
-	TollMenu T(M);
-	T.display();
+	//Manager M;
+	//TollMenu T(M);
+	//T.display();
 
 	/*AddTABMenu AT;
 	AT.display();
@@ -38,7 +39,15 @@ int main()
 	T = OT1.getTable();
 	T.displayTEA();
 	*/
+	OperateTEA OT;
+	Teacher ttt;
 
+	OT.readPreFile("Ð¡·É");
+	ttt = OT.getTeacher();
+	SalaryTable ST(ttt);
+	ST.showAllTable();
+	ST.briefShow();
+	return 0;
 }
 
 

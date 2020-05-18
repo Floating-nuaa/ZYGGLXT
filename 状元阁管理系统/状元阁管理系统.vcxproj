@@ -173,6 +173,7 @@
     <ClCompile Include="RegisterManagerMenu.cpp" />
     <ClCompile Include="RunningMenu.cpp" />
     <ClCompile Include="RunningRecord.cpp" />
+    <ClCompile Include="SalaryTable.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="STDInfo.cpp" />
     <ClCompile Include="StoreTable.cpp" />
