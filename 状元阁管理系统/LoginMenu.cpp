@@ -14,7 +14,8 @@ void LoginMenu:: display()
 	cout << "********************************************************" << "" << endl;
 	cout << endl << endl << endl ;
 	cout <<"\t"<< "欢迎使用状元阁信息管理系统" << endl;
-	cout <<"\t\t"<< "请您先进行登陆！"<<endl<<endl;
+	cout << endl;
+	cout <<"\t"<< "请 您 先 进 行 登 陆 ！"<<endl<<endl;
 	cout << endl << endl << endl << endl << endl;
 	cout << "********************************************************" << endl;
 	system("pause");
@@ -47,10 +48,11 @@ string LoginMenu::login_one()
 //登录函数，实现的功能有链接注册函数和进入主功能页面
 {
 	system("cls");
-	cout << "********************************************************" << endl;
+	cout << "*********************************************************" << endl;
+
 	cout << endl;
-	cout << "\t\t首次登陆请输入指令register！" << endl<<endl;
-	cout << "\t\t请输入密钥：  ";
+	cout << "\t如果这是您首次登录,请输入指令register！" << endl<<endl;
+	cout << "\t请输入您的个人登录码 :  ";
 	string s;
 	s = getStringWithoutShow();
 	cout << endl << endl << endl << endl << endl;
@@ -64,14 +66,15 @@ string LoginMenu::login_one()
 void LoginMenu::register_one() {
 
 		system("cls");
-		cout << "********************************************************" << endl;
+		cout << "*****************************************************************" << endl;
 		cout << endl ;
-		cout << "请输入BigBoss的授权码：";
+		cout << "\t您即将设置个人登录密码,设置后您需要重新进入本系统 " << endl<<endl;
+		cout << "请输入BigBoss的授权码 :  ";
 		string s;
 		s = getStringWithoutShow();
 		bool tem = 0;
 		cout << endl << endl << endl << endl << endl;
-		cout << "********************************************************" << endl;
+		cout << "*****************************************************************" << endl;
 		
 		if (checkBigPassword(s))
 
@@ -90,9 +93,9 @@ void LoginMenu::register_one() {
 void LoginMenu::register_two()
 {
 	system("cls");
-	cout << "********************************************************" << endl;
-	cout << endl << endl << endl << endl << endl;
-	cout << "请输入注册用户名: ";
+	cout << "*****************************************************************" << endl;
+	cout << endl;
+	cout << "\t请输入注册用户名 :  ";
 	string name,password;
 	cin >> name;
 	cout << "请输入您的密钥:   ";

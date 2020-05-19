@@ -146,6 +146,8 @@
     <ClCompile Include="ClassPrice.cpp" />
     <ClCompile Include="ConClassPrice.cpp" />
     <ClCompile Include="ConfigInfo.cpp" />
+    <ClCompile Include="Handler.cpp" />
+    <ClCompile Include="InsideMenu.cpp" />
     <ClCompile Include="MainEntrance.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="OperaMode.cpp" />
@@ -153,7 +155,6 @@
     <ClCompile Include="AddSTdMenu.cpp" />
     <ClCompile Include="BaseFile.cpp" />
     <ClCompile Include="Date.cpp" />
-    <ClCompile Include="DEFINE.cpp" />
     <ClCompile Include="FatherTable.cpp" />
     <ClCompile Include="FeasibleCmd.cpp" />
     <ClCompile Include="Lesson.cpp" />
@@ -201,6 +202,7 @@
     <ClInclude Include="FeasibleCmd.h" />
     <ClInclude Include="Date.h" />
     <ClInclude Include="Handler.h" />
+    <ClInclude Include="InsideMenu.h" />
     <ClInclude Include="Lesson.h" />
     <ClInclude Include="LoginMenu.h" />
     <ClInclude Include="MainEntrance.h" />
@@ -233,8 +235,6 @@
     <ClInclude Include="Teacher.h" />
     <ClInclude Include="OperateMode.h" />
     <ClInclude Include="TEAInfo.h" />
-    <ClInclude Include="Money.h" />
-    <ClInclude Include="Money.cpp" />
     <ClInclude Include="TollMenu.h" />
     <ClInclude Include="TransactionRecord.h" />
     <ClInclude Include="ViolationMenu.h" />

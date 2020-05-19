@@ -90,7 +90,7 @@ bool RegisterManagerMenu::checkQuality()
 		}
 	
 	}
-	catch (int goal) 
+	catch (int) 
 	{
 		cout << "Warning  BigBoss授权码异常 ，请检查文件路径是否存在 ！" << endl;
 		return 0;

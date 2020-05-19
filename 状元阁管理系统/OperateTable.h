@@ -4,7 +4,7 @@
 #include "Table.h"
 #include "stdafx.h"
 #include "TableInfo.h"	//保存文件的地址
-
+#include "AddTABMenu.h"
 class OperateTable : public OperateMode 
 {
 	//操作学生课表的类
@@ -45,10 +45,13 @@ public:
 
 	bool transformTTToCSV();
 
+	void getTableFromScreen();
+
 	void clearHidenTable();
 	
 	Table getTable();			//返回这个让table对象
 
+	string getAddress();
 };
 #endif // !OPERATETABLE_H_
 

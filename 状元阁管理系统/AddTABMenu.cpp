@@ -49,8 +49,6 @@ void AddTABMenu::display()
 		strcpy_s(TEAname, TeacherName.c_str());
 		classType = display2();
 	
-		cout << "请输入课程是第几节课(1-5) :  ";
-		cin >> whenClass;
 	
 	
 		cout << "\t请选择课表的输入方式" << endl;
@@ -64,6 +62,9 @@ void AddTABMenu::display()
 		{
 			case 'A': 
 			{
+
+				cout << "请输入课程是第几节课(1-5) :  ";
+				cin >> whenClass;
 				Date d1, d2;
 				cout << "请输入开始日期" << endl;
 				d1 = getDateFromScreen();
@@ -78,6 +79,9 @@ void AddTABMenu::display()
 
 			case 'B':
 			{
+
+				cout << "请输入课程是第几节课(1-5) :  ";
+				cin >> whenClass;
 				Date d1;
 				int num = 0;
 				cout << "请输入开始日期" << endl;

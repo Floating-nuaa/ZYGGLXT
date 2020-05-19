@@ -15,6 +15,7 @@ QueryRecord:: ~QueryRecord()
 
 RunningRecord QueryRecord::getRunningRecord(int ruler)
 {
+
 	Manager temp;
 	RunningRecord Running(temp,0,"test");
 
@@ -34,11 +35,14 @@ RunningRecord QueryRecord::getRunningRecord(int ruler)
 	}
 	file.seekg(t, ios::beg);
 
+	if (file.eof())
+	{
+		file.close();
+		throw 3131;
+	}
 	file.read((char*)&Running, sizeof(Running));
-
+	
 	file.close();
-
-	return Running;
 }
 
 ViolationRecord QueryRecord::getViolationRecord(int ruler)
@@ -63,7 +67,11 @@ ViolationRecord QueryRecord::getViolationRecord(int ruler)
 	}
 
 	file.seekg(t, ios::beg);
-
+	if (file.eof())
+	{
+		file.close();
+		throw 3131;
+	}
 	file.read((char*)&Violation, sizeof(Violation));
 
 	file.close();
@@ -96,7 +104,11 @@ TransactionRecord QueryRecord::getTransactionRecord(int ruler)
 	}
 
 	file.seekg(t, ios::beg);
-
+	if (file.eof())
+	{
+		file.close();
+		throw 3131;
+	}
 	file.read((char*)&Transaction, sizeof(Transaction));
 
 	file.close();
@@ -129,7 +141,11 @@ TransactionRecord QueryRecord::getHidenTransactionRecord(int ruler)
 	}
 
 	file2.seekg(t, ios::beg);
-
+	if (file2.eof())
+	{
+		file2.close();
+		throw 3131;
+	}
 	file2.read((char*)&Transaction, sizeof(Transaction));
 
 	file2.close();

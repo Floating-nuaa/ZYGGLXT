@@ -65,7 +65,8 @@ bool OperateSTD::saveThisFile()
 	}
 	perFile.write((char*)&stud, sizeof(stud));
 	perFile.close();
-	
+	cout << "学生" << this->stud.getName() << " 的信息保存成功" << endl;
+	cout << "保存路径为 :  " << saveAddress.getCompleteAddress() << endl;
 	return 1;
 }
 

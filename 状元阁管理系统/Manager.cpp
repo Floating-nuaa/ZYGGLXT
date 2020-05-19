@@ -1,7 +1,7 @@
 #include "Manager.h"
 #include <string>
 #include <iostream>
-#include "stdafx.h"
+
 using namespace std;
 
 
@@ -91,10 +91,10 @@ bool Manager::setSSH( )
 	while (newpass1.size()<=6) 
 	{
 		cout << "Warning:  密钥长度不足，请至少设置长度为六位的字符串密钥" << endl<<endl;
-		cout << "请输入新密钥:   ";
+		cout << "请输入新密钥 :  ";
 		newpass1 = getStringWithoutShow();
 	}
-	cout << "请输入确认密钥:   ";
+	cout << "请确认新密钥 :  ";
 	newpass2 = getStringWithoutShow();
 	i = 0;
 	while (newpass1 != newpass2) 
@@ -132,9 +132,26 @@ bool Manager::setSSH( )
 void Manager::display()
 {
 	People::display();
-	cout << this->SSH << endl;
-
 }
 
 
 
+string Manager::getSSH()
+{
+	string ssh = this->SSH;
+	return ssh;
+}
+
+
+bool Manager::checkSSH(string ssh)
+{
+	string thisSSH = this->SSH;
+	if (thisSSH == ssh) 
+	{
+		return true;
+	}
+	else 
+	{
+		return false;
+	}
+}

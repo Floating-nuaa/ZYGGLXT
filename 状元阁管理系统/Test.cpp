@@ -1,53 +1,65 @@
 #pragma warning(disable : 4996)
-#include <iostream>
-#include "Date.h"
-#include "RelationMap.h"
-#include "stdafx.h"
-#include <time.h>
-#include "Student.h"
-#include <fstream>
-#include "OperateTable.h"
-#include "RegisterManagerMenu.h"
-#include "FeasibleCmd.h"
-#include "TollMenu.h"
-#include "AddTABMenu.h"
-#include "OperateSTD.h"
-#include "ViolationMenu.h"
-#include "ConClassPrice.h"
-#include "SalaryTable.h"
-using namespace std;
-
+#include "MainEntrance.h"
 int main() 
 
 {
-	//Manager M;
-	//TollMenu T(M);
-	//T.display();
-
-	/*AddTABMenu AT;
-	AT.display();
-	T = AT.getTable();
-	OperateTable OT(T);
-	OT.saveThisFile();
+	MainEntrance mainEntrance;
 	
-	OperateTable OT,OT1;
-	OT.updateThisTable();
-	OT.readPreFile("潘佳辉");
-	T = OT.getTable();
-	T.displaySTD();
-	OT1.readPreFile("小飞");
-	T = OT1.getTable();
-	T.displayTEA();
-	*/
-	OperateTEA OT;
-	Teacher ttt;
+	mainEntrance.ShowThe_First();
+	mainEntrance.ShowPre_Login();
+	int CMDF=0, CMDS=0, CMDT=0;
+	bool flag = 0;
+	do
+	{
+		CMDF=mainEntrance.ShowMain_Menu();
 
-	OT.readPreFile("小飞");
-	ttt = OT.getTeacher();
-	SalaryTable ST(ttt);
-	ST.showAllTable();
-	ST.briefShow();
+		mainEntrance.DealFirt_Comd(CMDF);
+		
+		if (CMDF == 9)
+		{
+		
+			do 
+			{
+				flag = 0;
+
+				CMDS = mainEntrance.ShowInde_Menu();
+				mainEntrance.DealSecn_Comd(CMDS);
+
+				if (CMDS == 0)
+				{
+					flag = 1;
+					continue;
+				}
+				if (CMDS == 12) 
+				{
+					do 
+					{
+
+						CMDT = mainEntrance.ShowMang_Menu();
+
+
+					} while (CMDT != 0);
+				}
+				
+
+			}while(CMDS != 0);
+			
+			if (flag) 
+			{
+				continue;
+			}
+		}
+
+	}while(CMDF!=0);
+	
+	if (!CMDF) 
+	{
+		cout << " 感谢您使用本系统" << endl;
+
+	}
+	
 	return 0;
+	
 }
 
 

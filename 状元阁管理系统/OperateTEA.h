@@ -42,7 +42,7 @@ public:
 	
 	Teacher getTeacher();
 
-	bool updateStudentInfo(string STDname);
+	bool updateTeacherInfo(string STDname);
 
 
 };

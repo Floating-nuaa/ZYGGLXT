@@ -169,10 +169,52 @@ void OperateTEA::setTeasID(People& obj)
 
 
 
-bool OperateTEA::updateStudentInfo(string  TEAname)
+bool OperateTEA::updateTeacherInfo(string  TEAname)
 {
 
-	try {}
+	try 
+	{
+		saveAddress.setName(TEAname);
+
+		fstream file(saveAddress.getCompleteAddress(), ios::in | ios::binary | ios::out);
+
+		if (!file)
+		{
+			cout << "教师信息文件打开失败，请检查路径和姓名是否正确！" << endl;
+			cout << "当前的路径是 " << saveAddress.getCompleteAddress() << endl;
+			return 0;
+		}
+
+		file.read((char*)&teacher, sizeof(teacher));
+
+		getChangeInfo();
+
+		if (catchElection())		//如果更新了学生姓名，就更新一下文件名 
+		{
+			file.close();
+			TEAInfo PreAddress = this->saveAddress;
+
+			this->saveAddress.setName(this->teacher.getName());
+			if (rename(PreAddress.getCompleteAddress().c_str(), this->saveAddress.getCompleteAddress().c_str()) < 0)
+			{
+				throw 9938;
+			}
+			file.open(saveAddress.getCompleteAddress(), ios::in | ios::binary | ios::out);
+			//接下来是输出文件，只需要进行对更名后的文件进行刷新
+
+		}
+
+		file.seekp(0, ios::beg);  //指针调到开头
+
+		file.write((char*)&teacher, sizeof(teacher)); // 写入修改后的信息
+
+		file.close();
+
+		cout << "Success  教师信息修改成功" << endl << endl;
+
+		return 1;	
+	
+	}
 	catch (int goal)
 	{
 		cout << "Warning  很遗憾，所有修改失败 ！！！" << endl;
@@ -183,46 +225,7 @@ bool OperateTEA::updateStudentInfo(string  TEAname)
 		cout << "问题未被解决请联系开发人员..." << endl;
 		system("pause");
 	}
-	saveAddress.setName(TEAname);
-
-	fstream file(saveAddress.getCompleteAddress(), ios::in | ios::binary | ios::out);
-
-	if (!file)
-	{
-		cout << "教师信息文件打开失败，请检查路径和姓名是否正确！" << endl;
-		cout << "当前的路径是 " << saveAddress.getCompleteAddress() << endl;
-		return 0;
-	}
-
-	file.read((char*)&teacher, sizeof(teacher));
-
-	getChangeInfo();
-
-	if (catchElection())		//如果更新了学生姓名，就更新一下文件名 
-	{
-		file.close();
-		TEAInfo PreAddress = this->saveAddress;
-
-		this->saveAddress.setName(this->teacher.getName());
-		if (rename(PreAddress.getCompleteAddress().c_str(), this->saveAddress.getCompleteAddress().c_str()) < 0)
-		{
-			throw 9938;
-		}
-		file.open(saveAddress.getCompleteAddress(), ios::in|ios::binary | ios::out);
-		//接下来是输出文件，只需要进行对更名后的文件进行刷新
 	
-	}
-
-	file.seekp(0, ios::beg);  //指针调到开头
-
-	file.write((char*)&teacher, sizeof(teacher)); // 写入修改后的信息
-
-	file.close();
-
-	cout << "Success  学生信息修改成功" << endl << endl;
-
-	return 1;
-
 
 
 }

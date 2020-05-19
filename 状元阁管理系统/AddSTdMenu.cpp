@@ -271,13 +271,14 @@ Purpose AddSTDMenu::catchPurpose()
 	cin >> a;
 	cout << endl;
 	string ttt;
-	cout << "请输入分别输入课程名称，中间用空格隔开 (如:语文 数学)" << endl;
+	cout << "请输入分别输入课程名称" << endl;
 
 	for (int i = 1; i <= a; i++)
 	{
 		cout << "请输入第 " << i << " 个科目 :  ";
 		cin >> ttt;
 		list.push_back(ttt);
+		cout << endl;
 	}
 	if (a == 0)
 	{
@@ -293,3 +294,4 @@ Student AddSTDMenu::getStudent()
 {
 	return this->student;
 }
+

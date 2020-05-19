@@ -75,9 +75,6 @@
     <ClCompile Include="Date.cpp">
       <Filter>源文件\内置层</Filter>
     </ClCompile>
-    <ClCompile Include="DEFINE.cpp">
-      <Filter>源文件\内置层</Filter>
-    </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>源文件\内置层</Filter>
     </ClCompile>
@@ -216,6 +213,12 @@
     <ClCompile Include="SalaryTable.cpp">
       <Filter>源文件\数据层\信息数据</Filter>
     </ClCompile>
+    <ClCompile Include="Handler.cpp">
+      <Filter>源文件\业务层</Filter>
+    </ClCompile>
+    <ClCompile Include="InsideMenu.cpp">
+      <Filter>源文件\显示层</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Date.h">
@@ -277,12 +280,6 @@
     </ClInclude>
     <ClInclude Include="OperateTEA.h">
       <Filter>头文件\业务类</Filter>
-    </ClInclude>
-    <ClInclude Include="Money.h">
-      <Filter>头文件\标准类</Filter>
-    </ClInclude>
-    <ClInclude Include="Money.cpp">
-      <Filter>源文件\内置层</Filter>
     </ClInclude>
     <ClInclude Include="OperateTable.h">
       <Filter>头文件\业务类</Filter>
@@ -364,6 +361,9 @@
     </ClInclude>
     <ClInclude Include="QueryRecord.h">
       <Filter>头文件\抽象类</Filter>
+    </ClInclude>
+    <ClInclude Include="InsideMenu.h">
+      <Filter>头文件\显示类</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

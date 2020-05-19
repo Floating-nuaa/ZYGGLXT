@@ -1,2 +1,3 @@
-﻿  SalaryTable.cpp
+﻿  BaseFile.cpp
+E:\VisualStudio\ZYGGLXT\状元阁管理系统\BaseFile.cpp(150,14): warning C4101: “N”: 未引用的局部变量
   状元阁管理系统.vcxproj -> E:\VisualStudio\ZYGGLXT\Debug\状元阁管理系统.exe

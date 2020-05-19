@@ -30,6 +30,8 @@ public:
 	void display();
 
 	void shortShow();
+
+	float getPayment();
 };
 
 #endif // ! TRANSACTIONRECORD_H_

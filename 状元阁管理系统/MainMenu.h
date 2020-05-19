@@ -13,6 +13,8 @@ public:
 	MainMenu();
 	void display();
 	~MainMenu() {  };
+	int getCommend();
+
 
 };
 

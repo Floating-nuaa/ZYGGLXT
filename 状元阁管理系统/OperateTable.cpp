@@ -278,7 +278,9 @@ bool OperateTable::readPreFile(string name, int oridinal)
 {
 	string thisName = name;
 
-	saveAddress.setName(thisName);
+	TableInfo objInfo;
+	objInfo.setName(thisName);
+	this->saveAddress = objInfo;
 
 	StoreTable ST;
 	fstream file;
@@ -427,6 +429,13 @@ bool OperateTable::transformTTToCSV()
 	return 1;
 }
 
+
+void OperateTable::getTableFromScreen()
+{
+	AddTABMenu addTable;
+	addTable.display();
+	this->table = addTable.getTable();
+}
 
 
 bool OperateTable::updateThisTable()
@@ -749,4 +758,9 @@ int OperateTable::checkHowLongBelonging(Table TEATab)
 void OperateTable::clearHidenTable()
 {
 	this->table.clearThisTable();
+}
+
+string OperateTable::getAddress() 
+{
+	return this->saveAddress.getCompleteAddress();
 }

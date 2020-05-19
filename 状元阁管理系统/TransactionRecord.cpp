@@ -65,4 +65,7 @@ void TransactionRecord::shortShow()
 
 
 
-
+float TransactionRecord::getPayment()
+{
+	return this->payment;
+}

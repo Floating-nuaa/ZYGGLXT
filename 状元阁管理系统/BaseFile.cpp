@@ -3,6 +3,8 @@
 #include <string>
 #include <fstream>
 #include <iostream>
+
+
 using namespace std;
 string BaseFile :: REGISTERADDRESS= "E:\\VisualStudio\\Data\\";
 
@@ -11,7 +13,6 @@ void BaseFile::RESETADDRESS(string RERE)
 {
 	REGISTERADDRESS = RERE; 
 }
-
 
 
 BaseFile::BaseFile() :saveAddress(REGISTERADDRESS)
@@ -36,6 +37,7 @@ BaseFile BaseFile::operator=(const BaseFile& obj)
 	completeFile = obj.completeFile;//完整文件路径
 	return *this;
 }
+
 BaseFile::BaseFile(string UA, string FA):saveAddress(REGISTERADDRESS)
 
 //第一个参数是功能描述，第二个参数是文件名称
@@ -45,8 +47,6 @@ BaseFile::BaseFile(string UA, string FA):saveAddress(REGISTERADDRESS)
 	fileName = FA;
 	completeFile = saveAddress + uniqueAddress + fileName;
 }
-
-
 
 
 string BaseFile::getCompleteAddress()
@@ -80,7 +80,7 @@ void BaseFile::changeSaveAddress()
 
 	cout << "请输入BigBoss授权码！" << endl;
 	string pass;
-	cin >> pass;
+	pass = getStringWithoutShow();
 	
 	try 
 	{

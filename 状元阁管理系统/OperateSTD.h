@@ -30,6 +30,7 @@ protected:
 	bool catchElection();
 	bool doChangeInfo(int election);
 	Purpose catchPurpose();
+
 public:
 
 	OperateSTD( );

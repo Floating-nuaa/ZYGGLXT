@@ -33,7 +33,6 @@ public :
 	ViolationRecord(const ViolationRecord&);
 	ViolationRecord operator =(const ViolationRecord&);
 	void display();
-	void shortShow();
 };
 
 #endif

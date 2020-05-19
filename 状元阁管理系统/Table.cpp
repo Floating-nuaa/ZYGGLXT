@@ -319,7 +319,7 @@ void Table::displayTEA()
 
 		lesson.display();
 
-		lessonTimeTable.pop();
+		objTab.lessonTimeTable.pop();
 
 	}
 

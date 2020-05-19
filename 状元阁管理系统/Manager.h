@@ -1,7 +1,7 @@
 #ifndef  MANAGER_H_
 #define MANAGER_H_
 #include "People.h"
-
+#include "stdafx.h"
 class Manager :public People
 
 {
@@ -12,6 +12,7 @@ protected :
 						//需要使用时转成string进行比较
 public :
 
+
 	Manager(char* name, char sex, char* phone, char*);
 	Manager();
 	~Manager();
@@ -21,9 +22,13 @@ public :
 	Manager operator =(const Manager& obj);
 	
 	//更改个人管理密钥
+	void display();
 
 	bool setSSH();
-	void display();
+
+	string getSSH();	//返回密钥,只能通过友元Handler调用
+
+	bool checkSSH(string ssh);
 
 };
 
