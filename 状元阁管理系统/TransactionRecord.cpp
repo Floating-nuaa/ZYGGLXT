@@ -12,7 +12,7 @@ TransactionRecord::TransactionRecord
 
 TransactionRecord::~TransactionRecord(){}
 
-TransactionRecord::TransactionRecord(const TransactionRecord& obj):Record(obj)
+TransactionRecord::TransactionRecord(const TransactionRecord& obj):Record(obj),stud(obj.stud)
 
 {
 	this->payment = obj.payment;
@@ -24,7 +24,7 @@ TransactionRecord TransactionRecord::operator=(const TransactionRecord& obj)
 
 {
 	Record::operator=(obj);
-
+	this->stud = obj.stud;
 	this->payment = obj.payment;
 	strcpy_s(this->collectWay, obj.collectWay);
 	strcpy_s(this->remarks, obj.remarks);

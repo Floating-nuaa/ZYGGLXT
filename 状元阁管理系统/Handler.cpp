@@ -292,4 +292,111 @@ float  Handler::checkSummery( int show)
 }
 
 
+void Handler::showAllRun(int small) 
+{
 
+
+	Manager temp;
+	RunningRecord Running(temp, 0, "test");
+
+
+	RecordInfo ADD("RunningRecord");
+
+	ifstream file;
+
+	file.open(ADD.getCompleteAddress(), ios::binary | ios::in);
+
+	if (!file)
+	{
+		cout << "Warning 流水记录文件打开失败  " << endl;
+		cout << "请检查是否存在路径" << ADD.getCompleteAddress() << endl;
+		throw 4585;
+	}
+	while (!file.eof())
+	{
+		file.read((char*)&Running, sizeof(Running));
+		if (small == 1)
+		{
+			Running.shortShow();
+		}
+		else
+		{
+			Running.display();
+		}
+
+	}
+	
+	file.close();
+	return;
+}
+
+void Handler::showAllVio( ) 
+
+{
+	Manager temp;
+	Teacher test;
+	Date d;
+	ViolationRecord Violation(temp, test, 0, 0, d, "test");
+
+
+	RecordInfo ADD("ViolationRecord");
+	ifstream file;
+
+	file.open(ADD.getCompleteAddress(), ios::in | ios::binary);
+
+	if (!file)
+	{
+		cout << "Warning 记录文件打开失败  " << endl;
+		cout << "请检查是否存在路径" << ADD.getCompleteAddress() << endl;
+		throw 4558;
+	}
+	
+	while (!file.eof()) 
+	{
+		
+		file.read((char*)&Violation, sizeof(Violation));
+		
+		Violation.display();
+	}
+
+	file.close();
+
+	return ;
+}
+
+void Handler::showAllToll(int small) 
+{
+	Manager temp;
+	Student test;
+	Date d;
+	TransactionRecord Transaction(temp, test);
+
+
+	RecordInfo SUM;
+	ifstream file2;
+
+	file2.open(SUM.getCompleteAddress(), ios::in | ios::binary);
+
+	if (!file2)
+	{
+		cout << "Warning 交易文件打开失败  " << endl;
+		cout << "请检查是否存在路径" << SUM.getCompleteAddress() << endl;
+		throw 4558;
+	}
+	
+	
+	while (!file2.eof())
+	{
+		file2.read((char*)&Transaction, sizeof(Transaction));
+		if (small == 1)
+		{
+			Transaction.shortShow();
+		}
+		else
+		{
+			Transaction.display();
+		}
+	}
+	
+	file2.close();
+}

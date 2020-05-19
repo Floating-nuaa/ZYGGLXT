@@ -90,9 +90,6 @@
     <ClCompile Include="Purpose.cpp">
       <Filter>源文件\内置层</Filter>
     </ClCompile>
-    <ClCompile Include="Test.cpp">
-      <Filter>源文件\Test</Filter>
-    </ClCompile>
     <ClCompile Include="Lesson.cpp">
       <Filter>源文件\内置层</Filter>
     </ClCompile>
@@ -218,6 +215,9 @@
     </ClCompile>
     <ClCompile Include="InsideMenu.cpp">
       <Filter>源文件\显示层</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件\Test</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -42,6 +42,10 @@ public:
 	void showOneVio(int ruler);
 	void showOneToll(int ruler, int small);
 
+	void showAllRun(int  );
+	void showAllVio(  );
+	void showAllToll( int );
+
 	bool checkSSH();
 
 	void showAllTEA();

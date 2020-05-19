@@ -55,10 +55,11 @@ Student TollMenu::checkSTDInfo(string STDname)
 bool TollMenu::saveThisTranRecord(TransactionRecord thisTR ) 
 
 {
+
 	RecordInfo ADD("TransactionRecord");
 	ofstream file;
 	
-	file.open(ADD.getCompleteAddress(), ios::out | ios::binary | ios::app);
+	file.open(ADD.getCompleteAddress(), ios::binary | ios::app);
 	
 	if (!file) 
 	{
@@ -91,6 +92,7 @@ bool TollMenu::saveThisTranRecord(TransactionRecord thisTR )
 	return true;
 
 }
+
 
 int TollMenu::HowMuchToPay(Student &std) 
 {

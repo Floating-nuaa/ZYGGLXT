@@ -184,7 +184,7 @@
     <ClCompile Include="TabNum.cpp" />
     <ClCompile Include="Teacher.cpp" />
     <ClCompile Include="TEAInfo.cpp" />
-    <ClCompile Include="Test.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="TollMenu.cpp" />
     <ClCompile Include="TransactionRecord.cpp" />
     <ClCompile Include="ViolationMenu.cpp" />

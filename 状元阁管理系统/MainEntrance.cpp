@@ -1,5 +1,9 @@
 #include "MainEntrance.h"
-
+#include <windows.h>
+#include <tchar.h>
+#include <assert.h>
+#include <iostream>
+using namespace std;
 MainEntrance :: MainEntrance():Hander()
 {
 	commender = 0;
@@ -242,7 +246,9 @@ bool MainEntrance::DealFirt_Comd(int Comd )
 				operationCancled();
 				return 0;
 			}
-			cout << "网络不通畅,打开失败!!" << endl;
+			//打开一个试用的网站
+			ShellExecute(NULL, _T("open"), _T("explorer.exe"), _T("https://github.com/Flaoting/ZYGGLXT"), NULL, SW_SHOW);
+			
 			break;
 		}
 
@@ -282,6 +288,7 @@ bool MainEntrance::DealFirt_Comd(int Comd )
 	return 1;
 }
 
+
 int  MainEntrance::ShowInde_Menu() 
 {
 	InsideMenu insideMenu;
@@ -306,7 +313,7 @@ bool MainEntrance::DealSecn_Comd(int Comd)
 		return false;
 	}
 
-	if (!this->Hander.getStatus() && Comd != 2 && Comd != 3 && Comd != 5 && Comd != 6&& Comd != 7&&Comd != 9&& Comd != 10)
+	if (!this->Hander.getStatus() &&Comd!=1&& Comd != 2 && Comd != 3 && Comd != 5 && Comd != 6&& Comd != 7&&Comd != 9&& Comd != 10)
 	{
 		cout << "您尚未获得此项功能的权限,请您先进行登录，再使用此项功能!" << endl;
 		cout << "即将为您返回上一界面" << endl;
@@ -397,6 +404,7 @@ bool MainEntrance::DealSecn_Comd(int Comd)
 
 			} while (checkToContinue());
 
+			break;
 		}
 
 		case 6: 
@@ -414,6 +422,7 @@ bool MainEntrance::DealSecn_Comd(int Comd)
 				cout << "是否要继续修改其他学生的信息？  ";
 
 			} while (checkToContinue());
+			break;
 		}
 
 		case 7:
@@ -459,6 +468,7 @@ bool MainEntrance::DealSecn_Comd(int Comd)
 				}
 				cout << "是否要继续查询其他教师的工资表";
 			} while (checkToContinue());
+			break;
 		}
 
 		case 8: 
@@ -469,7 +479,7 @@ bool MainEntrance::DealSecn_Comd(int Comd)
 				cout << "教 学 事 故 记 录 完 毕 " << endl;
 				cout << "是否继续添加教学事故？  ";
 			} while (checkToContinue());
-			
+			break;
 		}
 
 		case 9: 
@@ -493,7 +503,7 @@ bool MainEntrance::DealSecn_Comd(int Comd)
 						<<setw(5) << CP.getInPrice()<<setw(10) << "元/小时/人" << endl;
 				}
 			}
-			
+			break;
 		}
 
 		case 10:
@@ -524,28 +534,36 @@ bool MainEntrance::DealSecn_Comd(int Comd)
 				}
 			}
 			
-			int temp = 0,ttt=200,small=1;
+			int temp = 0,smaller=1;
+			int start = 1, end = 20;
 
-			while (temp <= 0 || temp > 3) 
+			while (temp <= 0 || temp > 6) 
 			{
-				cout << "1. 查询所有交易记录" << endl;
-				cout << "2. 查询所有流水账" << endl;
-				cout << "3. 查询所有教学事故" << endl;
+				cout << "1. 查询一个范围内的收银记录" << endl;
+				cout << "2. 查询一个范围内流水账" << endl;
+				cout << "3. 查询一个范围内教学事故" << endl;
+				cout << "4. 查询所有收银记录" << endl;
+				cout << "5. 查询所有流水账" << endl;
+				cout << "6. 查询所有教学事故" << endl;
 				cout << "请选择您要使用的功能 :  ";
 				cin >> temp;
 			}
 
-			cout << "请填写大约查询前多少条记录(默认200条) :  ";
-			cin >> ttt;
+			if(temp==1||temp==2||temp==3)
+			{
+				cout << "请输入记录从多少条开始 :  ";
+				cin >> start;
+				cout << "请输入记录到多少条结束 :  ";
+				cin >> end;
+			}
+			
 			cout << "是否改变默认的显示模式(简洁模式)";
-
 			if (checkToContinue())
 			{
 				cout << "1. 简洁模式 " << endl;
 				cout << "2. 详细模式 " << endl;
 				cout << "请选择显示模式 :  ";
-				cin >> small;
-
+				cin >> smaller;
 			}
 
 			switch (temp)
@@ -555,9 +573,9 @@ bool MainEntrance::DealSecn_Comd(int Comd)
 					try 
 					{
 						cout << "即将展示所有的交易记录 " << endl;
-						for (int i = 1; i <= ttt; i++)
+						for (int i = start; i <= end; i++)
 						{
-							this->Hander.showOneToll(i, small);
+							this->Hander.showOneToll(i, smaller);
 						}
 					}
 					catch (int) 
@@ -571,9 +589,9 @@ bool MainEntrance::DealSecn_Comd(int Comd)
 					try 
 					{
 						cout << "即将展示所有的流水账记录 " << endl;
-						for (int i = 1; i <= ttt; i++)
+						for (int i = start; i <= end; i++)
 						{
-							this->Hander.showOneRun(i, small);
+							this->Hander.showOneRun(i, smaller);
 						}
 					}
 					catch (int) 
@@ -589,7 +607,7 @@ bool MainEntrance::DealSecn_Comd(int Comd)
 					{
 						cout << "即将展示所有的教学事故记录 " << endl;
 
-						for (int i = 1; i <= ttt; i++)
+						for (int i = start; i <= end; i++)
 						{
 							this->Hander.showOneVio(i);
 						}
@@ -602,6 +620,24 @@ bool MainEntrance::DealSecn_Comd(int Comd)
 
 					break;
 				}
+				case 4: 
+				{
+					this->Hander.showAllToll(smaller);
+					cout << "所有收银记录展示完毕" << endl;
+					break;
+				}
+				case 5: 
+				{
+					this->Hander.showAllRun(smaller);
+					cout << "所有流水记录展示完毕" << endl;
+					break;
+				}
+				case 6:
+				{
+					this->Hander.showAllVio();
+					cout << "所有教学事故记录展示完毕" << endl;
+					break;
+				}
 			}
 		}
 	}
@@ -610,21 +646,30 @@ bool MainEntrance::DealSecn_Comd(int Comd)
 
 int  MainEntrance::ShowMang_Menu() 
 {
+	if (!this->Hander.getStatus()) 
+	{
+		cout << "您尚未获得此项功能的权限,请您先进行登录，再使用此项功能!" << endl;
+		cout << "即将为您返回上一界面" << endl;
+		return 0;
+	}
+
 	system("cls");
-	cout << "***************************************************************************" << endl << endl << endl;
+	cout << "*************************************************************************" << endl << endl << endl;
 	cout << "\t\t状元阁管理系统" << endl << endl << endl;
 	cout << "\t1. 查询所有教师信息  2. 修改文件储存位置   3. 一键统计总收入   " << endl << endl;
 	cout << "\t4. 查询所有学生信息  5. 初始化课程单价     6.修改课程单价 " << endl << endl;
 	cout << endl<<endl;
-	cout << "***************************************************************************" << endl << endl;
+	cout << "*************************************************************************" << endl << endl;
 	
 	int com=0;
 	
-	while (com < 0 || com > 6)
+	do 
 	{
 		cout << "请输入您要使用功能的编号 :  ";
 		cin >> com;
-	}
+	} while (com < 0 || com > 6);
+
+
 	this->commender = com;
 	
 	if (com == 0)
@@ -655,7 +700,7 @@ int  MainEntrance::ShowMang_Menu()
 
 		case 3: 
 		{
-			int cnt = 0, tem = 0;
+			int cnt = 0,tem = 0;
 			while(!this->Hander.checkSSH()&&cnt<3) 
 			{
 				cnt++;
@@ -674,7 +719,7 @@ int  MainEntrance::ShowMang_Menu()
 			{
 				tem = 1;
 			}
-			tem=this->Hander.checkSummery(tem);
+			tem=(int)this->Hander.checkSummery(tem);
 
 			cout << "经验证交易记录，所有收银共计 " << tem << " 元" << endl;
 			system("pause");
