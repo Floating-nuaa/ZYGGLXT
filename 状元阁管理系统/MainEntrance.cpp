@@ -2,8 +2,7 @@
 #include <windows.h>
 #include <tchar.h>
 #include <assert.h>
-#include <iostream>
-using namespace std;
+
 MainEntrance :: MainEntrance():Hander()
 {
 	commender = 0;
@@ -24,12 +23,24 @@ void MainEntrance::ShowThe_First()
 
 void MainEntrance::ShowPre_Login() 
 {
+	bool inCard=false;
+	LoginMenu  LM;
+	do{
+		if (LM.checkInDisplay())
+		{
+			return;
+		}
+		cout << "登录权限验证失败，是否再次验证？" << endl;
+		inCard = checkToContinue();
+	} while (inCard);
 
-	LoginMenu* LM;
-	LM = new LoginMenu;
-	LM->display();
-	delete LM;
-	LM = NULL;
+	if (!inCard) 
+	{
+		cout << "登录系统失败，请重新登录 !!!" << endl;
+		cout << "即将退出系统，欢迎您的再次使用" << endl;
+		system("pause");
+		exit(0);
+	}
 }
 
 int  MainEntrance::ShowMain_Menu() 
@@ -304,7 +315,11 @@ bool MainEntrance::DealSecn_Comd(int Comd)
 
 	if (Comd == 12) 
 	{
-		cout << "状元阁提醒您 : 您即将使用进入管理员功能页面 " << endl << endl;
+		if (this->Hander.checkSSH())
+		{
+			cout << "状元阁提醒您 : 您即将使用进入管理员功能页面 " << endl << endl;
+			return true;
+		}
 		return false;
 	}
 
@@ -358,7 +373,10 @@ bool MainEntrance::DealSecn_Comd(int Comd)
 			OperateTEA operateTEA;
 			Teacher test;
 			
-			operateTEA.readPreFile();
+			if (!operateTEA.readPreFile()) 
+			{
+				return 0;
+			}
 			test = operateTEA.getTeacher();
 			
 			test.display();
@@ -372,7 +390,12 @@ bool MainEntrance::DealSecn_Comd(int Comd)
 		{
 			OperateSTD operateSTD;
 			Student std;
-			operateSTD.readPreFile();
+			
+			if (!operateSTD.readPreFile()) 
+			{
+				return 0;
+			}
+			
 			std = operateSTD.getStudent();
 			std.display();
 			cout << "学 生 " << std.getName() << " 信 息 展 示 完 毕" << endl;
@@ -414,7 +437,7 @@ bool MainEntrance::DealSecn_Comd(int Comd)
 			string name;
 			do
 			{
-				cout << "请输入要更改教师的姓名 :  ";
+				cout << "请输入要更改学生的姓名 :  ";
 				cin >> name;
 
 				operateSTD.updateStudentInfo(name);
@@ -448,7 +471,7 @@ bool MainEntrance::DealSecn_Comd(int Comd)
 					int temo=0;
 					while (temo <= 0 || temo > 2) 
 					{
-
+						cout << endl;
 						cout << "1. 展示工资表详细信息" << endl;
 						cout << "2. 展示工资表简要信息" << endl;
 						cout << "请选择您要使用的功能 :  ";
@@ -473,6 +496,7 @@ bool MainEntrance::DealSecn_Comd(int Comd)
 
 		case 8: 
 		{
+			this->Hander.checkSSH();
 			do 
 			{
 				this->Hander.addVio();
@@ -533,115 +557,106 @@ bool MainEntrance::DealSecn_Comd(int Comd)
 					return 0;
 				}
 			}
-			
-			int temp = 0,smaller=1;
+
+			int temp = 0, smaller = 1;
 			int start = 1, end = 20;
 
-			while (temp <= 0 || temp > 6) 
+			do 
 			{
-				cout << "1. 查询一个范围内的收银记录" << endl;
-				cout << "2. 查询一个范围内流水账" << endl;
-				cout << "3. 查询一个范围内教学事故" << endl;
-				cout << "4. 查询所有收银记录" << endl;
-				cout << "5. 查询所有流水账" << endl;
-				cout << "6. 查询所有教学事故" << endl;
-				cout << "请选择您要使用的功能 :  ";
-				cin >> temp;
-			}
-
-			if(temp==1||temp==2||temp==3)
-			{
-				cout << "请输入记录从多少条开始 :  ";
-				cin >> start;
-				cout << "请输入记录到多少条结束 :  ";
-				cin >> end;
-			}
-			
-			cout << "是否改变默认的显示模式(简洁模式)";
-			if (checkToContinue())
-			{
-				cout << "1. 简洁模式 " << endl;
-				cout << "2. 详细模式 " << endl;
-				cout << "请选择显示模式 :  ";
-				cin >> smaller;
-			}
-
-			switch (temp)
-			{
-				case 1: 
+				
+				do
 				{
-					try 
+					cout << "1. 查询一个范围内的收银记录" << endl;
+					cout << "2. 查询一个范围内流水账" << endl;
+					cout << "3. 查询一个范围内教学事故" << endl;
+					cout << "4. 查询所有收银记录" << endl;
+					cout << "5. 查询所有流水账" << endl;
+					cout << "6. 查询所有教学事故" << endl;
+					cout << "请选择您要使用的功能 :  ";
+					cin >> temp;
+				} while (temp <= 0 || temp > 6);
+
+
+				if (temp == 1 || temp == 2 || temp == 3)
+				{
+					cout << "请输入记录从多少条开始 :  ";
+					cin >> start;
+					cout << "请输入记录到多少条结束 :  ";
+					cin >> end;
+				}
+
+				cout << "是否改变默认的显示模式(简洁模式)";
+				if (checkToContinue())
+				{
+					cout << "1. 简洁模式 " << endl;
+					cout << "2. 详细模式 " << endl;
+					cout << "请选择显示模式 :  ";
+					cin >> smaller;
+				}
+				
+				switch (temp)
+				{
+					case 1:
 					{
 						cout << "即将展示所有的交易记录 " << endl;
+						
 						for (int i = start; i <= end; i++)
 						{
 							this->Hander.showOneToll(i, smaller);
 						}
-					}
-					catch (int) 
-					{
+
 						break;
 					}
-					break;
-				}
-				case 2: 
-				{
-					try 
+
+					case 2:
 					{
 						cout << "即将展示所有的流水账记录 " << endl;
+						
 						for (int i = start; i <= end; i++)
 						{
 							this->Hander.showOneRun(i, smaller);
 						}
-					}
-					catch (int) 
-					{
+						
 						break;
 					}
-					break;
-				}
-				case 3: 
-				{
-
-					try 
+					case 3:
 					{
+
 						cout << "即将展示所有的教学事故记录 " << endl;
 
 						for (int i = start; i <= end; i++)
 						{
 							this->Hander.showOneVio(i);
 						}
-					
-					}
-					catch (int) 
-					{
+
 						break;
 					}
 
-					break;
+					case 4:
+					{
+						this->Hander.showAllToll(smaller);
+						cout << "所有收银记录展示完毕" << endl;
+						break;
+					}
+
+					case 5:
+					{
+						this->Hander.showAllRun(smaller);
+						cout << "所有流水记录展示完毕" << endl;
+						break;
+					}
+
+					case 6:
+					{
+						this->Hander.showAllVio();
+						cout << "所有教学事故记录展示完毕" << endl;
+						break;
+					}
 				}
-				case 4: 
-				{
-					this->Hander.showAllToll(smaller);
-					cout << "所有收银记录展示完毕" << endl;
-					break;
-				}
-				case 5: 
-				{
-					this->Hander.showAllRun(smaller);
-					cout << "所有流水记录展示完毕" << endl;
-					break;
-				}
-				case 6:
-				{
-					this->Hander.showAllVio();
-					cout << "所有教学事故记录展示完毕" << endl;
-					break;
-				}
-			}
+
+			} while (checkToContinue());
 		}
 	}
-
 }
 
 int  MainEntrance::ShowMang_Menu() 

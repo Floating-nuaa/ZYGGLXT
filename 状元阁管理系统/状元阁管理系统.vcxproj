@@ -142,7 +142,6 @@
   <ItemGroup>
     <ClCompile Include="AddTABMenu.cpp" />
     <ClCompile Include="AddTEAMenu.cpp" />
-    <ClCompile Include="CashRegister.cpp" />
     <ClCompile Include="ClassPrice.cpp" />
     <ClCompile Include="ConClassPrice.cpp" />
     <ClCompile Include="ConfigInfo.cpp" />
@@ -195,7 +194,6 @@
     <ClInclude Include="AddTABMenu.h" />
     <ClInclude Include="AddTEAMenu.h" />
     <ClInclude Include="BaseFile.h" />
-    <ClInclude Include="CashRegister.h" />
     <ClInclude Include="ClassPrice.h" />
     <ClInclude Include="ConClassPrice.h" />
     <ClInclude Include="ConfigInfo.h" />

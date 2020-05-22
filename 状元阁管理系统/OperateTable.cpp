@@ -44,6 +44,8 @@ Table OperateTable::getTable()
 bool OperateTable::saveThisFile() 
 
 {
+	saveAddress.setName(this->table.getOwnerName());
+
 	Table objTab(this->table);
 
 	fstream file;
@@ -111,6 +113,7 @@ bool OperateTable::saveThisFile()
 bool OperateTable::saveThisFile(int ruler) //调用这个的是教师的课表，教师名字在前
 
 {
+
 	Table objTab(this->table);
 
 	fstream file;
@@ -191,8 +194,11 @@ bool OperateTable::readPreFile()
 	//读入配置文件，对这个类的对象进行赋值
 
 {
+
+	this->table.clearThisTable();
+
 	string thisName = "test";
-	cout << "\t请输入要查询学生的姓名:  ";
+	cout << "请输入要查询学生的姓名:  ";
 	cin >> thisName;
 	cout << endl;
 	saveAddress.setName(thisName);
@@ -236,6 +242,8 @@ bool OperateTable::readPreFile(string name)
 //读入配置文件，对这个类的对象进行赋值
 
 {
+	this->table.clearThisTable();
+
 	string thisName = name;
 	saveAddress.setName(thisName);
 
@@ -276,6 +284,9 @@ bool OperateTable::readPreFile(string name)
 bool OperateTable::readPreFile(string name, int oridinal) 
 //oridinal 代表第几个数据
 {
+
+	this->table.clearThisTable();
+
 	string thisName = name;
 
 	TableInfo objInfo;
@@ -452,7 +463,7 @@ bool OperateTable::updateThisTable()
 	{
 		
 		
-		if (!checkIsThisTable()) 
+		if (!checkIsThisTable())    //询问是否修改这个课表
 		{
 			
 			cout << endl;

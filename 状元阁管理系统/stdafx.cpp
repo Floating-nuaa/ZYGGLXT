@@ -221,7 +221,7 @@ string TimeStampToStandard(int a )
 
 	return Standard;
 
-}\
+}
 
 bool checkToContinue( )
 {

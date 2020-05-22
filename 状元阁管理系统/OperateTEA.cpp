@@ -78,7 +78,7 @@ bool OperateTEA::readPreFile()
 
 {
 	string thisName = "test";
-	cout << "\t请输入要查询教师的姓名:  ";
+	cout << "请输入要查询教师的姓名:  ";
 	cin >> thisName;
 	cout << endl;
 
@@ -197,7 +197,22 @@ bool OperateTEA::updateTeacherInfo(string  TEAname)
 			this->saveAddress.setName(this->teacher.getName());
 			if (rename(PreAddress.getCompleteAddress().c_str(), this->saveAddress.getCompleteAddress().c_str()) < 0)
 			{
-				throw 9938;
+				cout << "Warning 文件更名失败" << endl;
+				cout << "原文件位置是  " << PreAddress.getCompleteAddress() << endl;
+				cout << "新文件位置是  " << this->saveAddress.getCompleteAddress() << endl;
+				cout << "请根据提示进行手动修改文件名称 ,感谢您的理解和配合！" << endl;
+
+				file.open(PreAddress.getCompleteAddress(), ios::in | ios::binary | ios::out);
+
+				file.seekp(0, ios::beg);  //指针调到开头
+
+				file.write((char*)&teacher, sizeof(teacher)); // 写入修改后的信息
+
+				file.close();
+
+				cout << "Success  学生信息修改成功" << endl << endl;
+
+				return 1;
 			}
 			file.open(saveAddress.getCompleteAddress(), ios::in | ios::binary | ios::out);
 			//接下来是输出文件，只需要进行对更名后的文件进行刷新

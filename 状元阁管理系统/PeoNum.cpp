@@ -97,12 +97,6 @@ bool PeoNum::getNum()
 	return 0;
 }
 
-
-void PeoNum::setNowNum(int a) 
-{
-	NowNum = a;
-}
-
 void PeoNum::update(int a) 
 {
 	a++;
@@ -110,6 +104,12 @@ void PeoNum::update(int a)
 	file << a << endl;
 	file.close();
 }
+
+void PeoNum::setNowNum(int a) 
+{
+	NowNum = a;
+}
+
 
 int PeoNum::returnNum() 
 {

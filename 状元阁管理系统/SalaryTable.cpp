@@ -62,6 +62,7 @@ void SalaryTable::showAllTable()
 //展示这位老师的所有课表
 	cout << "教师 " << this->teacher.getName() << " 的总工资为"
 		<< setw(8) << this->totalSalary << "   元 " << endl;
+	cout << endl;
 	cout << "下面将展示此此位老师的所有课程工资小结...." << endl;
 	cout << endl;
 	int total = 0;
@@ -122,12 +123,12 @@ int SalaryTable::HowMuchInDisplay()
 	do
 	{
 		T = OT.getTable();
-		T.shortShowTEA();		//这里好像有bug
+		T.shortShowTEA();
 		cout << endl;
 		int price = getClassTypeOutPrice(T.getClassType());
 		int sum = T.getNum() * 2 * price;
 		
-		cout << "课程单价 " << setw(5) << price << setw(5) << "元/人/小时" << endl;
+		cout << "课程单价 " << setw(5) << price << setw(5) << "元/人/小时" <<endl;
 		cout << "此节课小计 " << setw(5) << sum << setw(5) << " 元 " << endl;
 		
 		summery += sum;
@@ -159,7 +160,7 @@ int SalaryTable::HowMuchInShort()
 	{
 		
 		T = OT.getTable();
-		T.shortShortShowTEA();	//这里好像有bug
+		T.shortShortShowTEA();
 		cout << endl;
 		int price = getClassTypeOutPrice(T.getClassType());
 		int sum = T.getNum() * 2 * price;

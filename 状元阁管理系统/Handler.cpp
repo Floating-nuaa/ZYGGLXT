@@ -112,13 +112,23 @@ void Handler::showOneRun(int ruler, int small)
 {
 	QueryRecord QR;
 	RunningRecord RUN(QR.getRunningRecord(ruler));
-	if (small == 1) 
+
+	time_t now;
+	int unixTime = (int)time(&now);	int gap = 0;
+	gap = unixTime - RUN.getTimeStamp();
+	
+	if (abs(gap) > 3)
 	{
-		RUN.shortShow();
-	}
-	else 
-	{
-		RUN.display();
+
+		if (small == 1)
+		{
+			RUN.shortShow();
+		}
+		else
+		{
+			RUN.display();
+		}
+
 	}
 }
 
@@ -126,38 +136,70 @@ void Handler::showOneToll_S(int ruler, int small)
 {
 	QueryRecord QR;
 	TransactionRecord Toll(QR.getHidenTransactionRecord(ruler));
-	if (small == 1)
+
+	time_t now;
+	int unixTime = (int)time(&now);
+	int gap = 0;
+	gap = unixTime - Toll.getTimeStamp();
+	if (abs(gap) > 3)
 	{
-		Toll.shortShow();
+		if (small == 1)
+		{
+			Toll.shortShow();
+		}
+		else
+		{
+			Toll.display();
+		}
 	}
-	else
-	{
-		Toll.display();
-	}
+	return;
 }
 
 void Handler::showOneToll(int ruler, int small) 
 {
 
 
+
+
 	QueryRecord QR;
 	TransactionRecord Toll(QR.getHidenTransactionRecord(ruler));
-	if (small == 1)
+	
+	time_t now;
+	int unixTime = (int)time(&now);
+	int gap = 0;
+	gap = unixTime - Toll.getTimeStamp();
+	
+	if (abs(gap) > 3)
 	{
-		Toll.shortShow();
+
+		if (small == 1)
+		{
+			Toll.shortShow();
+		}
+		else
+		{
+			Toll.display();
+		}
+
 	}
-	else
-	{
-		Toll.display();
-	}
+	return;
 }
 
 void Handler::showOneVio(int ruler) 
 {
+
 	QueryRecord QR;
 	ViolationRecord Vio(QR.getViolationRecord(ruler));
 
+	time_t now;
+	int unixTime = (int)time(&now);
+	int gap = 0;
+	gap = unixTime - Vio.getTimeStamp();
+	if(abs(gap)>3)
+	{
 	Vio.display();
+	}
+	return;
 }
 
 bool Handler::checkSSH() 
@@ -190,18 +232,26 @@ void Handler::showAllTEA()
 	}
 	Teacher teacher;
 	int i = 1;
+	perFile.read((char*)&teacher, sizeof(teacher));
+	if (perFile.eof())
+	{
+		cout << "没有教师记录可供查询，请您先添加教师信息 !!!!" << endl;
+		return;
+	}
+
 	while (!perFile.eof()) 
 	{
-		perFile.read((char*)&teacher, sizeof(teacher));
+
 		teacher.display();
-		
+		cout << endl;
+		i++;
 		if (i % 2 == 0) 
 		{
 			cout << "任意按键将进行清屏操作" << endl;
 			system("pause");
 			system("cls");
 		}
-		i++;
+		perFile.read((char*)&teacher, sizeof(teacher));
 	}
 	perFile.close();
 	return ;
@@ -226,24 +276,37 @@ void Handler::shouwAllSTD()
 	}
 	Student student;
 	int i = 1;
+
+	perFile.read((char*)&student, sizeof(student));
+	if (perFile.eof()) 
+	{
+		cout << "没有学生记录可供查询，请您先添加学生信息 !!!!" << endl;
+		return;
+	}
+
 	while (!perFile.eof())
 	{
-		perFile.read((char*)&student, sizeof(student));
+		
 		student.display();
+		cout << endl;
+		i++;
+
 		if (i % 2 == 0)
 		{
 			cout << "任意按键将进行清屏操作" << endl;
 			system("pause");
 			system("cls");
 		}
-		i++;
+		
+		perFile.read((char*)&student, sizeof(student));
 	}
+
 	perFile.close();
 	return;
 }
 
 
-float  Handler::checkSummery( int show) 
+float  Handler::checkSummery( int show)    //这是总账的函数，show是是否简要的展示交易记录 
 {
 	Manager temp;
 	Student test;
@@ -251,7 +314,6 @@ float  Handler::checkSummery( int show)
 	TransactionRecord Transaction(temp, test);
 	float summery = 0;
 	
-
 	RecordInfo ADD("TransactionRecord");
 	ifstream file;
 
@@ -263,26 +325,39 @@ float  Handler::checkSummery( int show)
 		cout << "请检查是否存在路径" << ADD.getCompleteAddress() << endl;
 		throw 4558;
 	}
-	int ruler = 1;
+	
+	file.read((char*)&Transaction, sizeof(Transaction));//第一次读取
+
+	if (file.eof())				//读取失败则返回summery
+	{
+		file.close();
+		cout << "暂时没有交易记录可供总账 ！！！" << endl;
+		return summery;
+	}
+
+	summery += Transaction.getPayment();
+
+	if (show == 1)
+	{
+		Transaction.shortShow();
+	}
+
 	while (!file.eof()) 
 	{
-		int t = (ruler - 1) * sizeof(Transaction);
-		
-		file.seekg(t, ios::beg);
+		file.read((char*)&Transaction, sizeof(Transaction));
 
 		if (file.eof())
 		{
 			file.close();
-			throw 3131;
+			return summery;
 		}
-		file.read((char*)&Transaction, sizeof(Transaction));
-
 		summery += Transaction.getPayment();
-		if (show) 
+
+		if (show==1) 
 		{
 			Transaction.shortShow();
 		}
-		ruler++;
+	
 	}
 	
 	file.close();
@@ -312,9 +387,17 @@ void Handler::showAllRun(int small)
 		cout << "请检查是否存在路径" << ADD.getCompleteAddress() << endl;
 		throw 4585;
 	}
+
+	file.read((char*)&Running, sizeof(Running));
+
+	if (file.eof()) 
+	{
+		cout << "没有流水记录可供查询!!! " << endl;
+		return;
+	}
+
 	while (!file.eof())
 	{
-		file.read((char*)&Running, sizeof(Running));
 		if (small == 1)
 		{
 			Running.shortShow();
@@ -324,6 +407,7 @@ void Handler::showAllRun(int small)
 			Running.display();
 		}
 
+		file.read((char*)&Running, sizeof(Running));
 	}
 	
 	file.close();
@@ -351,12 +435,20 @@ void Handler::showAllVio( )
 		throw 4558;
 	}
 	
+
+	file.read((char*)&Violation, sizeof(Violation));
+
+	if (file.eof()) 
+	{
+		cout << "没有教学事故记录可供查询!!! " << endl;
+		return;
+	}
+
 	while (!file.eof()) 
 	{
-		
-		file.read((char*)&Violation, sizeof(Violation));
-		
 		Violation.display();
+
+		file.read((char*)&Violation, sizeof(Violation));
 	}
 
 	file.close();
@@ -384,10 +476,14 @@ void Handler::showAllToll(int small)
 		throw 4558;
 	}
 	
-	
+	file2.read((char*)&Transaction, sizeof(Transaction));
+
+	if (file2.eof()) 
+	{
+		cout << "没有交易记录可供查询!!! " << endl;
+	}
 	while (!file2.eof())
 	{
-		file2.read((char*)&Transaction, sizeof(Transaction));
 		if (small == 1)
 		{
 			Transaction.shortShow();
@@ -396,6 +492,9 @@ void Handler::showAllToll(int small)
 		{
 			Transaction.display();
 		}
+
+		file2.read((char*)&Transaction, sizeof(Transaction));
+	
 	}
 	
 	file2.close();

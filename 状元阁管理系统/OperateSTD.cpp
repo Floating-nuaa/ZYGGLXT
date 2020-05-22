@@ -78,7 +78,7 @@ bool OperateSTD::readPreFile( )
 
 {
 	string thisName="test";
-	cout << "\t请输入要查询学生的姓名:  ";
+	cout << "请输入要查询学生的姓名:  ";
 	cin >> thisName;
 	cout << endl;
 	saveAddress.setName(thisName);
@@ -196,8 +196,25 @@ bool OperateSTD::updateStudentInfo(string  STDname)
 		STDInfo PreAddress = this->saveAddress;
 
 		this->saveAddress.setName(this->stud.getName());
-		if(rename(PreAddress.getCompleteAddress().c_str(), this->saveAddress.getCompleteAddress().c_str())<0)
-			cout <<"更名失败";
+		if (rename(PreAddress.getCompleteAddress().c_str(), this->saveAddress.getCompleteAddress().c_str()) < 0) 
+		{
+			cout <<"Warning 文件更名失败"<<endl;
+			cout << "原文件位置是  " << PreAddress.getCompleteAddress() << endl;
+			cout << "新文件位置是  " << this->saveAddress.getCompleteAddress() << endl;
+			cout << "请根据提示进行手动修改文件名称 ,感谢您的理解和配合！" << endl;
+			file.open(PreAddress.getCompleteAddress(), ios::in | ios::binary | ios::out);
+
+			file.seekp(0, ios::beg);  //指针调到开头
+
+			file.write((char*)&stud, sizeof(stud)); // 写入修改后的信息
+
+			file.close();
+
+			cout << "Success  学生信息修改成功" << endl << endl;
+
+			return 1;
+
+		}
 		file.open(saveAddress.getCompleteAddress(), ios::in | ios::binary | ios::out);
 	}
 	
@@ -240,9 +257,11 @@ void OperateSTD:: getChangeInfo()
 bool OperateSTD::catchElection()
 
 {
+	cout << endl;
 	cout << "请 选 择 您 要 修 改 的 信 息 " << endl;
 	cout << "1. 姓  名   2. 性  别   3. 手机号码  " << endl;
 	cout << "4. 定  金   5. 科  目   6. 特殊需求  " << endl;
+	cout << endl;
 	int election = 0;
 	
 	bool goon = true;

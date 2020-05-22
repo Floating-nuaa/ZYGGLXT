@@ -43,6 +43,8 @@ RunningRecord QueryRecord::getRunningRecord(int ruler)
 	file.read((char*)&Running, sizeof(Running));
 	
 	file.close();
+
+	return Running;
 }
 
 ViolationRecord QueryRecord::getViolationRecord(int ruler)

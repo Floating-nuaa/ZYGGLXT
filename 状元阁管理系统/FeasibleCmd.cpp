@@ -7,7 +7,7 @@ FeasibleCmd::FeasibleCmd()
 
 	system("mode con cols=75 lines=25");//窗口宽度高度
 
-	system("color 0B");
+	//system("color 0B");
 
 	system("date /T");
 

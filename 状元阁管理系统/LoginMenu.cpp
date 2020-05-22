@@ -40,6 +40,48 @@ void LoginMenu:: display()
 		display();
 	}
 	return;
+
+}
+
+
+
+bool LoginMenu::checkInDisplay()
+{
+
+	system("cls");
+	cout << "********************************************************" << "" << endl;
+	cout << endl << endl << endl;
+	cout << "\t" << "欢迎使用状元阁信息管理系统" << endl;
+	cout << endl;
+	cout << "\t" << "请 您 先 进 行 登 陆 ！" << endl << endl;
+	cout << endl << endl << endl << endl << endl;
+	cout << "********************************************************" << endl;
+	system("pause");
+
+	string s1 = login_one();
+
+	if (s1 == "register") //如果返回的密钥是register，则进行注册
+	{
+		register_one();
+		exit(0);
+	}
+	
+	try
+	{
+		if (checkPassword(s1)) 
+		{
+			return 1;				//查找成功，返回1
+		}
+	}
+	catch (int)
+	{
+		/*cout << "Warning 无此用户信息！请您重新输入！" << endl;
+		system("pause");
+		display();*/
+		return false;
+	}
+	return false;
+
 }
 
 
@@ -54,10 +96,12 @@ string LoginMenu::login_one()
 	cout << "\t如果这是您首次登录,请输入指令register！" << endl<<endl;
 	cout << "\t请输入您的个人登录码 :  ";
 	string s;
+	do 
+	{
 	s = getStringWithoutShow();
+	} while (s == ""||s==" "|| s=="\n");
 	cout << endl << endl << endl << endl << endl;
 	cout << "********************************************************" << endl;
-	system("pause");
 	return s;
 }
 

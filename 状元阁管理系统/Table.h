@@ -84,15 +84,16 @@ public:
 
     void clearThisTable(); //清空当前课表内的内容
 
-    int getNum();
-    
-    string getSelfName();
+    int getNum();// 获得课程节数
 
-    int getClassType();
+    string getSelfName();//获得表格名称
 
-    string getTheOtherName();
+    int getClassType();//获得类型代号
 
-    int getTableID();
+    string getTheOtherName();//获得对应成员的姓名
+
+    int getTableID();//获得课表的编号
+
 };
 #endif 
 

@@ -123,9 +123,6 @@
     <ClCompile Include="OperateTable.cpp">
       <Filter>源文件\业务层</Filter>
     </ClCompile>
-    <ClCompile Include="CashRegister.cpp">
-      <Filter>源文件\业务层</Filter>
-    </ClCompile>
     <ClCompile Include="TollMenu.cpp">
       <Filter>源文件\显示层</Filter>
     </ClCompile>
@@ -293,14 +290,8 @@
     <ClInclude Include="PerInfo.h">
       <Filter>头文件\文件类</Filter>
     </ClInclude>
-    <ClInclude Include="OperateSTD.h">
-      <Filter>头文件\业务类</Filter>
-    </ClInclude>
     <ClInclude Include="Student.h">
       <Filter>头文件\关于人的类</Filter>
-    </ClInclude>
-    <ClInclude Include="CashRegister.h">
-      <Filter>头文件\业务类</Filter>
     </ClInclude>
     <ClInclude Include="TollMenu.h">
       <Filter>头文件\显示类</Filter>
@@ -364,6 +355,9 @@
     </ClInclude>
     <ClInclude Include="InsideMenu.h">
       <Filter>头文件\显示类</Filter>
+    </ClInclude>
+    <ClInclude Include="OperateSTD.h">
+      <Filter>源文件\Test</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

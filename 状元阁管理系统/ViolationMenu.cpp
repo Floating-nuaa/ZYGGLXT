@@ -32,7 +32,7 @@ void ViolationMenu::display()
 		
 		cout << "************************************************************" << endl << endl;
 		cout << "友情提示  教学事故记录前请先检查教师个人信息已经录入系统" << endl;
-		cout << "友情提示  教学事故记录已经记录无法修改或删除，请谨慎操作" << endl;
+		cout << "友情提示  教学事故记录一经记录无法修改或删除，请谨慎操作" << endl;
 		
 		if (!checkToContinue())
 		{
@@ -75,7 +75,7 @@ void ViolationMenu::display()
 		ViolationRecord VM(operatorManager, tea, first, second, occurTime, remarks);
 		if (saveThisRecord(VM))
 		{
-			cout << "此次记录保存成功!!";
+			cout << "此次记录保存成功!!"<<endl;
 		}
 		else
 		{
